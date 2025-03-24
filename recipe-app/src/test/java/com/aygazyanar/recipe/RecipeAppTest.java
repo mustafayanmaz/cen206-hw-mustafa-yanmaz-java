@@ -1,10 +1,10 @@
 /**
 
-@file CalculatorAppTest.java
-@brief This file contains the test cases for the CalculatorApp class.
-@details This file includes test methods to validate the functionality of the CalculatorApp class. It uses JUnit for unit testing.
+@file RecipeAppTest.java
+@brief This file contains the test cases for the RecipeApp class.
+@details This file includes test methods to validate the functionality of the RecipeApp class. It uses JUnit for unit testing.
 */
-package com.ucoruh.calculator;
+package com.aygazyanar.recipe;
 
 import static org.junit.Assert.*;
 
@@ -22,12 +22,12 @@ import org.junit.Test;
 
 /**
 
-@class CalculatorAppTest
-@brief This class represents the test class for the CalculatorApp class.
-@details The CalculatorAppTest class provides test methods to verify the behavior of the CalculatorApp class. It includes test methods for successful execution, object creation, and error handling scenarios.
+@class RecipeAppTest
+@brief This class represents the test class for the RecipeApp class.
+@details The RecipeAppTest class provides test methods to verify the behavior of the RecipeApp class. It includes test methods for successful execution, object creation, and error handling scenarios.
 @author ugur.coruh
 */
-public class CalculatorAppTest {
+public class RecipeAppTest {
 
   /**
    * @brief This method is executed once before all test methods.
@@ -64,7 +64,7 @@ public class CalculatorAppTest {
   /**
    * @brief Test method to validate the successful execution of the main method.
    *
-   * @details This method redirects the System.in and System.out streams to simulate user input and capture the output. It calls the main method of CalculatorApp with a valid argument and asserts the expected behavior based on the output.
+   * @details This method redirects the System.in and System.out streams to simulate user input and capture the output. It calls the main method of RecipeApp with a valid argument and asserts the expected behavior based on the output.
    */
   @Test
   public void testMainSuccess() {
@@ -80,8 +80,8 @@ public class CalculatorAppTest {
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outputStream));
     String[] args = new String[] {"0"};
-    // Call the main method of CalculatorApp
-    CalculatorApp.main(args);
+    // Call the main method of RecipeApp
+    RecipeApp.main(args);
     // Restore original System.in and System.out
     System.setIn(originalIn);
     System.setOut(originalOut);
@@ -90,14 +90,14 @@ public class CalculatorAppTest {
   }
 
   /**
-   * @brief Test method to validate the object creation of CalculatorApp.
+   * @brief Test method to validate the object creation of RecipeApp.
    *
-   * @details This method creates an instance of the CalculatorApp class and asserts the successful creation of the object.
+   * @details This method creates an instance of the RecipeApp class and asserts the successful creation of the object.
    */
   @Test
   public void testMainObject() {
-    // Creating an instance of CalculatorApp
-    CalculatorApp app = new CalculatorApp();
+    // Creating an instance of RecipeApp
+    RecipeApp app = new RecipeApp();
     // Asserting the successful creation of the object
     assertTrue(true);
   }
@@ -105,7 +105,7 @@ public class CalculatorAppTest {
   /**
    * @brief Test method to validate the error handling of the main method.
    *
-   * @details This method redirects the System.in and System.out streams to simulate user input and capture the output. It calls the main method of CalculatorApp with an invalid argument and asserts the expected behavior based on the output.
+   * @details This method redirects the System.in and System.out streams to simulate user input and capture the output. It calls the main method of RecipeApp with an invalid argument and asserts the expected behavior based on the output.
    */
   @Test
   public void testMainError() {
@@ -121,8 +121,8 @@ public class CalculatorAppTest {
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outputStream));
     String[] args = new String[] {"1"};
-    // Call the main method of CalculatorApp
-    CalculatorApp.main(args);
+    // Call the main method of RecipeApp
+    RecipeApp.main(args);
     // Restore original System.in and System.out
     System.setIn(originalIn);
     System.setOut(originalOut);

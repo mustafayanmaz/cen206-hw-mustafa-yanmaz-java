@@ -5,16 +5,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<!-- The Basics -->
-	<groupId>com.ucoruh.calculator</groupId>
-	<artifactId>calculator-app</artifactId>
+	<groupId>com.aygazyanar.recipe</groupId>
+	<artifactId>recipe-app</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<!-- More Project Information -->
-	<name>calculator-app</name>
-	<url>https://github.com/ucoruh/eclipse-java-maven-template</url>
+	<name>recipe-app</name>
+	<url>https://github.com/aygazyanar/eclipse-java-maven-template</url>
 	<scm>
-		<url>https://github.com/ucoruh/eclipse-java-maven-template</url>
+		<url>https://github.com/aygazyanar/eclipse-java-maven-template</url>
 	</scm>
 	<inceptionYear>2023</inceptionYear>
 	<developers>
@@ -63,7 +63,7 @@
 	<!-- Environment Settings -->
 	<issueManagement>
 		<system>Github</system>
-		<url>https://github.com/ucoruh/eclipse-java-maven-template</url>
+		<url>https://github.com/aygazyanar/eclipse-java-maven-template</url>
 	</issueManagement>
 	<ciManagement>
 		<system>Github</system>
@@ -76,25 +76,25 @@
 				<sendOnWarning>true</sendOnWarning>
 			</notifier>
 		</notifiers>
-		<url>https://github.com/ucoruh/eclipse-java-maven-template</url>
+		<url>https://github.com/aygazyanar/eclipse-java-maven-template</url>
 	</ciManagement>
 	<repositories>
 		<repository>
 			<id>eclipse-java-maven-template</id>
 			<name>eclipse-java-maven-template</name>
-			<url>https://github.com/ucoruh/eclipse-java-maven-template</url>
+			<url>https://github.com/aygazyanar/eclipse-java-maven-template</url>
 		</repository>
 	</repositories>
 	<distributionManagement>
 		<site>
-			<name>https://github.com/ucoruh/eclipse-java-maven-template</name>
+			<name>https://github.com/aygazyanar/eclipse-java-maven-template</name>
 			<id>eclipse-java-maven-template</id>
 		</site>
-		<downloadUrl>https://github.com/ucoruh/eclipse-java-maven-template</downloadUrl>
+		<downloadUrl>https://github.com/aygazyanar/eclipse-java-maven-template</downloadUrl>
 		<repository>
 			<id>eclipse-java-maven-template</id>
 			<name>eclipse-java-maven-template</name>
-			<url>https://github.com/ucoruh/eclipse-java-maven-template</url>
+			<url>https://github.com/aygazyanar/eclipse-java-maven-template</url>
 		</repository>
 	</distributionManagement>
 	<properties>
@@ -145,8 +145,8 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<includes>
-						<include>**/CalculatorAppTest.java</include>
-						<include>**/CalculatorTest.java</include>
+						<include>**/RecipeAppTest.java</include>
+						<include>**/RecipeTest.java</include>
 					</includes>
 				</configuration>
 			</plugin>
@@ -250,7 +250,7 @@
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<mainClass>
-										com.ucoruh.calculator.CalculatorApp</mainClass>
+										com.aygazyanar.recipe.RecipeApp</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>

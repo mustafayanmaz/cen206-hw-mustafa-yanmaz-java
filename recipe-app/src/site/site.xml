@@ -20,9 +20,9 @@
 	<version position="right" />
 
 	<bannerLeft>
-		<name>Calculator Application</name>
+		<name>Recipe Application</name>
 		<src>images/logo.png</src>
-		<href>https://github.com/ucoruh/eclipse-java-maven-template</href>
+		<href>https://github.com/aygazyanar/eclipse-java-maven-template</href>
 	</bannerLeft>
 
 	<bannerRight>
@@ -35,7 +35,7 @@
 	</poweredBy>
 
 	<body>
-		<head>Calculator App</head>
+		<head>Recipe App</head>
 		<!-- Add any additional meta tags, CSS files, or JavaScript files -->
 
 		<menu name="Overview">
@@ -45,7 +45,7 @@
 				<item name="Project Info" href="project-info.html" />
 				<item name="Project Summary" href="summary.html" />
 				<item name="Project Team" href="team.html" />
-				<item name="GitHub Repository" href="https://github.com/ucoruh/eclipse-java-maven-template" />
+				<item name="GitHub Repository" href="https://github.com/aygazyanar/eclipse-java-maven-template" />
 		</menu>
 
 		<menu name="Development">
