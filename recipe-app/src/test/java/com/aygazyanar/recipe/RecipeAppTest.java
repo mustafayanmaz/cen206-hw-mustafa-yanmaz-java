@@ -97,3 +97,111 @@ public class RecipeAppTest {
         Connection conn = DBConnection.getInstance().getConnection();
         assertNotNull("DB connection should not be null", conn);
     }
+    
+
+    @Test
+    public void testAuthService() throws Exception {
+        AuthService authService = new AuthService();
+        // Register a new user
+        boolean regResult = authService.register("testuser", "password");
+        assertTrue("User registration should succeed", regResult);
+        
+        // Try to register the same user again
+        boolean regDuplicate = authService.register("testuser", "password");
+        assertFalse("Duplicate user registration should fail", regDuplicate);
+
+        // Test login with correct credentials
+        User user = authService.login("testuser", "password");
+        assertNotNull("Login with correct credentials should return a user", user);
+        assertEquals("Username should match", "testuser", user.getUsername());
+
+        // Test login with incorrect credentials
+        User invalidUser = authService.login("testuser", "wrongpassword");
+        assertNull("Login with wrong password should return null", invalidUser);
+    }
+
+    @Test
+    public void testIngredientService() throws Exception {
+        IngredientService ingredientService = new IngredientService();
+        // Create a new ingredient
+        Ingredient flour = new Ingredient(0, "Flour", 2.0, "Baking");
+        ingredientService.addIngredient(flour);
+        
+        // Retrieve all ingredients and check if it is added
+        List<Ingredient> ingredients = ingredientService.getAllIngredients();
+        assertNotNull("Ingredient list should not be null", ingredients);
+        assertEquals("There should be one ingredient", 1, ingredients.size());
+        
+        Ingredient retrieved = ingredients.get(0);
+        assertEquals("Name should be Flour", "Flour", retrieved.getName());
+        assertEquals("Price should be 2.0", 2.0, retrieved.getPrice(), 0.001);
+        assertEquals("Category should be Baking", "Baking", retrieved.getCategory());
+        
+        // Update the ingredient
+        retrieved.setName("WholeWheat Flour");
+        retrieved.setPrice(2.5);
+        retrieved.setCategory("Bakery");
+        ingredientService.updateIngredient(retrieved);
+        
+        Ingredient updated = ingredientService.getIngredientById(retrieved.getId());
+        assertNotNull("Updated ingredient should not be null", updated);
+        assertEquals("Name should be updated", "WholeWheat Flour", updated.getName());
+        assertEquals("Price should be updated", 2.5, updated.getPrice(), 0.001);
+        assertEquals("Category should be updated", "Bakery", updated.getCategory());
+
+        // Test price adjustment: increase by 50%
+        IncreasePriceStrategy incStrategy = new IncreasePriceStrategy(50);
+        ingredientService.adjustIngredientPrice(updated.getId(), incStrategy);
+        Ingredient increased = ingredientService.getIngredientById(updated.getId());
+        assertEquals("Price after increase should be 3.75", 2.5 * 1.5, increased.getPrice(), 0.001);
+
+        // Test price adjustment: decrease by 20%
+        DecreasePriceStrategy decStrategy = new DecreasePriceStrategy(20);
+        ingredientService.adjustIngredientPrice(updated.getId(), decStrategy);
+        Ingredient decreased = ingredientService.getIngredientById(updated.getId());
+        // New price should be previous price multiplied by 0.8
+        assertEquals("Price after decrease should be adjusted", increased.getPrice() * 0.8, decreased.getPrice(), 0.001);
+    }
+
+    @Test
+    public void testRecipeServiceAndCalculation() throws Exception {
+        // Add ingredients using IngredientService
+        IngredientService ingredientService = new IngredientService();
+        // Ingredient 1: Egg, price 0.5
+        Ingredient egg = new Ingredient(0, "Egg", 0.5, "Protein");
+        ingredientService.addIngredient(egg);
+        // Ingredient 2: Milk, price 1.0
+        Ingredient milk = new Ingredient(0, "Milk", 1.0, "Dairy");
+        ingredientService.addIngredient(milk);
+
+        // Retrieve ingredients to get their IDs
+        List<Ingredient> ingredients = ingredientService.getAllIngredients();
+        assertEquals("There should be 2 ingredients", 2, ingredients.size());
+        Ingredient retrievedEgg = ingredientService.getIngredientById(ingredients.get(0).getId());
+        Ingredient retrievedMilk = ingredientService.getIngredientById(ingredients.get(1).getId());
+
+        // Create a recipe using RecipeService
+        RecipeService recipeService = new RecipeService();
+        Recipe pancake = new Recipe(0, "Pancake");
+        // Add 2 eggs and 1 cup of milk
+        RecipeIngredient riEgg = new RecipeIngredient(retrievedEgg, 2.0, "pieces");
+        RecipeIngredient riMilk = new RecipeIngredient(retrievedMilk, 1.0, "cup");
+        pancake.addIngredient(riEgg);
+        pancake.addIngredient(riMilk);
+        recipeService.addRecipe(pancake);
+
+        // Test total cost calculation
+        double expectedCost = 2.0 * 0.5 + 1.0 * 1.0; // 1.0 + 1.0 = 2.0
+        assertEquals("Total cost of recipe should be calculated", expectedCost, pancake.calculateTotalCost(), 0.001);
+
+        // Retrieve recipe by id
+        Recipe retrievedRecipe = recipeService.getRecipeById(pancake.getId());
+        assertNotNull("Retrieved recipe should not be null", retrievedRecipe);
+        assertEquals("Recipe name should match", "Pancake", retrievedRecipe.getName());
+        assertEquals("Recipe should have 2 ingredients", 2, retrievedRecipe.getIngredients().size());
+
+        // Retrieve all recipes and check count
+        List<Recipe> recipes = recipeService.getAllRecipes();
+        assertEquals("There should be one recipe", 1, recipes.size());
+    }
+
