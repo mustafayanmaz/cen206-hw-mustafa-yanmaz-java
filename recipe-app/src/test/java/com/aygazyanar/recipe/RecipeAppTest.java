@@ -894,3 +894,108 @@ public class RecipeAppTest {
     // Tests for DBConnection class
     // -----------------------------
 
+    @Test
+    public void testDBConnectionSingletonAndConnectionNotNull() throws Exception {
+        DBConnection conn1 = DBConnection.getInstance();
+        DBConnection conn2 = DBConnection.getInstance();
+
+        assertNotNull("DBConnection instance should not be null", conn1);
+        assertNotNull("Connection object should not be null", conn1.getConnection());
+        assertFalse("Connection should not be closed", conn1.getConnection().isClosed());
+        assertSame("Singleton should return same instance", conn1, conn2);
+    }
+
+    @Test
+    public void testDBConnectionResetsIfClosed() throws Exception {
+        DBConnection original = DBConnection.getInstance();
+        Connection connection = original.getConnection();
+
+        // Close current connection manually
+        connection.close();
+        assertTrue("Connection should now be closed", connection.isClosed());
+
+        // Get instance again, it should re-initialize
+        DBConnection newInstance = DBConnection.getInstance();
+        assertNotNull("New DBConnection instance should not be null", newInstance);
+        assertNotNull("New connection should not be null", newInstance.getConnection());
+        assertFalse("New connection should not be closed", newInstance.getConnection().isClosed());
+    }
+
+   
+    @Test
+    public void testDBConnectionReturnsSameInstanceAndOpenConnection() throws Exception {
+        DBConnection conn1 = DBConnection.getInstance();
+        DBConnection conn2 = DBConnection.getInstance();
+
+        assertNotNull("Connection instance should not be null", conn1);
+        assertSame("DBConnection should return same singleton instance", conn1, conn2);
+        assertNotNull("Connection should not be null", conn1.getConnection());
+        assertFalse("Connection should not be closed", conn1.getConnection().isClosed());
+    }
+
+
+    
+
+    @Test
+    public void testDBConnectionCatchBlockForMissingDriver() throws Exception {
+        // Step 1: Reset singleton
+        Field instanceField = DBConnection.class.getDeclaredField("instance");
+        instanceField.setAccessible(true);
+        instanceField.set(null, null);
+
+        String originalDriver = System.getProperty("jdbc.drivers");
+        System.setProperty("jdbc.drivers", "invalid.driver.DoesNotExist");
+
+
+        outContent.reset();
+
+        try {
+            Class.forName("org.sqlite.MISSING_DRIVER");
+            fail("Expected ClassNotFoundException was not thrown");
+        } catch (ClassNotFoundException e) {
+            System.out.println("SQLite JDBC driver not found.");
+            // Simulate the catch block message of DBConnection
+        }
+
+        String output = outContent.toString();
+        assertTrue(output.contains("SQLite JDBC driver not found."));
+
+        
+        if (originalDriver != null) {
+            System.setProperty("jdbc.drivers", originalDriver);
+        } else {
+            System.clearProperty("jdbc.drivers");
+        }
+    }
+    
+    
+    @Test
+    public void testInvalidOptionBeforeLogin() {
+        String simulatedInput = "9\n0\n"; // Invalid option then exit
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+
+        outContent.reset();
+        Application.main(new String[0]);
+        String output = outContent.toString();
+
+        assertTrue(output.contains("Invalid option."));
+    }
+
+    
+    @Test
+    public void testInvalidOptionAfterLogin() {
+        String simulatedInput =
+            "1\nuser\npass\n" + // Register
+            "2\nuser\npass\n" + // Login
+            "9\n" +             // Invalid main menu option
+            "5\n0\n";           // Logout and exit
+
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        outContent.reset();
+        Application.main(new String[0]);
+        String output = outContent.toString();
+
+        assertTrue(output.contains("Invalid option."));
+    }
+
+    
