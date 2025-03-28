@@ -604,4 +604,97 @@ public class RecipeAppTest {
     // Tests for User class (getter and setter)
     // -----------------------------
 
+    @Test
+    public void testUserDefaultConstructorAndSetters() {
+        User user = new User();
+        user.setId(1);
+        user.setUsername("john");
+        user.setPassword("12345");
+
+        assertEquals(1, user.getId());
+        assertEquals("john", user.getUsername());
+        assertEquals("12345", user.getPassword());
+    }
+
+    @Test
+    public void testUserParameterizedConstructor() {
+        User user = new User(10, "alice", "secret");
+
+        assertEquals(10, user.getId());
+        assertEquals("alice", user.getUsername());
+        assertEquals("secret", user.getPassword());
+    }
     
+    // -----------------------------
+    // Tests for RecipeService catch blocks
+    // -----------------------------
+
+    @Test
+    public void testAddRecipeCatchBlock() throws Exception {
+        RecipeDAO faultyDAO = new RecipeDAO() {
+            @Override public void addRecipe(Recipe recipe) throws Exception {
+                throw new Exception("Simulated exception in addRecipe");
+            }
+            @Override public Recipe getRecipeById(int id) throws Exception { return null; }
+            @Override public List<Recipe> getAllRecipes() throws Exception { return null; }
+        };
+        RecipeService service = new RecipeService();
+        Field field = RecipeService.class.getDeclaredField("recipeDAO");
+        field.setAccessible(true);
+        field.set(service, faultyDAO);
+
+        Recipe dummy = new Recipe(0, "TestRecipe");
+
+        outContent.reset();
+        service.addRecipe(dummy);
+        String output = outContent.toString();
+        assertTrue(output.contains("Error adding recipe: Simulated exception in addRecipe"));
+    }
+
+    @Test
+    public void testGetRecipeByIdCatchBlock() throws Exception {
+        RecipeDAO faultyDAO = new RecipeDAO() {
+            @Override public void addRecipe(Recipe recipe) throws Exception { }
+            @Override public Recipe getRecipeById(int id) throws Exception {
+                throw new Exception("Simulated exception in getRecipeById");
+            }
+            @Override public List<Recipe> getAllRecipes() throws Exception { return null; }
+        };
+        RecipeService service = new RecipeService();
+        Field field = RecipeService.class.getDeclaredField("recipeDAO");
+        field.setAccessible(true);
+        field.set(service, faultyDAO);
+
+        outContent.reset();
+        Recipe result = service.getRecipeById(1);
+        assertNull(result);
+        String output = outContent.toString();
+        assertTrue(output.contains("Error retrieving recipe: Simulated exception in getRecipeById"));
+    }
+
+    @Test
+    public void testGetAllRecipesCatchBlock() throws Exception {
+        RecipeDAO faultyDAO = new RecipeDAO() {
+            @Override public void addRecipe(Recipe recipe) throws Exception { }
+            @Override public Recipe getRecipeById(int id) throws Exception { return null; }
+            @Override public List<Recipe> getAllRecipes() throws Exception {
+                throw new Exception("Simulated exception in getAllRecipes");
+            }
+        };
+        RecipeService service = new RecipeService();
+        Field field = RecipeService.class.getDeclaredField("recipeDAO");
+        field.setAccessible(true);
+        field.set(service, faultyDAO);
+
+        outContent.reset();
+        List<Recipe> result = service.getAllRecipes();
+        assertNull(result);
+        String output = outContent.toString();
+        assertTrue(output.contains("Error retrieving recipes: Simulated exception in getAllRecipes"));
+    }
+    
+    
+    // -----------------------------
+    // Tests for AuthService catch blocks
+    // -----------------------------
+
