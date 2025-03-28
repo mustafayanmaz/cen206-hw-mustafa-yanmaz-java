@@ -698,3 +698,100 @@ public class RecipeAppTest {
     // Tests for AuthService catch blocks
     // -----------------------------
 
+    @Test
+    public void testRegisterCatchBlock() throws Exception {
+        UserDAO faultyDAO = new UserDAO() {
+            @Override public void createUser(User user) throws Exception { }
+            @Override public User getUserByUsername(String username) throws Exception {
+                throw new Exception("Simulated exception in getUserByUsername");
+            }
+        };
+
+        AuthService authService = new AuthService();
+        Field field = AuthService.class.getDeclaredField("userDAO");
+        field.setAccessible(true);
+        field.set(authService, faultyDAO);
+
+        outContent.reset();
+        boolean result = authService.register("xuser", "xpass");
+        String output = outContent.toString();
+        assertFalse(result);
+        assertTrue(output.contains("Error registering user: Simulated exception in getUserByUsername"));
+    }
+
+    @Test
+    public void testRegisterCatchBlock_createUserFails() throws Exception {
+        UserDAO faultyDAO = new UserDAO() {
+            @Override public void createUser(User user) throws Exception {
+                throw new Exception("Simulated exception in createUser");
+            }
+
+            @Override public User getUserByUsername(String username) throws Exception {
+                return null;
+            }
+        };
+
+        AuthService authService = new AuthService();
+        Field field = AuthService.class.getDeclaredField("userDAO");
+        field.setAccessible(true);
+        field.set(authService, faultyDAO);
+
+        outContent.reset();
+        boolean result = authService.register("xuser", "xpass");
+        String output = outContent.toString();
+        assertFalse(result);
+        assertTrue(output.contains("Error registering user: Simulated exception in createUser"));
+    }
+
+    @Test
+    public void testLoginCatchBlock() throws Exception {
+        UserDAO faultyDAO = new UserDAO() {
+            @Override public void createUser(User user) throws Exception { }
+
+            @Override public User getUserByUsername(String username) throws Exception {
+                throw new Exception("Simulated exception in login");
+            }
+        };
+
+        AuthService authService = new AuthService();
+        Field field = AuthService.class.getDeclaredField("userDAO");
+        field.setAccessible(true);
+        field.set(authService, faultyDAO);
+
+        outContent.reset();
+        User result = authService.login("xuser", "xpass");
+        String output = outContent.toString();
+        assertNull(result);
+        assertTrue(output.contains("Error during login: Simulated exception in login"));
+    }
+    
+    
+    
+    // -----------------------------
+    // Tests for Recipe class
+    // -----------------------------
+
+    @Test
+    public void testRecipeDefaultConstructorAndSetters() {
+        Recipe recipe = new Recipe();
+        recipe.setId(5);
+        recipe.setName("Soup");
+
+        assertEquals(5, recipe.getId());
+        assertEquals("Soup", recipe.getName());
+
+        // test ingredients list is initialized
+        assertNotNull(recipe.getIngredients());
+        assertTrue(recipe.getIngredients().isEmpty());
+    }
+
+    @Test
+    public void testRecipeParameterizedConstructor() {
+        Recipe recipe = new Recipe(7, "Salad");
+
+        assertEquals(7, recipe.getId());
+        assertEquals("Salad", recipe.getName());
+        assertNotNull(recipe.getIngredients());
+        assertTrue(recipe.getIngredients().isEmpty());
+    }
+
