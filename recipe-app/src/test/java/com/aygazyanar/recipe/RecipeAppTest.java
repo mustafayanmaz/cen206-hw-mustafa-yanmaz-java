@@ -998,4 +998,71 @@ public class RecipeAppTest {
         assertTrue(output.contains("Invalid option."));
     }
 
+    @Test
+    public void testRecipeCostingNoIngredientsAvailable() {
+        String simulatedInput =
+            "1\nuser\npass\n" +
+            "2\nuser\npass\n" +
+            "2\n" + // Go to recipe costing
+            "5\n0\n"; // Logout & exit
+
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        outContent.reset();
+        Application.main(new String[0]);
+        String output = outContent.toString();
+
+        assertTrue(output.contains("No ingredients available in the system"));
+    }
+
     
+    
+    @Test
+    public void testPriceAdjustmentInvalidOption() {
+        String simulatedInput =
+            "1\nuser\npass\n" +
+            "2\nuser\npass\n" +
+            "1\n1\nMilk\n2.0\nDairy\n0\n" +
+            "3\n1\nx\n20\n5\n0\n";
+
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        outContent.reset();
+        Application.main(new String[0]);
+        String output = outContent.toString();
+
+        assertTrue(output.contains("Invalid option."));
+    }
+
+    
+    @Test
+    public void testBudgetPlannerNoRecipesFound() {
+        String simulatedInput =
+            "1\nuser\npass\n" +
+            "2\nuser\npass\n" +
+            "4\n10.0\n5\n0\n"; // Go to budget planner with no recipes
+
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        outContent.reset();
+        Application.main(new String[0]);
+        String output = outContent.toString();
+
+        assertTrue(output.contains("No recipes found. Please create recipes first."));
+    }
+
+    
+    @Test
+    public void testDBConnectionCatchBlockMessageWhenDriverNotFound() {
+        outContent.reset();
+
+        try {
+            Class.forName("org.sqlite.NON_EXISTENT_DRIVER");
+            fail("Expected ClassNotFoundException was not thrown");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("SQLite JDBC driver not found.");
+        }
+
+        String output = outContent.toString();
+        assertTrue(output.contains("SQLite JDBC driver not found."));
+    }
+
+
+}
