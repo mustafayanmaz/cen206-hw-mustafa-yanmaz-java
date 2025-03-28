@@ -205,3 +205,118 @@ public class RecipeAppTest {
         assertEquals("There should be one recipe", 1, recipes.size());
     }
 
+
+    @Test
+    public void testBudgetService() throws Exception {
+        // Create ingredients and recipes for budget planning
+        IngredientService ingredientService = new IngredientService();
+        RecipeService recipeService = new RecipeService();
+        BudgetService budgetService = new BudgetService();
+
+        // Add ingredient: Butter, price 3.0
+        Ingredient butter = new Ingredient(0, "Butter", 3.0, "Dairy");
+        ingredientService.addIngredient(butter);
+        // Add ingredient: Sugar, price 2.0
+        Ingredient sugar = new Ingredient(0, "Sugar", 2.0, "Sweetener");
+        ingredientService.addIngredient(sugar);
+
+        // Retrieve ingredients
+        List<Ingredient> ingrList = ingredientService.getAllIngredients();
+        assertEquals("There should be 2 ingredients", 2, ingrList.size());
+        Ingredient retrievedButter = ingredientService.getIngredientById(ingrList.get(0).getId());
+        Ingredient retrievedSugar = ingredientService.getIngredientById(ingrList.get(1).getId());
+
+        // Create recipe: Cake using butter and sugar
+        Recipe cake = new Recipe(0, "Cake");
+        cake.addIngredient(new RecipeIngredient(retrievedButter, 1.0, "stick"));
+        cake.addIngredient(new RecipeIngredient(retrievedSugar, 2.0, "cups"));
+        recipeService.addRecipe(cake);
+
+        // Prepare list of recipes
+        List<Recipe> recipes = recipeService.getAllRecipes();
+        assertEquals("There should be 1 recipe", 1, recipes.size());
+
+        // Test budget planning with a budget higher than total cost
+        outContent.reset();
+        budgetService.planBudget(20.0, recipes);
+        String outputHighBudget = outContent.toString();
+        assertTrue("Output should contain 'Within budget' when under budget", 
+                   outputHighBudget.contains("Within budget"));
+
+        // Test budget planning with a budget lower than total cost
+        outContent.reset();
+        budgetService.planBudget(3.0, recipes);
+        String outputLowBudget = outContent.toString();
+        assertTrue("Output should contain warning when cost exceeds budget", 
+                   outputLowBudget.contains("Warning: Total cost exceeds the budget."));
+    }
+
+    @Test
+    public void testPriceAdjustmentStrategies() {
+        // Test IncreasePriceStrategy
+        PriceAdjustmentStrategy increaseStrategy = new IncreasePriceStrategy(10); // 10% increase
+        double increasedPrice = increaseStrategy.adjustPrice(100.0);
+        assertEquals("Increased price should be 110", 110.0, increasedPrice, 0.001);
+
+        // Test DecreasePriceStrategy
+        PriceAdjustmentStrategy decreaseStrategy = new DecreasePriceStrategy(10); // 10% decrease
+        double decreasedPrice = decreaseStrategy.adjustPrice(100.0);
+        assertEquals("Decreased price should be 90", 90.0, decreasedPrice, 0.001);
+    }
+
+    // -----------------------------
+    // Tests for Application.java interactive flow
+    // -----------------------------
+
+    @Test
+    public void testApplicationExit() {
+        // Simulate selecting "0" at the initial menu to exit immediately.
+        String simulatedInput = "0\n";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        Application.main(new String[0]);
+        String output = outContent.toString();
+        assertTrue("Output should contain welcome message", output.contains("Welcome to Recipe Cost Calculator!"));
+        assertTrue("Output should contain goodbye message", output.contains("Goodbye!"));
+    }
+
+    @Test
+    public void testApplicationFullFlow() {
+        /* 
+         * Simulate the following sequence:
+         * 1. Register (option "1"), then enter username and password.
+         * 2. Login (option "2"), then enter the same username and password.
+         * 3. Main menu (after login): choose Ingredient Management (option "1")
+         *    a. In Ingredient Management, choose "1" to add an ingredient.
+         *       - Enter ingredient name, price, and category.
+         *    b. Then choose "0" to go back.
+         * 4. In main menu, choose "5" to logout.
+         * 5. At the initial menu, choose "0" to exit.
+         */
+        String simulatedInput = 
+              "1\n" +           // Register
+              "username\n" +
+              "password\n" +
+              "2\n" +           // Login
+              "username\n" +
+              "password\n" +
+              "1\n" +           // Main menu: Ingredient Management
+              "1\n" +           // Ingredient Management: Add Ingredient
+              "Tomato\n" +
+              "1.5\n" +
+              "Vegetable\n" +
+              "0\n" +           // Back from Ingredient Management
+              "5\n" +           // Main menu: Logout
+              "0\n";            // Initial menu: Exit
+              
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        Application.main(new String[0]);
+        String output = outContent.toString();
+        
+        // Check that expected messages are printed
+        assertTrue("Output should indicate successful registration", output.contains("User registered successfully."));
+        assertTrue("Output should indicate successful login", output.contains("Login successful."));
+        assertTrue("Output should indicate that ingredient was added", output.contains("Ingredient added successfully."));
+        assertTrue("Output should indicate successful logout", output.contains("Logged out successfully."));
+        assertTrue("Output should contain goodbye message", output.contains("Goodbye!"));
+    }
+
