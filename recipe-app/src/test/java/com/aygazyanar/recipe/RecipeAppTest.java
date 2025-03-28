@@ -493,4 +493,115 @@ public class RecipeAppTest {
     // Tests for IngredientService catch blocks
     // -----------------------------
 
+    @Test
+    public void testAddIngredientCatchBlock() throws Exception {
+        IngredientDAO faultyDAO = new IngredientDAO() {
+            @Override public void addIngredient(Ingredient ingredient) throws Exception {
+                throw new Exception("Simulated exception in addIngredient");
+            }
+            @Override public void updateIngredient(Ingredient ingredient) throws Exception { }
+            @Override public Ingredient getIngredientById(int id) throws Exception { return null; }
+            @Override public List<Ingredient> getAllIngredients() throws Exception { return null; }
+        };
+        IngredientService service = new IngredientService();
+        Field field = IngredientService.class.getDeclaredField("ingredientDAO");
+        field.setAccessible(true);
+        field.set(service, faultyDAO);
+
+        outContent.reset();
+        service.addIngredient(new Ingredient(0, "Test", 1.0, "TestCat"));
+        String output = outContent.toString();
+        assertTrue(output.contains("Error adding ingredient: Simulated exception in addIngredient"));
+    }
+
+    @Test
+    public void testUpdateIngredientCatchBlock() throws Exception {
+        IngredientDAO faultyDAO = new IngredientDAO() {
+            @Override public void addIngredient(Ingredient ingredient) throws Exception { }
+            @Override public void updateIngredient(Ingredient ingredient) throws Exception {
+                throw new Exception("Simulated exception in updateIngredient");
+            }
+            @Override public Ingredient getIngredientById(int id) throws Exception { return null; }
+            @Override public List<Ingredient> getAllIngredients() throws Exception { return null; }
+        };
+        IngredientService service = new IngredientService();
+        Field field = IngredientService.class.getDeclaredField("ingredientDAO");
+        field.setAccessible(true);
+        field.set(service, faultyDAO);
+
+        outContent.reset();
+        service.updateIngredient(new Ingredient(1, "Test", 2.0, "TestCat"));
+        String output = outContent.toString();
+        assertTrue(output.contains("Error updating ingredient: Simulated exception in updateIngredient"));
+    }
+
+    @Test
+    public void testGetAllIngredientsCatchBlock() throws Exception {
+        IngredientDAO faultyDAO = new IngredientDAO() {
+            @Override public void addIngredient(Ingredient ingredient) throws Exception { }
+            @Override public void updateIngredient(Ingredient ingredient) throws Exception { }
+            @Override public Ingredient getIngredientById(int id) throws Exception { return null; }
+            @Override public List<Ingredient> getAllIngredients() throws Exception {
+                throw new Exception("Simulated exception in getAllIngredients");
+            }
+        };
+        IngredientService service = new IngredientService();
+        Field field = IngredientService.class.getDeclaredField("ingredientDAO");
+        field.setAccessible(true);
+        field.set(service, faultyDAO);
+
+        outContent.reset();
+        List<Ingredient> result = service.getAllIngredients();
+        assertNull(result);
+        String output = outContent.toString();
+        assertTrue(output.contains("Error retrieving ingredients: Simulated exception in getAllIngredients"));
+    }
+
+    @Test
+    public void testGetIngredientByIdCatchBlock() throws Exception {
+        IngredientDAO faultyDAO = new IngredientDAO() {
+            @Override public void addIngredient(Ingredient ingredient) throws Exception { }
+            @Override public void updateIngredient(Ingredient ingredient) throws Exception { }
+            @Override public Ingredient getIngredientById(int id) throws Exception {
+                throw new Exception("Simulated exception in getIngredientById");
+            }
+            @Override public List<Ingredient> getAllIngredients() throws Exception { return null; }
+        };
+        IngredientService service = new IngredientService();
+        Field field = IngredientService.class.getDeclaredField("ingredientDAO");
+        field.setAccessible(true);
+        field.set(service, faultyDAO);
+
+        outContent.reset();
+        Ingredient result = service.getIngredientById(1);
+        assertNull(result);
+        String output = outContent.toString();
+        assertTrue(output.contains("Error retrieving ingredient: Simulated exception in getIngredientById"));
+    }
+
+    @Test
+    public void testAdjustIngredientPriceCatchBlock() throws Exception {
+        IngredientDAO faultyDAO = new IngredientDAO() {
+            @Override public void addIngredient(Ingredient ingredient) throws Exception { }
+            @Override public void updateIngredient(Ingredient ingredient) throws Exception { }
+            @Override public Ingredient getIngredientById(int id) throws Exception {
+                throw new Exception("Simulated exception in getIngredientById for adjustPrice");
+            }
+            @Override public List<Ingredient> getAllIngredients() throws Exception { return null; }
+        };
+        IngredientService service = new IngredientService();
+        Field field = IngredientService.class.getDeclaredField("ingredientDAO");
+        field.setAccessible(true);
+        field.set(service, faultyDAO);
+
+        outContent.reset();
+        service.adjustIngredientPrice(1, new IncreasePriceStrategy(10));
+        String output = outContent.toString();
+        assertTrue(output.contains("Error adjusting price: Simulated exception in getIngredientById for adjustPrice"));
+    }
+    
+    // -----------------------------
+    // Tests for User class (getter and setter)
+    // -----------------------------
+
     
