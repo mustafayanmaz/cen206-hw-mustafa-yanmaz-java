@@ -320,3 +320,88 @@ public class RecipeAppTest {
         assertTrue("Output should contain goodbye message", output.contains("Goodbye!"));
     }
 
+    @Test
+    public void testIngredientManagementUpdateAndViewFlow() {
+        /*
+         * Simulate the following in Ingredient Management:
+         * 1. Add an ingredient.
+         * 2. Update that ingredient.
+         * 3. View all ingredients.
+         * 4. Then return to main menu, logout and exit.
+         */
+        String simulatedInput = 
+              "1\n" +           // Register
+              "user1\n" +
+              "pass1\n" +
+              "2\n" +           // Login
+              "user1\n" +
+              "pass1\n" +
+              "1\n" +           // Main menu: Ingredient Management
+              "1\n" +           // Add Ingredient
+              "Flour\n" +
+              "2.0\n" +
+              "Baking\n" +
+              "2\n" +           // Update Ingredient
+              "1\n" +           // Update ingredient with id (assumed to be 1)
+              "WholeWheatFlour\n" +
+              "2.5\n" +
+              "Bakery\n" +
+              "3\n" +           // View All Ingredients
+              "0\n" +           // Back from Ingredient Management
+              "5\n" +           // Logout
+              "0\n";            // Exit
+              
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        Application.main(new String[0]);
+        String output = outContent.toString();
+        
+        // Check that update and view messages are printed
+        assertTrue("Output should indicate ingredient added", output.contains("Ingredient added successfully."));
+        assertTrue("Output should indicate ingredient updated", output.contains("Ingredient updated successfully."));
+        assertTrue("Output should display updated ingredient details", output.contains("WholeWheatFlour"));
+    }
+
+    @Test
+    public void testRecipeCostingFlow() {
+        /*
+         * Simulate Recipe Costing:
+         * 1. Register and login.
+         * 2. Add an ingredient via Ingredient Management.
+         * 3. Choose Recipe Costing from main menu.
+         *    - Enter recipe name.
+         *    - Select the available ingredient (assumed id 1).
+         *    - Provide quantity and unit.
+         *    - Answer "n" to stop adding ingredients.
+         * 4. Then logout and exit.
+         */
+        String simulatedInput = 
+              "1\n" +           // Register
+              "user2\n" +
+              "pass2\n" +
+              "2\n" +           // Login
+              "user2\n" +
+              "pass2\n" +
+              "1\n" +           // Main menu: Ingredient Management
+              "1\n" +           // Add Ingredient
+              "Sugar\n" +
+              "1.0\n" +
+              "Sweetener\n" +
+              "0\n" +           // Back from Ingredient Management
+              "2\n" +           // Main menu: Recipe Costing
+              "SweetTea\n" +    // Recipe name
+              "1\n" +           // Enter ingredient id (Sugar)
+              "2\n" +           // Quantity
+              "cup\n" +         // Unit
+              "n\n" +           // Do not add more ingredients
+              "5\n" +           // Logout
+              "0\n";            // Exit
+              
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        Application.main(new String[0]);
+        String output = outContent.toString();
+        
+        // Check that recipe costing messages are printed
+        assertTrue("Output should show available ingredients", output.contains("Available Ingredients:"));
+        assertTrue("Output should display total cost of the recipe", output.contains("Total cost of recipe \"SweetTea\""));
+    }
+
