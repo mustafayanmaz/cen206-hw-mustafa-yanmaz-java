@@ -795,3 +795,102 @@ public class RecipeAppTest {
         assertTrue(recipe.getIngredients().isEmpty());
     }
 
+    @Test
+    public void testAddIngredientAndCalculateTotalCost() {
+        // prepare ingredient
+        Ingredient rice = new Ingredient(1, "Rice", 3.0, "Grain");
+        RecipeIngredient ri = new RecipeIngredient(rice, 2.0, "cups");
+
+        // create recipe and add ingredient
+        Recipe recipe = new Recipe();
+        recipe.setName("Pilaf");
+        recipe.addIngredient(ri);
+
+        // check total cost
+        double expectedCost = 2.0 * 3.0; // 6.0
+        assertEquals(expectedCost, recipe.calculateTotalCost(), 0.001);
+
+        // also check ingredient list size
+        assertEquals(1, recipe.getIngredients().size());
+        assertEquals("Rice", recipe.getIngredients().get(0).getIngredient().getName());
+    }
+
+    @Test
+    public void testSetIngredientsListManually() {
+        Ingredient tomato = new Ingredient(2, "Tomato", 1.0, "Vegetable");
+        RecipeIngredient ri = new RecipeIngredient(tomato, 3.0, "pieces");
+
+        List<RecipeIngredient> list = new ArrayList<>();
+        list.add(ri);
+
+        Recipe recipe = new Recipe();
+        recipe.setIngredients(list);
+
+        assertEquals(1, recipe.getIngredients().size());
+        assertEquals("Tomato", recipe.getIngredients().get(0).getIngredient().getName());
+    }
+
+    // -----------------------------
+    // Tests for RecipeIngredient class
+    // -----------------------------
+
+    @Test
+    public void testRecipeIngredientConstructorAndGetters() {
+        Ingredient cheese = new Ingredient(1, "Cheese", 5.0, "Dairy");
+        RecipeIngredient ri = new RecipeIngredient(cheese, 2.5, "slices");
+
+        assertEquals("Cheese", ri.getIngredient().getName());
+        assertEquals(5.0, ri.getIngredient().getPrice(), 0.001);
+        assertEquals(2.5, ri.getQuantity(), 0.001);
+        assertEquals("slices", ri.getUnit());
+    }
+
+    @Test
+    public void testRecipeIngredientSetters() {
+        Ingredient tomato = new Ingredient(2, "Tomato", 1.0, "Vegetable");
+        RecipeIngredient ri = new RecipeIngredient(tomato, 3.0, "pieces");
+
+        Ingredient newIngredient = new Ingredient(3, "Cucumber", 0.8, "Vegetable");
+        ri.setIngredient(newIngredient);
+        ri.setQuantity(4.0);
+        ri.setUnit("units");
+
+        assertEquals("Cucumber", ri.getIngredient().getName());
+        assertEquals(0.8, ri.getIngredient().getPrice(), 0.001);
+        assertEquals(4.0, ri.getQuantity(), 0.001);
+        assertEquals("units", ri.getUnit());
+    }
+
+    // -----------------------------
+    // Tests for Ingredient class
+    // -----------------------------
+
+    @Test
+    public void testIngredientDefaultConstructorAndSetters() {
+        Ingredient ing = new Ingredient();
+        ing.setId(10);
+        ing.setName("Oil");
+        ing.setPrice(4.5);
+        ing.setCategory("Liquid");
+
+        assertEquals(10, ing.getId());
+        assertEquals("Oil", ing.getName());
+        assertEquals(4.5, ing.getPrice(), 0.001);
+        assertEquals("Liquid", ing.getCategory());
+    }
+
+    @Test
+    public void testIngredientParameterizedConstructor() {
+        Ingredient ing = new Ingredient(3, "Butter", 6.0, "Dairy");
+
+        assertEquals(3, ing.getId());
+        assertEquals("Butter", ing.getName());
+        assertEquals(6.0, ing.getPrice(), 0.001);
+        assertEquals("Dairy", ing.getCategory());
+    }
+
+    
+    // -----------------------------
+    // Tests for DBConnection class
+    // -----------------------------
+
