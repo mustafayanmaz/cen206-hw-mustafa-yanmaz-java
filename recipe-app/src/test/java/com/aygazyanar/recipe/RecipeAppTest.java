@@ -405,3 +405,92 @@ public class RecipeAppTest {
         assertTrue("Output should display total cost of the recipe", output.contains("Total cost of recipe \"SweetTea\""));
     }
 
+    @Test
+    public void testPriceAdjustmentFlow() {
+        /*
+         * Simulate Price Adjustment:
+         * 1. Register and login.
+         * 2. Add an ingredient via Ingredient Management.
+         * 3. From main menu, choose Price Adjustment.
+         *    - Provide ingredient id (assumed id 1).
+         *    - Choose to increase (enter "i").
+         *    - Provide percentage (e.g., 20).
+         * 4. Then logout and exit.
+         */
+        String simulatedInput = 
+              "1\n" +           // Register
+              "user3\n" +
+              "pass3\n" +
+              "2\n" +           // Login
+              "user3\n" +
+              "pass3\n" +
+              "1\n" +           // Main menu: Ingredient Management
+              "1\n" +           // Add Ingredient
+              "Salt\n" +
+              "0.5\n" +
+              "Spice\n" +
+              "0\n" +           // Back from Ingredient Management
+              "3\n" +           // Main menu: Price Adjustment
+              "1\n" +           // Enter ingredient id (Salt)
+              "i\n" +           // Choose increase
+              "20\n" +          // 20% increase
+              "5\n" +           // Logout
+              "0\n";            // Exit
+              
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        Application.main(new String[0]);
+        String output = outContent.toString();
+        
+        // Check that price adjustment message is printed
+        assertTrue("Output should indicate price adjusted successfully", output.contains("Price adjusted successfully."));
+    }
+
+    @Test
+    public void testBudgetPlannerFlow() {
+        /*
+         * Simulate Budget Planner:
+         * 1. Register and login.
+         * 2. Add an ingredient via Ingredient Management.
+         * 3. Create a recipe via Recipe Costing that uses the added ingredient.
+         * 4. Choose Budget Planner from main menu and provide a budget.
+         * 5. Then logout and exit.
+         */
+        String simulatedInput = 
+              "1\n" +           // Register
+              "user4\n" +
+              "pass4\n" +
+              "2\n" +           // Login
+              "user4\n" +
+              "pass4\n" +
+              "1\n" +           // Main menu: Ingredient Management
+              "1\n" +           // Add Ingredient
+              "Flour\n" +
+              "2.0\n" +
+              "Baking\n" +
+              "0\n" +           // Back from Ingredient Management
+              "2\n" +           // Main menu: Recipe Costing
+              "Bread\n" +       // Recipe name
+              "1\n" +           // Enter ingredient id (Flour)
+              "3\n" +           // Quantity
+              "cup\n" +         // Unit
+              "n\n" +           // Do not add more ingredients
+              "4\n" +           // Main menu: Budget Planner
+              "10.0\n" +        // Provide budget (recipe cost will be 6.0)
+              "5\n" +           // Logout
+              "0\n";            // Exit
+              
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+        Application.main(new String[0]);
+        String output = outContent.toString();
+        
+        // Check that budget planner output is printed correctly
+        assertTrue("Output should contain 'Budget Planner'", output.contains("Budget Planner:"));
+        assertTrue("Output should indicate that cost is within budget", output.contains("Within budget."));
+    }
+    
+    
+    // -----------------------------
+    // Tests for IngredientService catch blocks
+    // -----------------------------
+
+    
