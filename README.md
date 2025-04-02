@@ -12,7 +12,7 @@ The Recipe Cost Calculator helps users to calculate the cost of recipes based on
 
 ## Releases
 
-- [Latest Release](https://github.com/mustafayanmaz/cen206-hw-mustafa-yanmaz-java)
+- [Latest Release](https://github.com/mustafayanmaz/cen206-hw-mustafa-yanmaz-java/releases/latest)
 
 ## Platforms
 
