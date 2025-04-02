@@ -80,7 +80,7 @@ jobs:
           total=$((covered + missed))
           coverage_percentage=$(awk "BEGIN { print ($covered / $total) * 100 }")
           # Check if coverage is 90%
-          if (( $(echo "$coverage_percentage == 90" | bc -l) )); then
+          if (( $(echo "$coverage_percentage >= 90" | bc -l) )); then
             echo "Test coverage is 90%!"
           else
             echo "Test coverage is not 90%."
