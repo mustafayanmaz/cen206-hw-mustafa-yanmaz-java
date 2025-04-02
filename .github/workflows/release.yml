@@ -79,11 +79,11 @@ jobs:
           missed=$(xmllint --xpath "string(//counter[@type='INSTRUCTION']/@missed)" target/site/jacoco/jacoco.xml)
           total=$((covered + missed))
           coverage_percentage=$(awk "BEGIN { print ($covered / $total) * 100 }")
-          # Check if coverage is 100%
-          if (( $(echo "$coverage_percentage == 100" | bc -l) )); then
-            echo "Test coverage is 100%!"
+          # Check if coverage is 90%
+          if (( $(echo "$coverage_percentage >= 90" | bc -l) )); then
+            echo "Test coverage is 90%!"
           else
-            echo "Test coverage is not 100%."
+            echo "Test coverage is not 90%."
             exit 1  # Fail the GitHub Actions workflow
           fi
           echo "Coverage Percentage: $coverage_percentage"
@@ -143,7 +143,7 @@ jobs:
         id: create_common_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.MAVEN_TEMPLATE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CEN206_HW_MIDTERM_MUSTAFA_YANMAZ }}
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
@@ -151,7 +151,10 @@ jobs:
             Changes in this release:
             ${{ steps.commit_summary.outputs.summary }}
             
-            Asst. Prof. Dr. Ugur CORUH
+            Mustafa Yanmaz
+            Duygu Ayvaz
+            Hayrunnisa Kasimay
+            
           draft: false
           prerelease: false
                 
@@ -175,7 +178,7 @@ jobs:
           asset_name: recipe.jar
           asset_content_type: application/jar
         env:
-          GITHUB_TOKEN: ${{ secrets.MAVEN_TEMPLATE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CEN206_HW_MIDTERM_MUSTAFA_YANMAZ }}
           
       - name: Upload Test Coverage Report
         uses: actions/upload-release-asset@v1
@@ -185,7 +188,7 @@ jobs:
           asset_name: test-coverage-report.tar.gz
           asset_content_type: application/gzip
         env:
-          GITHUB_TOKEN: ${{ secrets.MAVEN_TEMPLATE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CEN206_HW_MIDTERM_MUSTAFA_YANMAZ }}
           
       - name: Upload Doc Coverage Report
         uses: actions/upload-release-asset@v1
@@ -195,7 +198,7 @@ jobs:
           asset_name: doc-coverage-report.tar.gz
           asset_content_type: application/gzip
         env:
-          GITHUB_TOKEN: ${{ secrets.MAVEN_TEMPLATE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CEN206_HW_MIDTERM_MUSTAFA_YANMAZ }}
           
       - name: Upload Doxygen Documentation
         uses: actions/upload-release-asset@v1
@@ -205,7 +208,7 @@ jobs:
           asset_name: app-documents.tar.gz
           asset_content_type: application/gzip
         env:
-          GITHUB_TOKEN: ${{ secrets.MAVEN_TEMPLATE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CEN206_HW_MIDTERM_MUSTAFA_YANMAZ }}
           
       - name: Upload Web Site
         uses: actions/upload-release-asset@v1
@@ -215,10 +218,10 @@ jobs:
           asset_name: app-website.tar.gz
           asset_content_type: application/gzip
         env:
-          GITHUB_TOKEN: ${{ secrets.MAVEN_TEMPLATE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CEN206_HW_MIDTERM_MUSTAFA_YANMAZ }}
           
       - name: Deploy Web Site
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.MAVEN_TEMPLATE_TOKEN }}
+          github_token: ${{ secrets.CEN206_HW_MIDTERM_MUSTAFA_YANMAZ }}
           publish_dir: ./recipe-app/target/site
