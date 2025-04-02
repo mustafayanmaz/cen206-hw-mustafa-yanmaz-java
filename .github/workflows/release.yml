@@ -152,8 +152,9 @@ jobs:
             ${{ steps.commit_summary.outputs.summary }}
             
             Mustafa Yanmaz
+            Duygu Ayvaz
             Hayrunnisa Kasimay
-            Ali Ufuktan Topcu
+            
           draft: false
           prerelease: false
                 
