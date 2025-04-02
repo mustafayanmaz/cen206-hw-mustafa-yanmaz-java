@@ -19,18 +19,18 @@
 	<inceptionYear>2023</inceptionYear>
 	<developers>
 		<developer>
-			<name>Asst. Prof. Dr. Ugur CORUH</name>
+			<name>Mustafa Yanmaz</name>
 			<organization>RTEU</organization>
-			<email>ugur.coruh@erdogan.edu.tr</email>
+			<email>mustafa_yanmaz21@erdogan.edu.tr</email>
 			<roles>
 				<role>Developer</role>
 				<role>Designer</role>
 			</roles>
 		</developer>
 		<developer>
-			<name>Other Person</name>
+			<name>Duygu Ayvaz</name>
 			<organization>RTEU</organization>
-			<email>mail@gmail.com</email>
+			<email>duygu_ayvaz22@gmail.com</email>
 			<roles>
 				<role>Developer</role>
 			</roles>
@@ -38,8 +38,8 @@
 	</developers>
 	<contributors>
 		<contributor>
-			<name>Asst. Prof. Dr. Ugur CORUH</name>
-			<email>ugur.coruh@erdogan.edu.tr</email>
+			<name>Hayrunnisa Kasımay</name>
+			<email>hayrunnisa_kasimay21@erdogan.edu.tr</email>
 			<organization>RTEU</organization>
 			<roles>
 				<role>Developer</role>
