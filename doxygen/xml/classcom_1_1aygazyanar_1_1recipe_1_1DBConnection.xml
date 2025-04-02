@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection" kind="class" language="Java" prot="public">
+    <compoundname>com::aygazyanar::recipe::DBConnection</compoundname>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1a3efdb6c986ddf235ffe11f76f61c66f0" prot="private" static="yes" mutable="no">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection" kindref="compound">DBConnection</ref></type>
+        <definition>DBConnection com.aygazyanar.recipe.DBConnection.instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <qualifiedname>com.aygazyanar.recipe.DBConnection.instance</qualifiedname>
+        <briefdescription>
+<para>Singleton instance of DBConnection. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" line="24" column="33" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1aff1e478ee4e58e7e1698344982ba2077" prot="private" static="no" mutable="no">
+        <type>Connection</type>
+        <definition>Connection com.aygazyanar.recipe.DBConnection.connection</definition>
+        <argsstring></argsstring>
+        <name>connection</name>
+        <qualifiedname>com.aygazyanar.recipe.DBConnection.connection</qualifiedname>
+        <briefdescription>
+<para>The active JDBC database connection. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" line="29" column="24" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1af0795f7672ce58c0809cab122c1c150f" prot="private" static="no" mutable="no">
+        <type>final String</type>
+        <definition>final String com.aygazyanar.recipe.DBConnection.url</definition>
+        <argsstring></argsstring>
+        <name>url</name>
+        <qualifiedname>com.aygazyanar.recipe.DBConnection.url</qualifiedname>
+        <initializer>= &quot;jdbc:sqlite:recipe_calculator.db&quot;</initializer>
+        <briefdescription>
+<para>The JDBC URL used to connect to the SQLite database. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" line="34" column="26" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" bodystart="34" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1a829051ad30ce3e812936bd3d2e88f8cd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.aygazyanar.recipe.DBConnection.DBConnection</definition>
+        <argsstring>()</argsstring>
+        <name>DBConnection</name>
+        <qualifiedname>com.aygazyanar.recipe.DBConnection.DBConnection</qualifiedname>
+        <exceptions> throws SQLException </exceptions>
+        <briefdescription>
+<para>Private constructor that initializes the database connection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads the SQLite JDBC driver and connects to the database file.</para>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>SQLException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the JDBC driver is not found or the connection cannot be established. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" line="43" column="13" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" bodystart="43" bodyend="51"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1ac283a250b94b7c8efc89b12ceaa493d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Connection</type>
+        <definition>Connection com.aygazyanar.recipe.DBConnection.getConnection</definition>
+        <argsstring>()</argsstring>
+        <name>getConnection</name>
+        <qualifiedname>com.aygazyanar.recipe.DBConnection.getConnection</qualifiedname>
+        <briefdescription>
+<para>Gets the active database connection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The JDBC Connection object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" line="57" column="23" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" bodystart="57" bodyend="59"/>
+        <referencedby refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1a375981392f105a6c7c3d90d21f924234" compoundref="DBConnection_8java" startline="69" endline="76">com.aygazyanar.recipe.DBConnection.getInstance</referencedby>
+        <referencedby refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_1ab68e3e7cb3e2c5a9dccb972757036964" compoundref="IngredientDAOImpl_8java" startline="31" endline="34">com.aygazyanar.recipe.IngredientDAOImpl.IngredientDAOImpl</referencedby>
+        <referencedby refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a380ff1b9cc213f508217613d516e29d8" compoundref="RecipeDAOImpl_8java" startline="31" endline="35">com.aygazyanar.recipe.RecipeDAOImpl.RecipeDAOImpl</referencedby>
+        <referencedby refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_1aa61adfe7129543c5dc45f93283a2c656" compoundref="UserDAOImpl_8java" startline="29" endline="32">com.aygazyanar.recipe.UserDAOImpl.UserDAOImpl</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1a375981392f105a6c7c3d90d21f924234" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection" kindref="compound">DBConnection</ref></type>
+        <definition>static DBConnection com.aygazyanar.recipe.DBConnection.getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>com.aygazyanar.recipe.DBConnection.getInstance</qualifiedname>
+        <exceptions> throws SQLException </exceptions>
+        <briefdescription>
+<para>Returns the singleton instance of DBConnection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the instance does not exist or the connection is closed, a new one is created.</para>
+<para><simplesect kind="return"><para>DBConnection singleton instance. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>SQLException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If connection initialization fails. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" line="69" column="32" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" bodystart="69" bodyend="76"/>
+        <references refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1ac283a250b94b7c8efc89b12ceaa493d2" compoundref="DBConnection_8java" startline="57" endline="59">com.aygazyanar.recipe.DBConnection.getConnection</references>
+        <referencedby refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_1ab68e3e7cb3e2c5a9dccb972757036964" compoundref="IngredientDAOImpl_8java" startline="31" endline="34">com.aygazyanar.recipe.IngredientDAOImpl.IngredientDAOImpl</referencedby>
+        <referencedby refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a380ff1b9cc213f508217613d516e29d8" compoundref="RecipeDAOImpl_8java" startline="31" endline="35">com.aygazyanar.recipe.RecipeDAOImpl.RecipeDAOImpl</referencedby>
+        <referencedby refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_1aa61adfe7129543c5dc45f93283a2c656" compoundref="UserDAOImpl_8java" startline="29" endline="32">com.aygazyanar.recipe.UserDAOImpl.UserDAOImpl</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton class responsible for establishing and providing access to the SQLite database connection. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class ensures that only one instance of the database connection exists during runtime. It initializes the SQLite JDBC driver and handles reconnection if the connection is closed. </para>
+    </detaileddescription>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" line="19" column="7" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/DBConnection.java" bodystart="19" bodyend="77"/>
+    <listofallmembers>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1aff1e478ee4e58e7e1698344982ba2077" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::DBConnection</scope><name>connection</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1a829051ad30ce3e812936bd3d2e88f8cd" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::DBConnection</scope><name>DBConnection</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1ac283a250b94b7c8efc89b12ceaa493d2" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::DBConnection</scope><name>getConnection</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1a375981392f105a6c7c3d90d21f924234" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::DBConnection</scope><name>getInstance</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1a3efdb6c986ddf235ffe11f76f61c66f0" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::DBConnection</scope><name>instance</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1af0795f7672ce58c0809cab122c1c150f" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::DBConnection</scope><name>url</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

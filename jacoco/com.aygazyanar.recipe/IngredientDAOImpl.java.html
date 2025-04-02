@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>IngredientDAOImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">recipe-app</a> &gt; <a href="index.source.html" class="el_package">com.aygazyanar.recipe</a> &gt; <span class="el_source">IngredientDAOImpl.java</span></div><h1>IngredientDAOImpl.java</h1><pre class="source lang-java linenums">/**
+ * @file IngredientDAOImpl.java
+ * @brief Implements IngredientDAO using SQLite via JDBC for managing ingredient data.
+ */
+
+package com.aygazyanar.recipe; ///&lt; Main package for the Recipe Cost Calculator application.
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @class IngredientDAOImpl
+ * @brief Implements the IngredientDAO interface using SQLite via JDBC.
+ *
+ * Provides methods to add, update, retrieve, and list ingredients in the database.
+ */
+public class IngredientDAOImpl implements IngredientDAO {
+
+    /**
+     * @brief JDBC connection used for database operations.
+     */
+    private Connection connection;
+
+    /**
+     * @brief Constructs the DAO and initializes the ingredients table.
+     * @throws Exception If the database connection or table creation fails.
+     */
+<span class="fc" id="L31">    public IngredientDAOImpl() throws Exception {</span>
+<span class="fc" id="L32">        this.connection = DBConnection.getInstance().getConnection();</span>
+<span class="fc" id="L33">        createIngredientTable();</span>
+<span class="fc" id="L34">    }</span>
+
+    /**
+     * @brief Creates the ingredients table if it does not already exist.
+     * @throws Exception If table creation fails.
+     */
+    private void createIngredientTable() throws Exception {
+<span class="fc" id="L41">        String sql = &quot;CREATE TABLE IF NOT EXISTS ingredients (&quot;</span>
+                   + &quot;id INTEGER PRIMARY KEY AUTOINCREMENT, &quot;
+                   + &quot;name TEXT NOT NULL, &quot;
+                   + &quot;price REAL NOT NULL, &quot;
+                   + &quot;category TEXT&quot;
+                   + &quot;)&quot;;
+<span class="fc" id="L47">        connection.createStatement().execute(sql);</span>
+<span class="fc" id="L48">    }</span>
+
+    /**
+     * @brief Adds a new ingredient to the database.
+     * @param ingredient The Ingredient object to be added.
+     * @throws Exception If the insert operation fails.
+     */
+    @Override
+    public void addIngredient(Ingredient ingredient) throws Exception {
+<span class="fc" id="L57">        String sql = &quot;INSERT INTO ingredients (name, price, category) VALUES (?,?,?)&quot;;</span>
+<span class="fc" id="L58">        PreparedStatement pstmt = connection.prepareStatement(sql);</span>
+<span class="fc" id="L59">        pstmt.setString(1, ingredient.getName());</span>
+<span class="fc" id="L60">        pstmt.setDouble(2, ingredient.getPrice());</span>
+<span class="fc" id="L61">        pstmt.setString(3, ingredient.getCategory());</span>
+<span class="fc" id="L62">        pstmt.executeUpdate();</span>
+<span class="fc" id="L63">    }</span>
+
+    /**
+     * @brief Updates an existing ingredient in the database.
+     * @param ingredient The Ingredient object with updated values.
+     * @throws Exception If the update operation fails.
+     */
+    @Override
+    public void updateIngredient(Ingredient ingredient) throws Exception {
+<span class="fc" id="L72">        String sql = &quot;UPDATE ingredients SET name = ?, price = ?, category = ? WHERE id = ?&quot;;</span>
+<span class="fc" id="L73">        PreparedStatement pstmt = connection.prepareStatement(sql);</span>
+<span class="fc" id="L74">        pstmt.setString(1, ingredient.getName());</span>
+<span class="fc" id="L75">        pstmt.setDouble(2, ingredient.getPrice());</span>
+<span class="fc" id="L76">        pstmt.setString(3, ingredient.getCategory());</span>
+<span class="fc" id="L77">        pstmt.setInt(4, ingredient.getId());</span>
+<span class="fc" id="L78">        pstmt.executeUpdate();</span>
+<span class="fc" id="L79">    }</span>
+
+    /**
+     * @brief Retrieves an ingredient by its ID from the database.
+     * @param id The ID of the ingredient.
+     * @return The Ingredient object if found, or null otherwise.
+     * @throws Exception If the retrieval operation fails.
+     */
+    @Override
+    public Ingredient getIngredientById(int id) throws Exception {
+<span class="fc" id="L89">        String sql = &quot;SELECT * FROM ingredients WHERE id = ?&quot;;</span>
+<span class="fc" id="L90">        PreparedStatement pstmt = connection.prepareStatement(sql);</span>
+<span class="fc" id="L91">        pstmt.setInt(1, id);</span>
+<span class="fc" id="L92">        ResultSet rs = pstmt.executeQuery();</span>
+<span class="pc bpc" id="L93" title="1 of 2 branches missed.">        if (rs.next()) {</span>
+<span class="fc" id="L94">            return new Ingredient(</span>
+<span class="fc" id="L95">                rs.getInt(&quot;id&quot;),</span>
+<span class="fc" id="L96">                rs.getString(&quot;name&quot;),</span>
+<span class="fc" id="L97">                rs.getDouble(&quot;price&quot;),</span>
+<span class="fc" id="L98">                rs.getString(&quot;category&quot;)</span>
+            );
+        }
+<span class="nc" id="L101">        return null;</span>
+    }
+
+    /**
+     * @brief Retrieves all ingredients stored in the database.
+     * @return A list of all Ingredient objects.
+     * @throws Exception If the retrieval operation fails.
+     */
+    @Override
+    public List&lt;Ingredient&gt; getAllIngredients() throws Exception {
+<span class="fc" id="L111">        List&lt;Ingredient&gt; list = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L112">        String sql = &quot;SELECT * FROM ingredients&quot;;</span>
+<span class="fc" id="L113">        ResultSet rs = connection.createStatement().executeQuery(sql);</span>
+<span class="fc bfc" id="L114" title="All 2 branches covered.">        while (rs.next()) {</span>
+<span class="fc" id="L115">            list.add(new Ingredient(</span>
+<span class="fc" id="L116">                rs.getInt(&quot;id&quot;),</span>
+<span class="fc" id="L117">                rs.getString(&quot;name&quot;),</span>
+<span class="fc" id="L118">                rs.getDouble(&quot;price&quot;),</span>
+<span class="fc" id="L119">                rs.getString(&quot;category&quot;)</span>
+            ));
+        }
+<span class="fc" id="L122">        return list;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

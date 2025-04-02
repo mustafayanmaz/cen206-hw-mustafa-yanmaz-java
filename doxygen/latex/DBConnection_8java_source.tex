@@ -1,0 +1,44 @@
+\doxysection{DBConnection.\+java}
+\hypertarget{DBConnection_8java_source}{}\label{DBConnection_8java_source}\index{recipe-\/app/src/main/java/com/aygazyanar/recipe/DBConnection.java@{recipe-\/app/src/main/java/com/aygazyanar/recipe/DBConnection.java}}
+\mbox{\hyperlink{DBConnection_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00006}00006\ \textcolor{keyword}{package\ }com.aygazyanar.recipe;}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.sql.Connection;}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.sql.DriverManager;}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.sql.SQLException;}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00019}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}{00019}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}{DBConnection}}\ \{}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}{DBConnection}}\ instance;}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{private}\ Connection\ connection;}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ String\ url\ =\ \textcolor{stringliteral}{"{}jdbc:sqlite:recipe\_calculator.db"{}};}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}{DBConnection}}()\ \textcolor{keywordflow}{throws}\ SQLException\ \{}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ Class.forName(\textcolor{stringliteral}{"{}org.sqlite.JDBC"{}});}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ this.connection\ =\ DriverManager.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_ac283a250b94b7c8efc89b12ceaa493d2}{getConnection}}(url);}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (ClassNotFoundException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}SQLite\ JDBC\ driver\ not\ found."{}});}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ SQLException(ex);}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00057}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_ac283a250b94b7c8efc89b12ceaa493d2}{00057}}\ \ \ \ \ \textcolor{keyword}{public}\ Connection\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_ac283a250b94b7c8efc89b12ceaa493d2}{getConnection}}()\ \{}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ connection;}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00069}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_a375981392f105a6c7c3d90d21f924234}{00069}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}{DBConnection}}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_a375981392f105a6c7c3d90d21f924234}{getInstance}}()\ throws\ SQLException\ \{}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (instance\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ instance\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}{DBConnection}}();}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (instance.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_ac283a250b94b7c8efc89b12ceaa493d2}{getConnection}}().isClosed())\ \{}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ instance\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}{DBConnection}}();}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DBConnection_8java_source_l00077}00077\ \}}
+
+\end{DoxyCode}

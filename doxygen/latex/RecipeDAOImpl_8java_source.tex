@@ -1,0 +1,121 @@
+\doxysection{Recipe\+DAOImpl.\+java}
+\hypertarget{RecipeDAOImpl_8java_source}{}\label{RecipeDAOImpl_8java_source}\index{recipe-\/app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java@{recipe-\/app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java}}
+\mbox{\hyperlink{RecipeDAOImpl_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00006}00006\ \textcolor{keyword}{package\ }com.aygazyanar.recipe;\ }
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.sql.Connection;}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.sql.PreparedStatement;}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.sql.ResultSet;}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00012}00012\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00020}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl}{00020}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl}{RecipeDAOImpl}}\ \textcolor{keyword}{implements}\ \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO}{RecipeDAO}}\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{private}\ Connection\ connection;}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00031}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a380ff1b9cc213f508217613d516e29d8}{00031}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a380ff1b9cc213f508217613d516e29d8}{RecipeDAOImpl}}()\ throws\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ this.connection\ =\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}{DBConnection}}.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_a375981392f105a6c7c3d90d21f924234}{getInstance}}().\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_ac283a250b94b7c8efc89b12ceaa493d2}{getConnection}}();}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ createRecipeTable();}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ createRecipeIngredientsTable();}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ createRecipeTable()\ throws\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ recipes\ ("{}}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT,\ "{}}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}name\ TEXT\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ connection.createStatement().execute(sql);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ createRecipeIngredientsTable()\ throws\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ recipe\_ingredients\ ("{}}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}recipe\_id\ INTEGER,\ "{}}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}ingredient\_id\ INTEGER,\ "{}}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}quantity\ REAL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}unit\ TEXT,\ "{}}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}FOREIGN\ KEY(recipe\_id)\ REFERENCES\ recipes(id)"{}}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ connection.createStatement().execute(sql);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00070}00070\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00071}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_acce66ab053933a0a34cf22a37b1ea53a}{00071}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_acce66ab053933a0a34cf22a37b1ea53a}{addRecipe}}(\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}}\ recipe)\ \textcolor{keywordflow}{throws}\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ String\ recipeSql\ =\ \textcolor{stringliteral}{"{}INSERT\ INTO\ recipes\ (name)\ VALUES\ (?)"{}};}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ PreparedStatement\ recipeStmt\ =\ connection.prepareStatement(recipeSql,\ PreparedStatement.RETURN\_GENERATED\_KEYS);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ recipeStmt.setString(1,\ recipe.getName());}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ recipeStmt.executeUpdate();}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ ResultSet\ generatedKeys\ =\ recipeStmt.getGeneratedKeys();}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (generatedKeys.next())\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ recipeId\ =\ generatedKeys.getInt(1);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ recipe.setId(recipeId);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{RecipeIngredient}}\ ri\ :\ recipe.getIngredients())\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}INSERT\ INTO\ recipe\_ingredients\ (recipe\_id,\ ingredient\_id,\ quantity,\ unit)\ VALUES\ (?,?,?,?)"{}};}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PreparedStatement\ pstmt\ =\ connection.prepareStatement(sql);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pstmt.setInt(1,\ recipeId);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pstmt.setInt(2,\ ri.getIngredient().getId());}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pstmt.setDouble(3,\ ri.getQuantity());}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pstmt.setString(4,\ ri.getUnit());}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pstmt.executeUpdate();}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00099}00099\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00100}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a793981d24e9e3fa76a08da1993600684}{00100}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a793981d24e9e3fa76a08da1993600684}{getRecipeById}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \textcolor{keywordflow}{throws}\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}SELECT\ *\ FROM\ recipes\ WHERE\ id\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ PreparedStatement\ pstmt\ =\ connection.prepareStatement(sql);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ pstmt.setInt(1,\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ pstmt.executeQuery();}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}}\ recipe\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rs.next())\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ recipe\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}}(rs.getInt(\textcolor{stringliteral}{"{}id"{}}),\ rs.getString(\textcolor{stringliteral}{"{}name"{}}));}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ String\ ingredientSql\ =\ \textcolor{stringliteral}{"{}SELECT\ ri.quantity,\ ri.unit,\ i.id,\ i.name,\ i.price,\ i.category\ "{}}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}FROM\ recipe\_ingredients\ ri\ JOIN\ ingredients\ i\ ON\ ri.ingredient\_id\ =\ i.id\ WHERE\ ri.recipe\_id\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ PreparedStatement\ ingredientStmt\ =\ connection.prepareStatement(ingredientSql);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ ingredientStmt.setInt(1,\ recipe.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_aa87bf48419d7220b8f4bfa3ce81dd105}{getId}}());}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ ResultSet\ ingredientRs\ =\ ingredientStmt.executeQuery();}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ingredientRs.next())\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}}\ ingredient\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}}(}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getInt(\textcolor{stringliteral}{"{}id"{}}),}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getString(\textcolor{stringliteral}{"{}name"{}}),}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getDouble(\textcolor{stringliteral}{"{}price"{}}),}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getString(\textcolor{stringliteral}{"{}category"{}})}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{RecipeIngredient}}\ ri\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{RecipeIngredient}}(ingredient,\ ingredientRs.getDouble(\textcolor{stringliteral}{"{}quantity"{}}),\ ingredientRs.getString(\textcolor{stringliteral}{"{}unit"{}}));}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ recipe.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a793e47aa009306513fc8b2172b51c3ba}{addIngredient}}(ri);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ recipe;}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00133}00133\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00134}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a2e65552e7e7171eb70259ce9bd2fc749}{00134}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Recipe>\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a2e65552e7e7171eb70259ce9bd2fc749}{getAllRecipes}}()\ throws\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ List<Recipe>\ recipes\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}SELECT\ *\ FROM\ recipes"{}};}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ connection.createStatement().executeQuery(sql);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (rs.next())\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}}\ recipe\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}}(rs.getInt(\textcolor{stringliteral}{"{}id"{}}),\ rs.getString(\textcolor{stringliteral}{"{}name"{}}));}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ String\ ingredientSql\ =\ \textcolor{stringliteral}{"{}SELECT\ ri.quantity,\ ri.unit,\ i.id,\ i.name,\ i.price,\ i.category\ "{}}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}FROM\ recipe\_ingredients\ ri\ JOIN\ ingredients\ i\ ON\ ri.ingredient\_id\ =\ i.id\ WHERE\ ri.recipe\_id\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ PreparedStatement\ ingredientStmt\ =\ connection.prepareStatement(ingredientSql);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ ingredientStmt.setInt(1,\ recipe.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_aa87bf48419d7220b8f4bfa3ce81dd105}{getId}}());}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ ResultSet\ ingredientRs\ =\ ingredientStmt.executeQuery();}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ingredientRs.next())\ \{}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}}\ ingredient\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}}(}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getInt(\textcolor{stringliteral}{"{}id"{}}),}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getString(\textcolor{stringliteral}{"{}name"{}}),}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getDouble(\textcolor{stringliteral}{"{}price"{}}),}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getString(\textcolor{stringliteral}{"{}category"{}})}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{RecipeIngredient}}\ ri\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{RecipeIngredient}}(ingredient,\ ingredientRs.getDouble(\textcolor{stringliteral}{"{}quantity"{}}),\ ingredientRs.getString(\textcolor{stringliteral}{"{}unit"{}}));}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ recipe.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a793e47aa009306513fc8b2172b51c3ba}{addIngredient}}(ri);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ recipes.add(recipe);}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ recipes;}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{RecipeDAOImpl_8java_source_l00159}00159\ \}}
+
+\end{DoxyCode}

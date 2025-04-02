@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ingredient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">recipe-app</a> &gt; <a href="index.source.html" class="el_package">com.aygazyanar.recipe</a> &gt; <span class="el_source">Ingredient.java</span></div><h1>Ingredient.java</h1><pre class="source lang-java linenums">/**
+ * @file Ingredient.java
+ * @brief Represents an ingredient used in recipes with its name, price, and category.
+ */
+
+package com.aygazyanar.recipe;
+
+/**
+ * @class Ingredient
+ * @brief Represents an ingredient used in recipes with its name, price, and category.
+ *
+ * This class provides basic information about an ingredient and supports setting/getting its fields.
+ */
+public class Ingredient {
+
+    /**
+     * @brief The unique identifier of the ingredient.
+     */
+    private int id;
+
+    /**
+     * @brief The name of the ingredient.
+     */
+    private String name;
+
+    /**
+     * @brief The price of the ingredient.
+     */
+    private double price;
+
+    /**
+     * @brief The category the ingredient belongs to (e.g., dairy, vegetable).
+     */
+    private String category;
+
+    /**
+     * @brief Default constructor.
+     */
+<span class="fc" id="L39">    public Ingredient() {</span>
+<span class="fc" id="L40">    }</span>
+
+    /**
+     * @brief Constructs an ingredient with specified values.
+     * @param id The unique identifier.
+     * @param name The name of the ingredient.
+     * @param price The price of the ingredient.
+     * @param category The category of the ingredient.
+     */
+<span class="fc" id="L49">    public Ingredient(int id, String name, double price, String category) {</span>
+<span class="fc" id="L50">        this.id = id;</span>
+<span class="fc" id="L51">        this.name = name;</span>
+<span class="fc" id="L52">        this.price = price;</span>
+<span class="fc" id="L53">        this.category = category;</span>
+<span class="fc" id="L54">    }</span>
+
+    /**
+     * @brief Gets the ID of the ingredient.
+     * @return The ingredient ID.
+     */
+    public int getId() {
+<span class="fc" id="L61">        return id;</span>
+    }
+
+    /**
+     * @brief Sets the ID of the ingredient.
+     * @param id The new ID to set.
+     */
+    public void setId(int id) {
+<span class="fc" id="L69">        this.id = id;</span>
+<span class="fc" id="L70">    }</span>
+
+    /**
+     * @brief Gets the name of the ingredient.
+     * @return The ingredient name.
+     */
+    public String getName() {
+<span class="fc" id="L77">        return name;</span>
+    }
+
+    /**
+     * @brief Sets the name of the ingredient.
+     * @param name The new name to set.
+     */
+    public void setName(String name) {
+<span class="fc" id="L85">        this.name = name;</span>
+<span class="fc" id="L86">    }</span>
+
+    /**
+     * @brief Gets the price of the ingredient.
+     * @return The ingredient price.
+     */
+    public double getPrice() {
+<span class="fc" id="L93">        return price;</span>
+    }
+
+    /**
+     * @brief Sets the price of the ingredient.
+     * @param price The new price to set.
+     */
+    public void setPrice(double price) {
+<span class="fc" id="L101">        this.price = price;</span>
+<span class="fc" id="L102">    }</span>
+
+    /**
+     * @brief Gets the category of the ingredient.
+     * @return The ingredient category.
+     */
+    public String getCategory() {
+<span class="fc" id="L109">        return category;</span>
+    }
+
+    /**
+     * @brief Sets the category of the ingredient.
+     * @param category The new category to set.
+     */
+    public void setCategory(String category) {
+<span class="fc" id="L117">        this.category = category;</span>
+<span class="fc" id="L118">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

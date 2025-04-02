@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="BudgetService_8java" kind="file" language="Java">
+    <compoundname>BudgetService.java</compoundname>
+    <includes local="no">java.util.List</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>recipe-app/src/main/java/com/aygazyanar/recipe/BudgetService.java</label>
+        <link refid="BudgetService_8java"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>java.util.List</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1BudgetService" prot="public">com::aygazyanar::recipe::BudgetService</innerclass>
+    <innernamespace refid="namespacecom_1_1aygazyanar_1_1recipe">com::aygazyanar::recipe</innernamespace>
+    <briefdescription>
+<para>Provides functionality for budget planning based on recipe costs. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">package<sp/></highlight><highlight class="normal">com.aygazyanar.recipe;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.util.List;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classcom_1_1aygazyanar_1_1recipe_1_1BudgetService" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1BudgetService" kindref="compound">BudgetService</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classcom_1_1aygazyanar_1_1recipe_1_1BudgetService_1acd00b8ae69aaac827ef386ad50398e33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1BudgetService_1acd00b8ae69aaac827ef386ad50398e33" kindref="member">planBudget</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>budget,<sp/>List&lt;Recipe&gt;<sp/>recipes)<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>totalCost<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>System.out.println(</highlight><highlight class="stringliteral">&quot;Planning<sp/>meals<sp/>within<sp/>a<sp/>budget<sp/>of:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>budget);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe" kindref="compound">Recipe</ref><sp/>recipe<sp/>:<sp/>recipes)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>cost<sp/>=<sp/>recipe.calculateTotalCost();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>totalCost<sp/>+=<sp/>cost;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>System.out.println(</highlight><highlight class="stringliteral">&quot;Recipe:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>recipe.getName()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>Cost:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>cost);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>System.out.println(</highlight><highlight class="stringliteral">&quot;Total<sp/>cost:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>totalCost);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(totalCost<sp/>&gt;<sp/>budget)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>System.out.println(</highlight><highlight class="stringliteral">&quot;Warning:<sp/>Total<sp/>cost<sp/>exceeds<sp/>the<sp/>budget.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>System.out.println(</highlight><highlight class="stringliteral">&quot;Within<sp/>budget.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/BudgetService.java"/>
+  </compounddef>
+</doxygen>

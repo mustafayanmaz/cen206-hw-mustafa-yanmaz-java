@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1Application" kind="class"><name>com::aygazyanar::recipe::Application</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a90379d5d59ec5ea52e606fa40de948a9" kind="variable"><name>authService</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a1636bbba9121956a7d55c5ce0b62651d" kind="variable"><name>ingredientService</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a83a051a0faee0bf8e79dc6412c85fcaf" kind="variable"><name>recipeService</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1aee1a418723009d4b2fd6b64097c1e0f7" kind="variable"><name>budgetService</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a9790655e8123709909606a37dcf93e99" kind="variable"><name>currentUser</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a86ec24f4f3ca04f6a5bd94ceaea65ef6" kind="function"><name>main</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a6f272f5d9b67a9aae062dfc00d75cc99" kind="function"><name>register</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a4a039c681403663d347a291cbefcf272" kind="function"><name>login</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1aedf7dab0d42cf9225b28bf7623c9eef3" kind="function"><name>ingredientManagement</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a86aa65982075af7054922c259a22072c" kind="function"><name>recipeCosting</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1ae9aaf9c614902c91a15f8ffb7122c823" kind="function"><name>priceAdjustment</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a16c12abadca61ef854b6c845f5d6240a" kind="function"><name>budgetPlanner</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService" kind="class"><name>com::aygazyanar::recipe::AuthService</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1a21d54bda26573c8a2b633eee019091d8" kind="variable"><name>userDAO</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1af54cfcc56dbfe5795da88dd766535bab" kind="function"><name>AuthService</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1aa7a8d44f3a091637a7b010882add7156" kind="function"><name>register</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1a8337bf1b2e4199447ef1a7c60f4cf25a" kind="function"><name>login</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1BudgetService" kind="class"><name>com::aygazyanar::recipe::BudgetService</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1BudgetService_1acd00b8ae69aaac827ef386ad50398e33" kind="function"><name>planBudget</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection" kind="class"><name>com::aygazyanar::recipe::DBConnection</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1a3efdb6c986ddf235ffe11f76f61c66f0" kind="variable"><name>instance</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1aff1e478ee4e58e7e1698344982ba2077" kind="variable"><name>connection</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1af0795f7672ce58c0809cab122c1c150f" kind="variable"><name>url</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1a829051ad30ce3e812936bd3d2e88f8cd" kind="function"><name>DBConnection</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1ac283a250b94b7c8efc89b12ceaa493d2" kind="function"><name>getConnection</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1a375981392f105a6c7c3d90d21f924234" kind="function"><name>getInstance</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy" kind="class"><name>com::aygazyanar::recipe::DecreasePriceStrategy</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_1aad987662da4e4074d5cb3163ed42b5e5" kind="variable"><name>percentage</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_1a5af072ffaa38fb8b8f55c8b362897182" kind="function"><name>DecreasePriceStrategy</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_1af56bdd0a5be2502091bbdd395ab403ab" kind="function"><name>adjustPrice</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy" kind="class"><name>com::aygazyanar::recipe::IncreasePriceStrategy</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy_1a2aaafd5ff29f7209c83bdbb5a3d4958e" kind="variable"><name>percentage</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy_1a3dd8c0ed8314c608006d426ab4bb31d9" kind="function"><name>IncreasePriceStrategy</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy_1a7c7d23ec6bcaa1d5ec3ab3edbf9d5e5a" kind="function"><name>adjustPrice</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kind="class"><name>com::aygazyanar::recipe::Ingredient</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1aa2d51d4f4c3d0d64835fd164d45f0975" kind="variable"><name>id</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a4435e249ff6e1c68bbddde042585ad97" kind="variable"><name>name</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a9d06cbb0c5cea7f7b8940918fa472c2b" kind="variable"><name>price</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a0e580a7345e4e566373990a237b87995" kind="variable"><name>category</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a2c91ef36e7e81992b406f1d8895f09ef" kind="function"><name>Ingredient</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a334c37737eb961c7a4f7fa78c3bfcc58" kind="function"><name>Ingredient</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1aa8ecfd0cb692df50c39dd13f10962641" kind="function"><name>getId</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a14daeee6ddc34337e553c6882c33607f" kind="function"><name>setId</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a996ac6e87d800b959f9b6d8fb68c7bac" kind="function"><name>getName</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a6d23c3ef1c0fef2333212bc385fd815f" kind="function"><name>setName</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a2e8fa4d45400c96d9acd2921c0be4dda" kind="function"><name>getPrice</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a0c22104e914c8210edbeba68971772d7" kind="function"><name>setPrice</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a2a0c95212f27412834cf57161dbfd1d3" kind="function"><name>getCategory</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a69ebd4d7e4044de36c86a04219b3088e" kind="function"><name>setCategory</name></member>
+  </compound>
+  <compound refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO" kind="interface"><name>com::aygazyanar::recipe::IngredientDAO</name>
+    <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1ab05d3504aa659766e5ee31797d55692c" kind="function"><name>addIngredient</name></member>
+    <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1a7e2fe1609986ef4520a99006866c40ac" kind="function"><name>updateIngredient</name></member>
+    <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1ad25398bd2f32e6989765c8b4121c7779" kind="function"><name>getIngredientById</name></member>
+    <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1aa8f978c0f142eaffb14826b77c788ded" kind="function"><name>getAllIngredients</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl" kind="class"><name>com::aygazyanar::recipe::IngredientDAOImpl</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_1af3920a53f8f272deb3506c17d710648a" kind="variable"><name>connection</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_1ab68e3e7cb3e2c5a9dccb972757036964" kind="function"><name>IngredientDAOImpl</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_1a70ada18f779b2aba581bdc4cba72648f" kind="function"><name>addIngredient</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_1a5858723bed4471ba1289c254b3543d5e" kind="function"><name>updateIngredient</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_1a52d7a19579d7dedca481b2eda37c8d25" kind="function"><name>getIngredientById</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_1a96e100b6dd055104083ea7449cc06ee4" kind="function"><name>getAllIngredients</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_1a80b7eecc937a954d976197edd9c3e298" kind="function"><name>createIngredientTable</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService" kind="class"><name>com::aygazyanar::recipe::IngredientService</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1ad5fa3ebff5675eec4c7d8f7877be0ecc" kind="variable"><name>ingredientDAO</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a3a811f87f1673f78d578eec3dc1fa305" kind="function"><name>IngredientService</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1add4be62af2c005b58820c5095fe12b0c" kind="function"><name>addIngredient</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a9bbeab382cb3c6f788493c88057791b0" kind="function"><name>updateIngredient</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1acade2da12a9e3e5752b201c23ff1abbf" kind="function"><name>getAllIngredients</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a89faf9c0072c72efcaa03be09128f0a0" kind="function"><name>getIngredientById</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a2756bb4db5cf6c3ae04f7ab5c647af2b" kind="function"><name>adjustIngredientPrice</name></member>
+  </compound>
+  <compound refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy" kind="interface"><name>com::aygazyanar::recipe::PriceAdjustmentStrategy</name>
+    <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy_1a869ce7d33e86a67d6952764daf56cfa7" kind="function"><name>adjustPrice</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe" kind="class"><name>com::aygazyanar::recipe::Recipe</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1a8ba9fc71a06d482f8103fc8446e8eb2c" kind="variable"><name>id</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1a8b853f90bc90a1a8fda2b269008d16d0" kind="variable"><name>name</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1a4a7d568c7543777ad8d11140a13c8990" kind="variable"><name>ingredients</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1aa7d42e38eac429018b3d1dfcf21b5d0a" kind="function"><name>Recipe</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1a4c913aabcbd226b26e6cb2668f7f63c3" kind="function"><name>Recipe</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1aa87bf48419d7220b8f4bfa3ce81dd105" kind="function"><name>getId</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1a94a0dc660d5b8bf35060200f66633c43" kind="function"><name>setId</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1a2313f70a1f2b52f8232e2e381b852d49" kind="function"><name>getName</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1a6a939792c7665a17d12bdfb15368da13" kind="function"><name>setName</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1ae2dc13503829f6614b44cb7f26e00814" kind="function"><name>getIngredients</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1a64553b60aa3dee22a763af2fd2df0355" kind="function"><name>setIngredients</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1a793e47aa009306513fc8b2172b51c3ba" kind="function"><name>addIngredient</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1a762e720ec7da59298fc4c346fb28d1c8" kind="function"><name>calculateTotalCost</name></member>
+  </compound>
+  <compound refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO" kind="interface"><name>com::aygazyanar::recipe::RecipeDAO</name>
+    <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_1ac0032249a7a8c0779ba99a41b2277669" kind="function"><name>addRecipe</name></member>
+    <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_1a3786a32df6739d8bcf3d16f7da92e475" kind="function"><name>getRecipeById</name></member>
+    <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_1aaec8b4489b407f87ae123438837b44c4" kind="function"><name>getAllRecipes</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl" kind="class"><name>com::aygazyanar::recipe::RecipeDAOImpl</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1aa4db21952ecfde8a65d8545b957ca042" kind="variable"><name>connection</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a380ff1b9cc213f508217613d516e29d8" kind="function"><name>RecipeDAOImpl</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1acce66ab053933a0a34cf22a37b1ea53a" kind="function"><name>addRecipe</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a793981d24e9e3fa76a08da1993600684" kind="function"><name>getRecipeById</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a2e65552e7e7171eb70259ce9bd2fc749" kind="function"><name>getAllRecipes</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a13d626c4eaaa66f04bc92197ae4eba5c" kind="function"><name>createRecipeTable</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1af22b5c6a5fc7c8a30c00bb7f066ccdb0" kind="function"><name>createRecipeIngredientsTable</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient" kind="class"><name>com::aygazyanar::recipe::RecipeIngredient</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a8f8dbf5026d101ed194f2fb95f80c097" kind="variable"><name>ingredient</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a38bafc1b872a0fa559451c08fb7d3725" kind="variable"><name>quantity</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a42ef2a74d017117610dca031d3e37c9e" kind="variable"><name>unit</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ace6e0442d387b73e52c89f5ee118b23f" kind="function"><name>RecipeIngredient</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1af6c560727c72a5e16fc3062306409e85" kind="function"><name>getIngredient</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a44d0a57afb4decee2c24fe06423637d3" kind="function"><name>setIngredient</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1add0f35b335ef5bfd64a7b58b87707703" kind="function"><name>getQuantity</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ab5f48269c15dc04088f81b90d19b5100" kind="function"><name>setQuantity</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ad4a47d5a1b98d0e0efc69fabf0f89595" kind="function"><name>getUnit</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1aaf9d6f19106effafbe29849e0df9f74d" kind="function"><name>setUnit</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService" kind="class"><name>com::aygazyanar::recipe::RecipeService</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a1b3cb43435c1cd3820326758a27d2b9c" kind="variable"><name>recipeDAO</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a243676419a4734bcc359766e3eff410c" kind="function"><name>RecipeService</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a80b140995de751d78bfdd6125080d412" kind="function"><name>addRecipe</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a7dbb8718e7e8522bcf69994d4dafa221" kind="function"><name>getRecipeById</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a4e30e61225f1fb106e2aa54262e1d795" kind="function"><name>getAllRecipes</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1User" kind="class"><name>com::aygazyanar::recipe::User</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1ae34d8b61437fdc2c7c5cf7050a2d8aa1" kind="variable"><name>id</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1aa6a319c5b33dc0688caffb635c420eb6" kind="variable"><name>username</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a743ef896932c3dde60b3c9ce524a236a" kind="variable"><name>password</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a7c01ad7dddc3af8b78c0ed44018a079b" kind="function"><name>User</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a7d99b66eda62223cb9b0016ec0847f5d" kind="function"><name>User</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a171b832b45e6d0ea28d07571cf90f21b" kind="function"><name>getId</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a80d7194f0a33942cdbb4a9c05abe9782" kind="function"><name>setId</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a6474d60b45f43ddf0107418094c818fa" kind="function"><name>getUsername</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a364270a447ba19301d98277c41157a96" kind="function"><name>setUsername</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a00d60ac12e86b6bdd73bd4ba442d70c3" kind="function"><name>getPassword</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a137f9e1ad5080fbb22d3a6c15a52bb66" kind="function"><name>setPassword</name></member>
+  </compound>
+  <compound refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO" kind="interface"><name>com::aygazyanar::recipe::UserDAO</name>
+    <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a490f6f60e6925353daba00829e041bd3" kind="function"><name>createUser</name></member>
+    <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a372faa3feb290b17e07a312bc8e697c9" kind="function"><name>getUserByUsername</name></member>
+  </compound>
+  <compound refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl" kind="class"><name>com::aygazyanar::recipe::UserDAOImpl</name>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_1ae9d755a4bba24bc16b9281144e5022e4" kind="variable"><name>connection</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_1aa61adfe7129543c5dc45f93283a2c656" kind="function"><name>UserDAOImpl</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_1a4d7fb9bc1d18d18166a1ba821e597796" kind="function"><name>createUser</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_1a448f02718563803647ef0183f78b1ca9" kind="function"><name>getUserByUsername</name></member>
+    <member refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_1a093e2a4e89feb1a47c178b5ae5dd73bc" kind="function"><name>createUsersTable</name></member>
+  </compound>
+  <compound refid="namespacecom" kind="namespace"><name>com</name>
+  </compound>
+  <compound refid="namespacecom_1_1aygazyanar" kind="namespace"><name>com::aygazyanar</name>
+  </compound>
+  <compound refid="namespacecom_1_1aygazyanar_1_1recipe" kind="namespace"><name>com::aygazyanar::recipe</name>
+  </compound>
+  <compound refid="namespacejava_1_1lang" kind="namespace"><name>java::lang</name>
+  </compound>
+  <compound refid="Application_8java" kind="file"><name>Application.java</name>
+  </compound>
+  <compound refid="AuthService_8java" kind="file"><name>AuthService.java</name>
+  </compound>
+  <compound refid="BudgetService_8java" kind="file"><name>BudgetService.java</name>
+  </compound>
+  <compound refid="DBConnection_8java" kind="file"><name>DBConnection.java</name>
+  </compound>
+  <compound refid="DecreasePriceStrategy_8java" kind="file"><name>DecreasePriceStrategy.java</name>
+  </compound>
+  <compound refid="IncreasePriceStrategy_8java" kind="file"><name>IncreasePriceStrategy.java</name>
+  </compound>
+  <compound refid="Ingredient_8java" kind="file"><name>Ingredient.java</name>
+  </compound>
+  <compound refid="IngredientDAO_8java" kind="file"><name>IngredientDAO.java</name>
+  </compound>
+  <compound refid="IngredientDAOImpl_8java" kind="file"><name>IngredientDAOImpl.java</name>
+  </compound>
+  <compound refid="IngredientService_8java" kind="file"><name>IngredientService.java</name>
+  </compound>
+  <compound refid="PriceAdjustmentStrategy_8java" kind="file"><name>PriceAdjustmentStrategy.java</name>
+  </compound>
+  <compound refid="Recipe_8java" kind="file"><name>Recipe.java</name>
+  </compound>
+  <compound refid="RecipeDAO_8java" kind="file"><name>RecipeDAO.java</name>
+  </compound>
+  <compound refid="RecipeDAOImpl_8java" kind="file"><name>RecipeDAOImpl.java</name>
+  </compound>
+  <compound refid="RecipeIngredient_8java" kind="file"><name>RecipeIngredient.java</name>
+  </compound>
+  <compound refid="RecipeService_8java" kind="file"><name>RecipeService.java</name>
+  </compound>
+  <compound refid="User_8java" kind="file"><name>User.java</name>
+  </compound>
+  <compound refid="UserDAO_8java" kind="file"><name>UserDAO.java</name>
+  </compound>
+  <compound refid="UserDAOImpl_8java" kind="file"><name>UserDAOImpl.java</name>
+  </compound>
+  <compound refid="dir_ee7cada3e258f8c57b3a162ad18ded36" kind="dir"><name>recipe-app/src/main/java/com/aygazyanar</name>
+  </compound>
+  <compound refid="dir_403e4adef11381a935287b4ecce23cdc" kind="dir"><name>recipe-app/src/main/java/com</name>
+  </compound>
+  <compound refid="dir_ba4c6102c0146c76a15a53d2e6cecd46" kind="dir"><name>recipe-app/src/main/java</name>
+  </compound>
+  <compound refid="dir_d3c7a85d90c1ad1a1933a88f972db9c9" kind="dir"><name>recipe-app/src/main</name>
+  </compound>
+  <compound refid="dir_3d6541d04a320f68efcfbc39eb285d3a" kind="dir"><name>recipe-app/src/main/java/com/aygazyanar/recipe</name>
+  </compound>
+  <compound refid="dir_e73406182bd97913e9c50fbe0d80543e" kind="dir"><name>recipe-app</name>
+  </compound>
+  <compound refid="dir_5356542e2158aa0335bf30c6d37971dc" kind="dir"><name>recipe-app/src</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,22 @@
+\doxysection{Decrease\+Price\+Strategy.\+java}
+\hypertarget{DecreasePriceStrategy_8java_source}{}\label{DecreasePriceStrategy_8java_source}\index{recipe-\/app/src/main/java/com/aygazyanar/recipe/DecreasePriceStrategy.java@{recipe-\/app/src/main/java/com/aygazyanar/recipe/DecreasePriceStrategy.java}}
+\mbox{\hyperlink{DecreasePriceStrategy_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00006}00006\ \textcolor{keyword}{package\ }com.aygazyanar.recipe;}
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00014}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy}{00014}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy}{DecreasePriceStrategy}}\ \textcolor{keyword}{implements}\ \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy}{PriceAdjustmentStrategy}}\ \{}
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{double}\ percentage;}
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00025}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_a5af072ffaa38fb8b8f55c8b362897182}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_a5af072ffaa38fb8b8f55c8b362897182}{DecreasePriceStrategy}}(\textcolor{keywordtype}{double}\ percentage)\ \{}
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ this.percentage\ =\ percentage;}
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00034}00034\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00035}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_af56bdd0a5be2502091bbdd395ab403ab}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_af56bdd0a5be2502091bbdd395ab403ab}{adjustPrice}}(\textcolor{keywordtype}{double}\ currentPrice)\ \{}
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ currentPrice\ *\ (1\ -\/\ percentage\ /\ 100);}
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{DecreasePriceStrategy_8java_source_l00038}00038\ \}}
+
+\end{DoxyCode}

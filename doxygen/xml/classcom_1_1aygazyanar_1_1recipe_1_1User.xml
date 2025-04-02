@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classcom_1_1aygazyanar_1_1recipe_1_1User" kind="class" language="Java" prot="public">
+    <compoundname>com::aygazyanar::recipe::User</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1User_1ae34d8b61437fdc2c7c5cf7050a2d8aa1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int com.aygazyanar.recipe.User.id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>com.aygazyanar.recipe.User.id</qualifiedname>
+        <briefdescription>
+<para>Unique identifier of the user. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" line="19" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1User_1aa6a319c5b33dc0688caffb635c420eb6" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.aygazyanar.recipe.User.username</definition>
+        <argsstring></argsstring>
+        <name>username</name>
+        <qualifiedname>com.aygazyanar.recipe.User.username</qualifiedname>
+        <briefdescription>
+<para>Username of the user. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" line="24" column="20" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1User_1a743ef896932c3dde60b3c9ce524a236a" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.aygazyanar.recipe.User.password</definition>
+        <argsstring></argsstring>
+        <name>password</name>
+        <qualifiedname>com.aygazyanar.recipe.User.password</qualifiedname>
+        <briefdescription>
+<para>Password of the user. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" line="29" column="20" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1User_1a7c01ad7dddc3af8b78c0ed44018a079b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.aygazyanar.recipe.User.User</definition>
+        <argsstring>()</argsstring>
+        <name>User</name>
+        <qualifiedname>com.aygazyanar.recipe.User.User</qualifiedname>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" line="34" column="12" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" bodystart="34" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1User_1a7d99b66eda62223cb9b0016ec0847f5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.aygazyanar.recipe.User.User</definition>
+        <argsstring>(int id, String username, String password)</argsstring>
+        <name>User</name>
+        <qualifiedname>com.aygazyanar.recipe.User.User</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a User with given ID, username, and password. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unique ID of the user. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The username of the user. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The password of the user. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" line="43" column="12" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" bodystart="43" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1User_1a171b832b45e6d0ea28d07571cf90f21b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int com.aygazyanar.recipe.User.getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <qualifiedname>com.aygazyanar.recipe.User.getId</qualifiedname>
+        <briefdescription>
+<para>Gets the user ID. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The user ID. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" line="53" column="16" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" bodystart="53" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1User_1a80d7194f0a33942cdbb4a9c05abe9782" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.User.setId</definition>
+        <argsstring>(int id)</argsstring>
+        <name>setId</name>
+        <qualifiedname>com.aygazyanar.recipe.User.setId</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Sets the user ID. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new ID to assign. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" line="61" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" bodystart="61" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1User_1a6474d60b45f43ddf0107418094c818fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.aygazyanar.recipe.User.getUsername</definition>
+        <argsstring>()</argsstring>
+        <name>getUsername</name>
+        <qualifiedname>com.aygazyanar.recipe.User.getUsername</qualifiedname>
+        <briefdescription>
+<para>Gets the username. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The username string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" line="69" column="19" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" bodystart="69" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1User_1a364270a447ba19301d98277c41157a96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.User.setUsername</definition>
+        <argsstring>(String username)</argsstring>
+        <name>setUsername</name>
+        <qualifiedname>com.aygazyanar.recipe.User.setUsername</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>username</declname>
+        </param>
+        <briefdescription>
+<para>Sets the username. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The username to assign. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" line="77" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" bodystart="77" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1User_1a00d60ac12e86b6bdd73bd4ba442d70c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.aygazyanar.recipe.User.getPassword</definition>
+        <argsstring>()</argsstring>
+        <name>getPassword</name>
+        <qualifiedname>com.aygazyanar.recipe.User.getPassword</qualifiedname>
+        <briefdescription>
+<para>Gets the password. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The password string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" line="85" column="19" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" bodystart="85" bodyend="87"/>
+        <referencedby refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1a8337bf1b2e4199447ef1a7c60f4cf25a" compoundref="AuthService_8java" startline="61" endline="75">com.aygazyanar.recipe.AuthService.login</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1User_1a137f9e1ad5080fbb22d3a6c15a52bb66" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.User.setPassword</definition>
+        <argsstring>(String password)</argsstring>
+        <name>setPassword</name>
+        <qualifiedname>com.aygazyanar.recipe.User.setPassword</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+<para>Sets the password. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The password to assign. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" line="93" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" bodystart="93" bodyend="95"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents a user in the system with an ID, username, and password. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Used for authentication and authorization purposes in the application. </para>
+    </detaileddescription>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" line="14" column="7" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/User.java" bodystart="14" bodyend="96"/>
+    <listofallmembers>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a171b832b45e6d0ea28d07571cf90f21b" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::User</scope><name>getId</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a00d60ac12e86b6bdd73bd4ba442d70c3" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::User</scope><name>getPassword</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a6474d60b45f43ddf0107418094c818fa" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::User</scope><name>getUsername</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1ae34d8b61437fdc2c7c5cf7050a2d8aa1" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::User</scope><name>id</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a743ef896932c3dde60b3c9ce524a236a" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::User</scope><name>password</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a80d7194f0a33942cdbb4a9c05abe9782" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::User</scope><name>setId</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a137f9e1ad5080fbb22d3a6c15a52bb66" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::User</scope><name>setPassword</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a364270a447ba19301d98277c41157a96" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::User</scope><name>setUsername</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a7c01ad7dddc3af8b78c0ed44018a079b" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::User</scope><name>User</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a7d99b66eda62223cb9b0016ec0847f5d" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::User</scope><name>User</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1aa6a319c5b33dc0688caffb635c420eb6" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::User</scope><name>username</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

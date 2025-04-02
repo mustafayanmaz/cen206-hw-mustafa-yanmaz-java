@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="RecipeIngredient_8java" kind="file" language="Java">
+    <compoundname>RecipeIngredient.java</compoundname>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient" prot="public">com::aygazyanar::recipe::RecipeIngredient</innerclass>
+    <innernamespace refid="namespacecom_1_1aygazyanar_1_1recipe">com::aygazyanar::recipe</innernamespace>
+    <briefdescription>
+<para>Represents the association between an ingredient and its usage in a recipe. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">package<sp/></highlight><highlight class="normal">com.aygazyanar.recipe;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient" kindref="compound">RecipeIngredient</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref><sp/>ingredient;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>quantity;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>String<sp/>unit;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ace6e0442d387b73e52c89f5ee118b23f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ace6e0442d387b73e52c89f5ee118b23f" kindref="member">RecipeIngredient</ref>(<ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref><sp/>ingredient,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>quantity,<sp/>String<sp/>unit)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.ingredient<sp/>=<sp/>ingredient;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.quantity<sp/>=<sp/>quantity;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.unit<sp/>=<sp/>unit;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1af6c560727c72a5e16fc3062306409e85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1af6c560727c72a5e16fc3062306409e85" kindref="member">getIngredient</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ingredient;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a44d0a57afb4decee2c24fe06423637d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a44d0a57afb4decee2c24fe06423637d3" kindref="member">setIngredient</ref>(<ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref><sp/>ingredient)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.ingredient<sp/>=<sp/>ingredient;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1add0f35b335ef5bfd64a7b58b87707703" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1add0f35b335ef5bfd64a7b58b87707703" kindref="member">getQuantity</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>quantity;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ab5f48269c15dc04088f81b90d19b5100" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ab5f48269c15dc04088f81b90d19b5100" kindref="member">setQuantity</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>quantity)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.quantity<sp/>=<sp/>quantity;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ad4a47d5a1b98d0e0efc69fabf0f89595" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ad4a47d5a1b98d0e0efc69fabf0f89595" kindref="member">getUnit</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>unit;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1aaf9d6f19106effafbe29849e0df9f74d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1aaf9d6f19106effafbe29849e0df9f74d" kindref="member">setUnit</ref>(String<sp/>unit)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.unit<sp/>=<sp/>unit;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java"/>
+  </compounddef>
+</doxygen>

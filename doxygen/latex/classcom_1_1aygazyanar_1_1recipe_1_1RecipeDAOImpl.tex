@@ -1,0 +1,254 @@
+\doxysection{com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl Class Reference}
+\hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl}{}\label{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl}\index{com.aygazyanar.recipe.RecipeDAOImpl@{com.aygazyanar.recipe.RecipeDAOImpl}}
+
+
+\texorpdfstring{$<$}{<} Main package for the Recipe Cost Calculator application.  
+
+
+Inheritance diagram for com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a380ff1b9cc213f508217613d516e29d8}{Recipe\+DAOImpl}} ()  throws Exception 
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the database connection and ensures tables exist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_acce66ab053933a0a34cf22a37b1ea53a}{add\+Recipe}} (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} recipe)  throws Exception 
+\begin{DoxyCompactList}\small\item\em Adds a recipe and its ingredients to the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a793981d24e9e3fa76a08da1993600684}{get\+Recipe\+By\+Id}} (int id)  throws Exception 
+\begin{DoxyCompactList}\small\item\em Retrieves a recipe and its ingredients by ID. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} $>$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a2e65552e7e7171eb70259ce9bd2fc749}{get\+All\+Recipes}} ()  throws Exception 
+\begin{DoxyCompactList}\small\item\em Retrieves all recipes from the database along with their ingredients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Main package for the Recipe Cost Calculator application. 
+
+Implementation of the Recipe\+DAO interface using SQLite and JDBC.
+
+Provides database access for storing, retrieving, and managing recipes and their ingredients. 
+
+Definition at line \mbox{\hyperlink{RecipeDAOImpl_8java_source_l00020}{20}} of file \mbox{\hyperlink{RecipeDAOImpl_8java_source}{Recipe\+DAOImpl.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a380ff1b9cc213f508217613d516e29d8}\label{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a380ff1b9cc213f508217613d516e29d8} 
+\index{com.aygazyanar.recipe.RecipeDAOImpl@{com.aygazyanar.recipe.RecipeDAOImpl}!RecipeDAOImpl@{RecipeDAOImpl}}
+\index{RecipeDAOImpl@{RecipeDAOImpl}!com.aygazyanar.recipe.RecipeDAOImpl@{com.aygazyanar.recipe.RecipeDAOImpl}}
+\doxysubsubsection{\texorpdfstring{RecipeDAOImpl()}{RecipeDAOImpl()}}
+{\footnotesize\ttfamily com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl.\+Recipe\+DAOImpl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Constructor that initializes the database connection and ensures tables exist. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & if a database connection error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{RecipeDAOImpl_8java_source_l00031}{31}} of file \mbox{\hyperlink{RecipeDAOImpl_8java_source}{Recipe\+DAOImpl.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ this.connection\ =\ DBConnection.getInstance().getConnection();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ createRecipeTable();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ createRecipeIngredientsTable();}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{DBConnection_8java_source_l00057}{com.\+aygazyanar.\+recipe.\+DBConnection.\+get\+Connection()}}, and \mbox{\hyperlink{DBConnection_8java_source_l00069}{com.\+aygazyanar.\+recipe.\+DBConnection.\+get\+Instance()}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_acce66ab053933a0a34cf22a37b1ea53a}\label{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_acce66ab053933a0a34cf22a37b1ea53a} 
+\index{com.aygazyanar.recipe.RecipeDAOImpl@{com.aygazyanar.recipe.RecipeDAOImpl}!addRecipe@{addRecipe}}
+\index{addRecipe@{addRecipe}!com.aygazyanar.recipe.RecipeDAOImpl@{com.aygazyanar.recipe.RecipeDAOImpl}}
+\doxysubsubsection{\texorpdfstring{addRecipe()}{addRecipe()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl.\+add\+Recipe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}}}]{recipe }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Adds a recipe and its ingredients to the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recipe} & The Recipe object to be stored. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & if a database error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_ac0032249a7a8c0779ba99a41b2277669}{com.\+aygazyanar.\+recipe.\+Recipe\+DAO}}.
+
+
+
+Definition at line \mbox{\hyperlink{RecipeDAOImpl_8java_source_l00071}{71}} of file \mbox{\hyperlink{RecipeDAOImpl_8java_source}{Recipe\+DAOImpl.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ String\ recipeSql\ =\ \textcolor{stringliteral}{"{}INSERT\ INTO\ recipes\ (name)\ VALUES\ (?)"{}};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ PreparedStatement\ recipeStmt\ =\ connection.prepareStatement(recipeSql,\ PreparedStatement.RETURN\_GENERATED\_KEYS);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ recipeStmt.setString(1,\ recipe.getName());}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ recipeStmt.executeUpdate();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ ResultSet\ generatedKeys\ =\ recipeStmt.getGeneratedKeys();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (generatedKeys.next())\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ recipeId\ =\ generatedKeys.getInt(1);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ recipe.setId(recipeId);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (RecipeIngredient\ ri\ :\ recipe.getIngredients())\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}INSERT\ INTO\ recipe\_ingredients\ (recipe\_id,\ ingredient\_id,\ quantity,\ unit)\ VALUES\ (?,?,?,?)"{}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PreparedStatement\ pstmt\ =\ connection.prepareStatement(sql);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pstmt.setInt(1,\ recipeId);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pstmt.setInt(2,\ ri.getIngredient().getId());}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pstmt.setDouble(3,\ ri.getQuantity());}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pstmt.setString(4,\ ri.getUnit());}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pstmt.executeUpdate();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a2e65552e7e7171eb70259ce9bd2fc749}\label{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a2e65552e7e7171eb70259ce9bd2fc749} 
+\index{com.aygazyanar.recipe.RecipeDAOImpl@{com.aygazyanar.recipe.RecipeDAOImpl}!getAllRecipes@{getAllRecipes}}
+\index{getAllRecipes@{getAllRecipes}!com.aygazyanar.recipe.RecipeDAOImpl@{com.aygazyanar.recipe.RecipeDAOImpl}}
+\doxysubsubsection{\texorpdfstring{getAllRecipes()}{getAllRecipes()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} $>$ com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl.\+get\+All\+Recipes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Retrieves all recipes from the database along with their ingredients. 
+
+\begin{DoxyReturn}{Returns}
+A list of all Recipe objects. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & if a database error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_aaec8b4489b407f87ae123438837b44c4}{com.\+aygazyanar.\+recipe.\+Recipe\+DAO}}.
+
+
+
+Definition at line \mbox{\hyperlink{RecipeDAOImpl_8java_source_l00134}{134}} of file \mbox{\hyperlink{RecipeDAOImpl_8java_source}{Recipe\+DAOImpl.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ List<Recipe>\ recipes\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}SELECT\ *\ FROM\ recipes"{}};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ connection.createStatement().executeQuery(sql);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (rs.next())\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ Recipe\ recipe\ =\ \textcolor{keyword}{new}\ Recipe(rs.getInt(\textcolor{stringliteral}{"{}id"{}}),\ rs.getString(\textcolor{stringliteral}{"{}name"{}}));}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ String\ ingredientSql\ =\ \textcolor{stringliteral}{"{}SELECT\ ri.quantity,\ ri.unit,\ i.id,\ i.name,\ i.price,\ i.category\ "{}}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}FROM\ recipe\_ingredients\ ri\ JOIN\ ingredients\ i\ ON\ ri.ingredient\_id\ =\ i.id\ WHERE\ ri.recipe\_id\ =\ ?"{}};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ PreparedStatement\ ingredientStmt\ =\ connection.prepareStatement(ingredientSql);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ ingredientStmt.setInt(1,\ recipe.getId());}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ ResultSet\ ingredientRs\ =\ ingredientStmt.executeQuery();}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ingredientRs.next())\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ingredient\ ingredient\ =\ \textcolor{keyword}{new}\ Ingredient(}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getInt(\textcolor{stringliteral}{"{}id"{}}),}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getString(\textcolor{stringliteral}{"{}name"{}}),}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getDouble(\textcolor{stringliteral}{"{}price"{}}),}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getString(\textcolor{stringliteral}{"{}category"{}})}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RecipeIngredient\ ri\ =\ \textcolor{keyword}{new}\ RecipeIngredient(ingredient,\ ingredientRs.getDouble(\textcolor{stringliteral}{"{}quantity"{}}),\ ingredientRs.getString(\textcolor{stringliteral}{"{}unit"{}}));}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ recipe.addIngredient(ri);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ recipes.add(recipe);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ recipes;}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Recipe_8java_source_l00104}{com.\+aygazyanar.\+recipe.\+Recipe.\+add\+Ingredient()}}, and \mbox{\hyperlink{Recipe_8java_source_l00056}{com.\+aygazyanar.\+recipe.\+Recipe.\+get\+Id()}}.
+
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a793981d24e9e3fa76a08da1993600684}\label{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a793981d24e9e3fa76a08da1993600684} 
+\index{com.aygazyanar.recipe.RecipeDAOImpl@{com.aygazyanar.recipe.RecipeDAOImpl}!getRecipeById@{getRecipeById}}
+\index{getRecipeById@{getRecipeById}!com.aygazyanar.recipe.RecipeDAOImpl@{com.aygazyanar.recipe.RecipeDAOImpl}}
+\doxysubsubsection{\texorpdfstring{getRecipeById()}{getRecipeById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl.\+get\+Recipe\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Retrieves a recipe and its ingredients by ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the recipe to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Recipe object if found, otherwise null. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & if a database error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_a3786a32df6739d8bcf3d16f7da92e475}{com.\+aygazyanar.\+recipe.\+Recipe\+DAO}}.
+
+
+
+Definition at line \mbox{\hyperlink{RecipeDAOImpl_8java_source_l00100}{100}} of file \mbox{\hyperlink{RecipeDAOImpl_8java_source}{Recipe\+DAOImpl.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}SELECT\ *\ FROM\ recipes\ WHERE\ id\ =\ ?"{}};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ PreparedStatement\ pstmt\ =\ connection.prepareStatement(sql);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ pstmt.setInt(1,\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ pstmt.executeQuery();}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ Recipe\ recipe\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rs.next())\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ recipe\ =\ \textcolor{keyword}{new}\ Recipe(rs.getInt(\textcolor{stringliteral}{"{}id"{}}),\ rs.getString(\textcolor{stringliteral}{"{}name"{}}));}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ String\ ingredientSql\ =\ \textcolor{stringliteral}{"{}SELECT\ ri.quantity,\ ri.unit,\ i.id,\ i.name,\ i.price,\ i.category\ "{}}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}FROM\ recipe\_ingredients\ ri\ JOIN\ ingredients\ i\ ON\ ri.ingredient\_id\ =\ i.id\ WHERE\ ri.recipe\_id\ =\ ?"{}};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ PreparedStatement\ ingredientStmt\ =\ connection.prepareStatement(ingredientSql);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ ingredientStmt.setInt(1,\ recipe.getId());}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ ResultSet\ ingredientRs\ =\ ingredientStmt.executeQuery();}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (ingredientRs.next())\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ingredient\ ingredient\ =\ \textcolor{keyword}{new}\ Ingredient(}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getInt(\textcolor{stringliteral}{"{}id"{}}),}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getString(\textcolor{stringliteral}{"{}name"{}}),}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getDouble(\textcolor{stringliteral}{"{}price"{}}),}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientRs.getString(\textcolor{stringliteral}{"{}category"{}})}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RecipeIngredient\ ri\ =\ \textcolor{keyword}{new}\ RecipeIngredient(ingredient,\ ingredientRs.getDouble(\textcolor{stringliteral}{"{}quantity"{}}),\ ingredientRs.getString(\textcolor{stringliteral}{"{}unit"{}}));}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ recipe.addIngredient(ri);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ recipe;}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Recipe_8java_source_l00104}{com.\+aygazyanar.\+recipe.\+Recipe.\+add\+Ingredient()}}, and \mbox{\hyperlink{Recipe_8java_source_l00056}{com.\+aygazyanar.\+recipe.\+Recipe.\+get\+Id()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+recipe-\/app/src/main/java/com/aygazyanar/recipe/\mbox{\hyperlink{RecipeDAOImpl_8java}{Recipe\+DAOImpl.\+java}}\end{DoxyCompactItemize}

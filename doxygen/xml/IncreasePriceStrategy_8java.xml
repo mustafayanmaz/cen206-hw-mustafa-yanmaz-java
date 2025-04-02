@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="IncreasePriceStrategy_8java" kind="file" language="Java">
+    <compoundname>IncreasePriceStrategy.java</compoundname>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy" prot="public">com::aygazyanar::recipe::IncreasePriceStrategy</innerclass>
+    <innernamespace refid="namespacecom_1_1aygazyanar_1_1recipe">com::aygazyanar::recipe</innernamespace>
+    <briefdescription>
+<para>Strategy implementation for increasing ingredient prices. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">package<sp/></highlight><highlight class="normal">com.aygazyanar.recipe;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy" kindref="compound">IncreasePriceStrategy</ref><sp/></highlight><highlight class="keyword">implements</highlight><highlight class="normal"><sp/><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy" kindref="compound">PriceAdjustmentStrategy</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>percentage;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy_1a3dd8c0ed8314c608006d426ab4bb31d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy_1a3dd8c0ed8314c608006d426ab4bb31d9" kindref="member">IncreasePriceStrategy</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>percentage)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.percentage<sp/>=<sp/>percentage;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>@Override</highlight></codeline>
+<codeline lineno="37" refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy_1a7c7d23ec6bcaa1d5ec3ab3edbf9d5e5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy_1a7c7d23ec6bcaa1d5ec3ab3edbf9d5e5a" kindref="member">adjustPrice</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>currentPrice)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>currentPrice<sp/>*<sp/>(1<sp/>+<sp/>percentage<sp/>/<sp/>100);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/IncreasePriceStrategy.java"/>
+  </compounddef>
+</doxygen>

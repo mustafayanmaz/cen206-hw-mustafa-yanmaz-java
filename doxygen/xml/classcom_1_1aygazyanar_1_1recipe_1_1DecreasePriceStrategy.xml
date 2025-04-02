@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy" kind="class" language="Java" prot="public">
+    <compoundname>com::aygazyanar::recipe::DecreasePriceStrategy</compoundname>
+    <basecompoundref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy" prot="public" virt="non-virtual">com.aygazyanar.recipe.PriceAdjustmentStrategy</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_1aad987662da4e4074d5cb3163ed42b5e5" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double com.aygazyanar.recipe.DecreasePriceStrategy.percentage</definition>
+        <argsstring></argsstring>
+        <name>percentage</name>
+        <qualifiedname>com.aygazyanar.recipe.DecreasePriceStrategy.percentage</qualifiedname>
+        <briefdescription>
+<para>The percentage by which the price will be decreased. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/DecreasePriceStrategy.java" line="19" column="20" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/DecreasePriceStrategy.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_1a5af072ffaa38fb8b8f55c8b362897182" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.aygazyanar.recipe.DecreasePriceStrategy.DecreasePriceStrategy</definition>
+        <argsstring>(double percentage)</argsstring>
+        <name>DecreasePriceStrategy</name>
+        <qualifiedname>com.aygazyanar.recipe.DecreasePriceStrategy.DecreasePriceStrategy</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>percentage</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a DecreasePriceStrategy with the specified percentage. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>percentage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The percentage to decrease the price by. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/DecreasePriceStrategy.java" line="25" column="12" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/DecreasePriceStrategy.java" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_1af56bdd0a5be2502091bbdd395ab403ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double com.aygazyanar.recipe.DecreasePriceStrategy.adjustPrice</definition>
+        <argsstring>(double currentPrice)</argsstring>
+        <name>adjustPrice</name>
+        <qualifiedname>com.aygazyanar.recipe.DecreasePriceStrategy.adjustPrice</qualifiedname>
+        <reimplements refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy_1a869ce7d33e86a67d6952764daf56cfa7">adjustPrice</reimplements>
+        <param>
+          <type>double</type>
+          <declname>currentPrice</declname>
+        </param>
+        <briefdescription>
+<para>Applies the decrease strategy to the given price. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>currentPrice</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current price before adjustment. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The adjusted price after decreasing by the specified percentage. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/DecreasePriceStrategy.java" line="35" column="19" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/DecreasePriceStrategy.java" bodystart="35" bodyend="37"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Strategy for decreasing the price of an ingredient by a given percentage. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Implements the PriceAdjustmentStrategy interface to reduce the price based on the specified percentage. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>com.aygazyanar.recipe.DecreasePriceStrategy</label>
+        <link refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>com.aygazyanar.recipe.PriceAdjustmentStrategy</label>
+        <link refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>com.aygazyanar.recipe.DecreasePriceStrategy</label>
+        <link refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>com.aygazyanar.recipe.PriceAdjustmentStrategy</label>
+        <link refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy"/>
+      </node>
+    </collaborationgraph>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/DecreasePriceStrategy.java" line="14" column="7" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/DecreasePriceStrategy.java" bodystart="14" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_1af56bdd0a5be2502091bbdd395ab403ab" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::DecreasePriceStrategy</scope><name>adjustPrice</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_1a5af072ffaa38fb8b8f55c8b362897182" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::DecreasePriceStrategy</scope><name>DecreasePriceStrategy</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_1aad987662da4e4074d5cb3163ed42b5e5" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::DecreasePriceStrategy</scope><name>percentage</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

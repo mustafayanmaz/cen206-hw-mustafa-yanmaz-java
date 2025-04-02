@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="UserDAO_8java" kind="file" language="Java">
+    <compoundname>UserDAO.java</compoundname>
+    <innerclass refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO" prot="public">com::aygazyanar::recipe::UserDAO</innerclass>
+    <innernamespace refid="namespacecom_1_1aygazyanar_1_1recipe">com::aygazyanar::recipe</innernamespace>
+    <briefdescription>
+<para>Interface for user data access operations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">package<sp/></highlight><highlight class="normal">com.aygazyanar.recipe;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO" kindref="compound">UserDAO</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a490f6f60e6925353daba00829e041bd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a490f6f60e6925353daba00829e041bd3" kindref="member">createUser</ref>(<ref refid="classcom_1_1aygazyanar_1_1recipe_1_1User" kindref="compound">User</ref><sp/>user)<sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>Exception;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a372faa3feb290b17e07a312bc8e697c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1User" kindref="compound">User</ref><sp/><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a372faa3feb290b17e07a312bc8e697c9" kindref="member">getUserByUsername</ref>(String<sp/>username)<sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>Exception;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/UserDAO.java"/>
+  </compounddef>
+</doxygen>

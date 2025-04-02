@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy" kind="interface" language="Java" prot="public">
+    <compoundname>com::aygazyanar::recipe::PriceAdjustmentStrategy</compoundname>
+    <derivedcompoundref refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy" prot="public" virt="non-virtual">com.aygazyanar.recipe.DecreasePriceStrategy</derivedcompoundref>
+    <derivedcompoundref refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy" prot="public" virt="non-virtual">com.aygazyanar.recipe.IncreasePriceStrategy</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy_1a869ce7d33e86a67d6952764daf56cfa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double com.aygazyanar.recipe.PriceAdjustmentStrategy.adjustPrice</definition>
+        <argsstring>(double currentPrice)</argsstring>
+        <name>adjustPrice</name>
+        <qualifiedname>com.aygazyanar.recipe.PriceAdjustmentStrategy.adjustPrice</qualifiedname>
+        <reimplementedby refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_1af56bdd0a5be2502091bbdd395ab403ab">adjustPrice</reimplementedby>
+        <reimplementedby refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy_1a7c7d23ec6bcaa1d5ec3ab3edbf9d5e5a">adjustPrice</reimplementedby>
+        <param>
+          <type>double</type>
+          <declname>currentPrice</declname>
+        </param>
+        <briefdescription>
+<para>Adjusts the current price based on the implemented strategy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>currentPrice</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The original price before adjustment. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The adjusted price. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/PriceAdjustmentStrategy.java" line="22" column="12"/>
+        <referencedby refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a2756bb4db5cf6c3ae04f7ab5c647af2b" compoundref="IngredientService_8java" startline="92" endline="106">com.aygazyanar.recipe.IngredientService.adjustIngredientPrice</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>&lt; Main package for the Recipe Cost Calculator application. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Strategy interface for adjusting the price of an ingredient.</para>
+<para>Defines a contract for price modification logic, allowing different adjustment strategies such as increasing or decreasing the price by a percentage. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>com.aygazyanar.recipe.PriceAdjustmentStrategy</label>
+        <link refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy"/>
+      </node>
+      <node id="2">
+        <label>com.aygazyanar.recipe.DecreasePriceStrategy</label>
+        <link refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>com.aygazyanar.recipe.IncreasePriceStrategy</label>
+        <link refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/PriceAdjustmentStrategy.java" line="15" column="18" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/PriceAdjustmentStrategy.java" bodystart="15" bodyend="23"/>
+    <listofallmembers>
+      <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy_1a869ce7d33e86a67d6952764daf56cfa7" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::PriceAdjustmentStrategy</scope><name>adjustPrice</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

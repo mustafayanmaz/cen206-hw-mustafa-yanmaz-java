@@ -1,0 +1,96 @@
+\doxysection{com.\+aygazyanar.\+recipe.\+User\+DAO Interface Reference}
+\hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO}{}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO}\index{com.aygazyanar.recipe.UserDAO@{com.aygazyanar.recipe.UserDAO}}
+
+
+Data Access Object interface for user-\/related database operations.  
+
+
+Inheritance diagram for com.\+aygazyanar.\+recipe.\+User\+DAO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_a490f6f60e6925353daba00829e041bd3}{create\+User}} (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}} user)  throws Exception
+\begin{DoxyCompactList}\small\item\em Creates a new user in the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}} \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_a372faa3feb290b17e07a312bc8e697c9}{get\+User\+By\+Username}} (String username)  throws Exception
+\begin{DoxyCompactList}\small\item\em Retrieves a user by their username. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data Access Object interface for user-\/related database operations. 
+
+Provides methods to create a new user and retrieve a user by username. 
+
+Definition at line \mbox{\hyperlink{UserDAO_8java_source_l00014}{14}} of file \mbox{\hyperlink{UserDAO_8java_source}{User\+DAO.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_a490f6f60e6925353daba00829e041bd3}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_a490f6f60e6925353daba00829e041bd3} 
+\index{com.aygazyanar.recipe.UserDAO@{com.aygazyanar.recipe.UserDAO}!createUser@{createUser}}
+\index{createUser@{createUser}!com.aygazyanar.recipe.UserDAO@{com.aygazyanar.recipe.UserDAO}}
+\doxysubsubsection{\texorpdfstring{createUser()}{createUser()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+User\+DAO.\+create\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}}}]{user }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Creates a new user in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The User object containing user details to be stored. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If a database or connection error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_a4d7fb9bc1d18d18166a1ba821e597796}{com.\+aygazyanar.\+recipe.\+User\+DAOImpl}}.
+
+
+
+Referenced by \mbox{\hyperlink{AuthService_8java_source_l00038}{com.\+aygazyanar.\+recipe.\+Auth\+Service.\+register()}}.
+
+\Hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_a372faa3feb290b17e07a312bc8e697c9}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_a372faa3feb290b17e07a312bc8e697c9} 
+\index{com.aygazyanar.recipe.UserDAO@{com.aygazyanar.recipe.UserDAO}!getUserByUsername@{getUserByUsername}}
+\index{getUserByUsername@{getUserByUsername}!com.aygazyanar.recipe.UserDAO@{com.aygazyanar.recipe.UserDAO}}
+\doxysubsubsection{\texorpdfstring{getUserByUsername()}{getUserByUsername()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}} com.\+aygazyanar.\+recipe.\+User\+DAO.\+get\+User\+By\+Username (\begin{DoxyParamCaption}\item[{String}]{username }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Retrieves a user by their username. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The User object if found, otherwise null. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If a database or connection error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_a448f02718563803647ef0183f78b1ca9}{com.\+aygazyanar.\+recipe.\+User\+DAOImpl}}.
+
+
+
+Referenced by \mbox{\hyperlink{AuthService_8java_source_l00061}{com.\+aygazyanar.\+recipe.\+Auth\+Service.\+login()}}, and \mbox{\hyperlink{AuthService_8java_source_l00038}{com.\+aygazyanar.\+recipe.\+Auth\+Service.\+register()}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+recipe-\/app/src/main/java/com/aygazyanar/recipe/\mbox{\hyperlink{UserDAO_8java}{User\+DAO.\+java}}\end{DoxyCompactItemize}

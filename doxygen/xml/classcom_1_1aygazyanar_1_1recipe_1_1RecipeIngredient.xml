@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient" kind="class" language="Java" prot="public">
+    <compoundname>com::aygazyanar::recipe::RecipeIngredient</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a8f8dbf5026d101ed194f2fb95f80c097" prot="private" static="no" mutable="no">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref></type>
+        <definition>Ingredient com.aygazyanar.recipe.RecipeIngredient.ingredient</definition>
+        <argsstring></argsstring>
+        <name>ingredient</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeIngredient.ingredient</qualifiedname>
+        <briefdescription>
+<para>The ingredient used in the recipe. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" line="20" column="24" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a38bafc1b872a0fa559451c08fb7d3725" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double com.aygazyanar.recipe.RecipeIngredient.quantity</definition>
+        <argsstring></argsstring>
+        <name>quantity</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeIngredient.quantity</qualifiedname>
+        <briefdescription>
+<para>The quantity of the ingredient used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" line="25" column="20" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a42ef2a74d017117610dca031d3e37c9e" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String com.aygazyanar.recipe.RecipeIngredient.unit</definition>
+        <argsstring></argsstring>
+        <name>unit</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeIngredient.unit</qualifiedname>
+        <briefdescription>
+<para>The unit of measurement for the quantity (e.g., grams, cups). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" line="30" column="20" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ace6e0442d387b73e52c89f5ee118b23f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.aygazyanar.recipe.RecipeIngredient.RecipeIngredient</definition>
+        <argsstring>(Ingredient ingredient, double quantity, String unit)</argsstring>
+        <name>RecipeIngredient</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeIngredient.RecipeIngredient</qualifiedname>
+        <param>
+          <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref></type>
+          <declname>ingredient</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>quantity</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>unit</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a RecipeIngredient with specified ingredient, quantity, and unit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ingredient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ingredient used in the recipe. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>quantity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of the ingredient used. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unit of measurement. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" line="38" column="12" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" bodystart="38" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1af6c560727c72a5e16fc3062306409e85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref></type>
+        <definition>Ingredient com.aygazyanar.recipe.RecipeIngredient.getIngredient</definition>
+        <argsstring>()</argsstring>
+        <name>getIngredient</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeIngredient.getIngredient</qualifiedname>
+        <briefdescription>
+<para>Gets the ingredient. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The Ingredient object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" line="48" column="23" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a44d0a57afb4decee2c24fe06423637d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.RecipeIngredient.setIngredient</definition>
+        <argsstring>(Ingredient ingredient)</argsstring>
+        <name>setIngredient</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeIngredient.setIngredient</qualifiedname>
+        <param>
+          <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref></type>
+          <declname>ingredient</declname>
+        </param>
+        <briefdescription>
+<para>Sets the ingredient. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ingredient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new Ingredient to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" line="56" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1add0f35b335ef5bfd64a7b58b87707703" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double com.aygazyanar.recipe.RecipeIngredient.getQuantity</definition>
+        <argsstring>()</argsstring>
+        <name>getQuantity</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeIngredient.getQuantity</qualifiedname>
+        <briefdescription>
+<para>Gets the quantity of the ingredient. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The quantity used. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" line="64" column="19" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ab5f48269c15dc04088f81b90d19b5100" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.RecipeIngredient.setQuantity</definition>
+        <argsstring>(double quantity)</argsstring>
+        <name>setQuantity</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeIngredient.setQuantity</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>quantity</declname>
+        </param>
+        <briefdescription>
+<para>Sets the quantity of the ingredient. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>quantity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The quantity to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" line="72" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" bodystart="72" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ad4a47d5a1b98d0e0efc69fabf0f89595" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String com.aygazyanar.recipe.RecipeIngredient.getUnit</definition>
+        <argsstring>()</argsstring>
+        <name>getUnit</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeIngredient.getUnit</qualifiedname>
+        <briefdescription>
+<para>Gets the unit of measurement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The unit as a string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" line="80" column="19" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" bodystart="80" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1aaf9d6f19106effafbe29849e0df9f74d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.RecipeIngredient.setUnit</definition>
+        <argsstring>(String unit)</argsstring>
+        <name>setUnit</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeIngredient.setUnit</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>unit</declname>
+        </param>
+        <briefdescription>
+<para>Sets the unit of measurement. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>unit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The unit to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" line="88" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" bodystart="88" bodyend="90"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents an ingredient used in a recipe, along with its quantity and unit. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class encapsulates an Ingredient object and additional information about how it is used in a specific recipe. </para>
+    </detaileddescription>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" line="15" column="7" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeIngredient.java" bodystart="15" bodyend="91"/>
+    <listofallmembers>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1af6c560727c72a5e16fc3062306409e85" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeIngredient</scope><name>getIngredient</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1add0f35b335ef5bfd64a7b58b87707703" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeIngredient</scope><name>getQuantity</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ad4a47d5a1b98d0e0efc69fabf0f89595" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeIngredient</scope><name>getUnit</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a8f8dbf5026d101ed194f2fb95f80c097" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeIngredient</scope><name>ingredient</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a38bafc1b872a0fa559451c08fb7d3725" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeIngredient</scope><name>quantity</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ace6e0442d387b73e52c89f5ee118b23f" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeIngredient</scope><name>RecipeIngredient</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a44d0a57afb4decee2c24fe06423637d3" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeIngredient</scope><name>setIngredient</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1ab5f48269c15dc04088f81b90d19b5100" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeIngredient</scope><name>setQuantity</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1aaf9d6f19106effafbe29849e0df9f74d" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeIngredient</scope><name>setUnit</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient_1a42ef2a74d017117610dca031d3e37c9e" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeIngredient</scope><name>unit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

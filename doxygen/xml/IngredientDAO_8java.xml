@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="IngredientDAO_8java" kind="file" language="Java">
+    <compoundname>IngredientDAO.java</compoundname>
+    <includes local="no">java.util.List</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>recipe-app/src/main/java/com/aygazyanar/recipe/IngredientDAO.java</label>
+        <link refid="IngredientDAO_8java"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>java.util.List</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO" prot="public">com::aygazyanar::recipe::IngredientDAO</innerclass>
+    <innernamespace refid="namespacecom_1_1aygazyanar_1_1recipe">com::aygazyanar::recipe</innernamespace>
+    <briefdescription>
+<para>Interface for ingredient-related database operations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">package<sp/></highlight><highlight class="normal">com.aygazyanar.recipe;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.util.List;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO" kindref="compound">IngredientDAO</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1ab05d3504aa659766e5ee31797d55692c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1ab05d3504aa659766e5ee31797d55692c" kindref="member">addIngredient</ref>(<ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref><sp/>ingredient)<sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>Exception;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1a7e2fe1609986ef4520a99006866c40ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1a7e2fe1609986ef4520a99006866c40ac" kindref="member">updateIngredient</ref>(<ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref><sp/>ingredient)<sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>Exception;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1ad25398bd2f32e6989765c8b4121c7779" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref><sp/><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1ad25398bd2f32e6989765c8b4121c7779" kindref="member">getIngredientById</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordflow">throws</highlight><highlight class="normal"><sp/>Exception;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1aa8f978c0f142eaffb14826b77c788ded" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>List&lt;Ingredient&gt;<sp/><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1aa8f978c0f142eaffb14826b77c788ded" kindref="member">getAllIngredients</ref>()<sp/>throws<sp/>Exception;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientDAO.java"/>
+  </compounddef>
+</doxygen>

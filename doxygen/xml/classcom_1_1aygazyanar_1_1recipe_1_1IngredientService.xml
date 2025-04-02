@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService" kind="class" language="Java" prot="public">
+    <compoundname>com::aygazyanar::recipe::IngredientService</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1ad5fa3ebff5675eec4c7d8f7877be0ecc" prot="private" static="no" mutable="no">
+        <type><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO" kindref="compound">IngredientDAO</ref></type>
+        <definition>IngredientDAO com.aygazyanar.recipe.IngredientService.ingredientDAO</definition>
+        <argsstring></argsstring>
+        <name>ingredientDAO</name>
+        <qualifiedname>com.aygazyanar.recipe.IngredientService.ingredientDAO</qualifiedname>
+        <briefdescription>
+<para>Data Access Object for ingredient persistence operations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" line="21" column="27" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a3a811f87f1673f78d578eec3dc1fa305" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.aygazyanar.recipe.IngredientService.IngredientService</definition>
+        <argsstring>()</argsstring>
+        <name>IngredientService</name>
+        <qualifiedname>com.aygazyanar.recipe.IngredientService.IngredientService</qualifiedname>
+        <exceptions> throws Exception </exceptions>
+        <briefdescription>
+<para>Constructs the service and initializes the DAO implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If DAO initialization fails. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" line="27" column="12" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1add4be62af2c005b58820c5095fe12b0c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.IngredientService.addIngredient</definition>
+        <argsstring>(Ingredient ingredient)</argsstring>
+        <name>addIngredient</name>
+        <qualifiedname>com.aygazyanar.recipe.IngredientService.addIngredient</qualifiedname>
+        <param>
+          <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref></type>
+          <declname>ingredient</declname>
+        </param>
+        <briefdescription>
+<para>Adds a new ingredient to the system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ingredient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Ingredient object to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" line="35" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" bodystart="35" bodyend="42"/>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1ab05d3504aa659766e5ee31797d55692c">com.aygazyanar.recipe.IngredientDAO.addIngredient</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a9bbeab382cb3c6f788493c88057791b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.IngredientService.updateIngredient</definition>
+        <argsstring>(Ingredient ingredient)</argsstring>
+        <name>updateIngredient</name>
+        <qualifiedname>com.aygazyanar.recipe.IngredientService.updateIngredient</qualifiedname>
+        <param>
+          <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref></type>
+          <declname>ingredient</declname>
+        </param>
+        <briefdescription>
+<para>Updates an existing ingredient&apos;s details. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ingredient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Ingredient object with updated data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" line="48" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" bodystart="48" bodyend="55"/>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1a7e2fe1609986ef4520a99006866c40ac">com.aygazyanar.recipe.IngredientDAO.updateIngredient</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1acade2da12a9e3e5752b201c23ff1abbf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref> &gt;</type>
+        <definition>List&lt; Ingredient &gt; com.aygazyanar.recipe.IngredientService.getAllIngredients</definition>
+        <argsstring>()</argsstring>
+        <name>getAllIngredients</name>
+        <qualifiedname>com.aygazyanar.recipe.IngredientService.getAllIngredients</qualifiedname>
+        <briefdescription>
+<para>Retrieves a list of all ingredients. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A List of Ingredient objects, or null if an error occurs. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" line="61" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" bodystart="61" bodyend="68"/>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1aa8f978c0f142eaffb14826b77c788ded">com.aygazyanar.recipe.IngredientDAO.getAllIngredients</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a89faf9c0072c72efcaa03be09128f0a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" kindref="compound">Ingredient</ref></type>
+        <definition>Ingredient com.aygazyanar.recipe.IngredientService.getIngredientById</definition>
+        <argsstring>(int id)</argsstring>
+        <name>getIngredientById</name>
+        <qualifiedname>com.aygazyanar.recipe.IngredientService.getIngredientById</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves an ingredient by its ID. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the ingredient to retrieve. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The Ingredient object if found, otherwise null. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" line="75" column="23" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" bodystart="75" bodyend="82"/>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1ad25398bd2f32e6989765c8b4121c7779">com.aygazyanar.recipe.IngredientDAO.getIngredientById</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a2756bb4db5cf6c3ae04f7ab5c647af2b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.IngredientService.adjustIngredientPrice</definition>
+        <argsstring>(int ingredientId, PriceAdjustmentStrategy strategy)</argsstring>
+        <name>adjustIngredientPrice</name>
+        <qualifiedname>com.aygazyanar.recipe.IngredientService.adjustIngredientPrice</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>ingredientId</declname>
+        </param>
+        <param>
+          <type><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy" kindref="compound">PriceAdjustmentStrategy</ref></type>
+          <declname>strategy</declname>
+        </param>
+        <briefdescription>
+<para>Adjusts the price of an ingredient using the provided strategy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the ingredient exists, its price is recalculated and updated.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ingredientId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the ingredient to update. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strategy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The price adjustment strategy (increase or decrease). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" line="92" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" bodystart="92" bodyend="106"/>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy_1a869ce7d33e86a67d6952764daf56cfa7">com.aygazyanar.recipe.PriceAdjustmentStrategy.adjustPrice</references>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1ad25398bd2f32e6989765c8b4121c7779">com.aygazyanar.recipe.IngredientDAO.getIngredientById</references>
+        <references refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a2e8fa4d45400c96d9acd2921c0be4dda" compoundref="Ingredient_8java" startline="92" endline="94">com.aygazyanar.recipe.Ingredient.getPrice</references>
+        <references refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_1a0c22104e914c8210edbeba68971772d7" compoundref="Ingredient_8java" startline="100" endline="102">com.aygazyanar.recipe.Ingredient.setPrice</references>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_1a7e2fe1609986ef4520a99006866c40ac">com.aygazyanar.recipe.IngredientDAO.updateIngredient</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Provides service-layer operations for managing ingredients. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Acts as an intermediary between the application logic and the data access layer. </para>
+    </detaileddescription>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" line="16" column="7" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/IngredientService.java" bodystart="16" bodyend="107"/>
+    <listofallmembers>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1add4be62af2c005b58820c5095fe12b0c" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::IngredientService</scope><name>addIngredient</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a2756bb4db5cf6c3ae04f7ab5c647af2b" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::IngredientService</scope><name>adjustIngredientPrice</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1acade2da12a9e3e5752b201c23ff1abbf" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::IngredientService</scope><name>getAllIngredients</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a89faf9c0072c72efcaa03be09128f0a0" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::IngredientService</scope><name>getIngredientById</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1ad5fa3ebff5675eec4c7d8f7877be0ecc" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::IngredientService</scope><name>ingredientDAO</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a3a811f87f1673f78d578eec3dc1fa305" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::IngredientService</scope><name>IngredientService</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_1a9bbeab382cb3c6f788493c88057791b0" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::IngredientService</scope><name>updateIngredient</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

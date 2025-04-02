@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO" kind="interface" language="Java" prot="public">
+    <compoundname>com::aygazyanar::recipe::UserDAO</compoundname>
+    <derivedcompoundref refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl" prot="public" virt="non-virtual">com.aygazyanar.recipe.UserDAOImpl</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a490f6f60e6925353daba00829e041bd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.UserDAO.createUser</definition>
+        <argsstring>(User user)</argsstring>
+        <name>createUser</name>
+        <qualifiedname>com.aygazyanar.recipe.UserDAO.createUser</qualifiedname>
+        <reimplementedby refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_1a4d7fb9bc1d18d18166a1ba821e597796">createUser</reimplementedby>
+        <param>
+          <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1User" kindref="compound">User</ref></type>
+          <declname>user</declname>
+        </param>
+        <exceptions> throws Exception</exceptions>
+        <briefdescription>
+<para>Creates a new user in the database. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The User object containing user details to be stored. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If a database or connection error occurs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/UserDAO.java" line="21" column="10"/>
+        <referencedby refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1aa7a8d44f3a091637a7b010882add7156" compoundref="AuthService_8java" startline="38" endline="52">com.aygazyanar.recipe.AuthService.register</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a372faa3feb290b17e07a312bc8e697c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1User" kindref="compound">User</ref></type>
+        <definition>User com.aygazyanar.recipe.UserDAO.getUserByUsername</definition>
+        <argsstring>(String username)</argsstring>
+        <name>getUserByUsername</name>
+        <qualifiedname>com.aygazyanar.recipe.UserDAO.getUserByUsername</qualifiedname>
+        <reimplementedby refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_1a448f02718563803647ef0183f78b1ca9">getUserByUsername</reimplementedby>
+        <param>
+          <type>String</type>
+          <declname>username</declname>
+        </param>
+        <exceptions> throws Exception</exceptions>
+        <briefdescription>
+<para>Retrieves a user by their username. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The username to search for. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The User object if found, otherwise null. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If a database or connection error occurs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/UserDAO.java" line="29" column="10"/>
+        <referencedby refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1a8337bf1b2e4199447ef1a7c60f4cf25a" compoundref="AuthService_8java" startline="61" endline="75">com.aygazyanar.recipe.AuthService.login</referencedby>
+        <referencedby refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1aa7a8d44f3a091637a7b010882add7156" compoundref="AuthService_8java" startline="38" endline="52">com.aygazyanar.recipe.AuthService.register</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Data Access Object interface for user-related database operations. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides methods to create a new user and retrieve a user by username. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>com.aygazyanar.recipe.UserDAO</label>
+        <link refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO"/>
+      </node>
+      <node id="2">
+        <label>com.aygazyanar.recipe.UserDAOImpl</label>
+        <link refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/UserDAO.java" line="14" column="18" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/UserDAO.java" bodystart="14" bodyend="30"/>
+    <listofallmembers>
+      <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a490f6f60e6925353daba00829e041bd3" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::UserDAO</scope><name>createUser</name></member>
+      <member refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a372faa3feb290b17e07a312bc8e697c9" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::UserDAO</scope><name>getUserByUsername</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

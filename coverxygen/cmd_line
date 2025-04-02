@@ -1,0 +1,1 @@
+genhtml ./recipe-app/target/site/coverxygen/lcov.info --legend --title 'Documentation Coverage Report' -o recipe-app/target/site/coverxygen

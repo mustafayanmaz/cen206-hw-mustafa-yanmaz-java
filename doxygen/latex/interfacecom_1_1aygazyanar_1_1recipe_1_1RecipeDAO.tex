@@ -1,0 +1,124 @@
+\doxysection{com.\+aygazyanar.\+recipe.\+Recipe\+DAO Interface Reference}
+\hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO}{}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO}\index{com.aygazyanar.recipe.RecipeDAO@{com.aygazyanar.recipe.RecipeDAO}}
+
+
+Data Access Object interface for performing CRUD operations on recipes.  
+
+
+Inheritance diagram for com.\+aygazyanar.\+recipe.\+Recipe\+DAO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_ac0032249a7a8c0779ba99a41b2277669}{add\+Recipe}} (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} recipe)  throws Exception
+\begin{DoxyCompactList}\small\item\em Adds a new recipe to the data source. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_a3786a32df6739d8bcf3d16f7da92e475}{get\+Recipe\+By\+Id}} (int id)  throws Exception
+\begin{DoxyCompactList}\small\item\em Retrieves a recipe by its ID. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} $>$ \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_aaec8b4489b407f87ae123438837b44c4}{get\+All\+Recipes}} ()  throws Exception
+\begin{DoxyCompactList}\small\item\em Retrieves all recipes from the data source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data Access Object interface for performing CRUD operations on recipes. 
+
+Defines methods to add a new recipe, retrieve a recipe by ID, and fetch all recipes from the data source. 
+
+Definition at line \mbox{\hyperlink{RecipeDAO_8java_source_l00017}{17}} of file \mbox{\hyperlink{RecipeDAO_8java_source}{Recipe\+DAO.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_ac0032249a7a8c0779ba99a41b2277669}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_ac0032249a7a8c0779ba99a41b2277669} 
+\index{com.aygazyanar.recipe.RecipeDAO@{com.aygazyanar.recipe.RecipeDAO}!addRecipe@{addRecipe}}
+\index{addRecipe@{addRecipe}!com.aygazyanar.recipe.RecipeDAO@{com.aygazyanar.recipe.RecipeDAO}}
+\doxysubsubsection{\texorpdfstring{addRecipe()}{addRecipe()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Recipe\+DAO.\+add\+Recipe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}}}]{recipe }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Adds a new recipe to the data source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recipe} & The Recipe object to be added. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If a database or connection error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_acce66ab053933a0a34cf22a37b1ea53a}{com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl}}.
+
+
+
+Referenced by \mbox{\hyperlink{RecipeService_8java_source_l00035}{com.\+aygazyanar.\+recipe.\+Recipe\+Service.\+add\+Recipe()}}.
+
+\Hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_aaec8b4489b407f87ae123438837b44c4}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_aaec8b4489b407f87ae123438837b44c4} 
+\index{com.aygazyanar.recipe.RecipeDAO@{com.aygazyanar.recipe.RecipeDAO}!getAllRecipes@{getAllRecipes}}
+\index{getAllRecipes@{getAllRecipes}!com.aygazyanar.recipe.RecipeDAO@{com.aygazyanar.recipe.RecipeDAO}}
+\doxysubsubsection{\texorpdfstring{getAllRecipes()}{getAllRecipes()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} $>$ com.\+aygazyanar.\+recipe.\+Recipe\+DAO.\+get\+All\+Recipes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Retrieves all recipes from the data source. 
+
+\begin{DoxyReturn}{Returns}
+A list of all Recipe objects. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If a database or connection error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a2e65552e7e7171eb70259ce9bd2fc749}{com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl}}.
+
+
+
+Referenced by \mbox{\hyperlink{RecipeService_8java_source_l00062}{com.\+aygazyanar.\+recipe.\+Recipe\+Service.\+get\+All\+Recipes()}}.
+
+\Hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_a3786a32df6739d8bcf3d16f7da92e475}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_a3786a32df6739d8bcf3d16f7da92e475} 
+\index{com.aygazyanar.recipe.RecipeDAO@{com.aygazyanar.recipe.RecipeDAO}!getRecipeById@{getRecipeById}}
+\index{getRecipeById@{getRecipeById}!com.aygazyanar.recipe.RecipeDAO@{com.aygazyanar.recipe.RecipeDAO}}
+\doxysubsubsection{\texorpdfstring{getRecipeById()}{getRecipeById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} com.\+aygazyanar.\+recipe.\+Recipe\+DAO.\+get\+Recipe\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Retrieves a recipe by its ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the recipe to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Recipe object if found, otherwise null. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If a database or connection error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_a793981d24e9e3fa76a08da1993600684}{com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl}}.
+
+
+
+Referenced by \mbox{\hyperlink{RecipeService_8java_source_l00049}{com.\+aygazyanar.\+recipe.\+Recipe\+Service.\+get\+Recipe\+By\+Id()}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+recipe-\/app/src/main/java/com/aygazyanar/recipe/\mbox{\hyperlink{RecipeDAO_8java}{Recipe\+DAO.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespacecom_1_1aygazyanar_1_1recipe" kind="namespace" language="Java">
+    <compoundname>com::aygazyanar::recipe</compoundname>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1Application" prot="public">com::aygazyanar::recipe::Application</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService" prot="public">com::aygazyanar::recipe::AuthService</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1BudgetService" prot="public">com::aygazyanar::recipe::BudgetService</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection" prot="public">com::aygazyanar::recipe::DBConnection</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy" prot="public">com::aygazyanar::recipe::DecreasePriceStrategy</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy" prot="public">com::aygazyanar::recipe::IncreasePriceStrategy</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1Ingredient" prot="public">com::aygazyanar::recipe::Ingredient</innerclass>
+    <innerclass refid="interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO" prot="public">com::aygazyanar::recipe::IngredientDAO</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl" prot="public">com::aygazyanar::recipe::IngredientDAOImpl</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService" prot="public">com::aygazyanar::recipe::IngredientService</innerclass>
+    <innerclass refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy" prot="public">com::aygazyanar::recipe::PriceAdjustmentStrategy</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe" prot="public">com::aygazyanar::recipe::Recipe</innerclass>
+    <innerclass refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO" prot="public">com::aygazyanar::recipe::RecipeDAO</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl" prot="public">com::aygazyanar::recipe::RecipeDAOImpl</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient" prot="public">com::aygazyanar::recipe::RecipeIngredient</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService" prot="public">com::aygazyanar::recipe::RecipeService</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1User" prot="public">com::aygazyanar::recipe::User</innerclass>
+    <innerclass refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO" prot="public">com::aygazyanar::recipe::UserDAO</innerclass>
+    <innerclass refid="classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl" prot="public">com::aygazyanar::recipe::UserDAOImpl</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="1" column="15"/>
+  </compounddef>
+</doxygen>

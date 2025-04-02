@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RecipeIngredient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">recipe-app</a> &gt; <a href="index.source.html" class="el_package">com.aygazyanar.recipe</a> &gt; <span class="el_source">RecipeIngredient.java</span></div><h1>RecipeIngredient.java</h1><pre class="source lang-java linenums">/**
+ * @file RecipeIngredient.java
+ * @brief Represents the association between an ingredient and its usage in a recipe.
+ */
+
+package com.aygazyanar.recipe;
+
+/**
+ * @class RecipeIngredient
+ * @brief Represents an ingredient used in a recipe, along with its quantity and unit.
+ *
+ * This class encapsulates an Ingredient object and additional information about how it is used
+ * in a specific recipe.
+ */
+public class RecipeIngredient {
+
+    /**
+     * @brief The ingredient used in the recipe.
+     */
+    private Ingredient ingredient;
+
+    /**
+     * @brief The quantity of the ingredient used.
+     */
+    private double quantity;
+
+    /**
+     * @brief The unit of measurement for the quantity (e.g., grams, cups).
+     */
+    private String unit;
+
+    /**
+     * @brief Constructs a RecipeIngredient with specified ingredient, quantity, and unit.
+     * @param ingredient The ingredient used in the recipe.
+     * @param quantity The amount of the ingredient used.
+     * @param unit The unit of measurement.
+     */
+<span class="fc" id="L38">    public RecipeIngredient(Ingredient ingredient, double quantity, String unit) {</span>
+<span class="fc" id="L39">        this.ingredient = ingredient;</span>
+<span class="fc" id="L40">        this.quantity = quantity;</span>
+<span class="fc" id="L41">        this.unit = unit;</span>
+<span class="fc" id="L42">    }</span>
+
+    /**
+     * @brief Gets the ingredient.
+     * @return The Ingredient object.
+     */
+    public Ingredient getIngredient() {
+<span class="fc" id="L49">        return ingredient;</span>
+    }
+
+    /**
+     * @brief Sets the ingredient.
+     * @param ingredient The new Ingredient to set.
+     */
+    public void setIngredient(Ingredient ingredient) {
+<span class="fc" id="L57">        this.ingredient = ingredient;</span>
+<span class="fc" id="L58">    }</span>
+
+    /**
+     * @brief Gets the quantity of the ingredient.
+     * @return The quantity used.
+     */
+    public double getQuantity() {
+<span class="fc" id="L65">        return quantity;</span>
+    }
+
+    /**
+     * @brief Sets the quantity of the ingredient.
+     * @param quantity The quantity to set.
+     */
+    public void setQuantity(double quantity) {
+<span class="fc" id="L73">        this.quantity = quantity;</span>
+<span class="fc" id="L74">    }</span>
+
+    /**
+     * @brief Gets the unit of measurement.
+     * @return The unit as a string.
+     */
+    public String getUnit() {
+<span class="fc" id="L81">        return unit;</span>
+    }
+
+    /**
+     * @brief Sets the unit of measurement.
+     * @param unit The unit to set.
+     */
+    public void setUnit(String unit) {
+<span class="fc" id="L89">        this.unit = unit;</span>
+<span class="fc" id="L90">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

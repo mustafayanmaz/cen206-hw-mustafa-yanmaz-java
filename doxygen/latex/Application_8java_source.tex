@@ -1,0 +1,244 @@
+\doxysection{Application.\+java}
+\hypertarget{Application_8java_source}{}\label{Application_8java_source}\index{recipe-\/app/src/main/java/com/aygazyanar/recipe/Application.java@{recipe-\/app/src/main/java/com/aygazyanar/recipe/Application.java}}
+\mbox{\hyperlink{Application_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00001}\mbox{\hyperlink{namespacecom_1_1aygazyanar_1_1recipe}{00001}}\ \textcolor{keyword}{package\ }com.aygazyanar.recipe;}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00006}00006\ \textcolor{keyword}{import}\ java.util.Scanner;}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00015}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Application}{00015}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Application}{Application}}\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1AuthService}{AuthService}}\ authService;}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService}{IngredientService}}\ ingredientService;}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService}{RecipeService}}\ recipeService;}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1BudgetService}{BudgetService}}\ budgetService;}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}}\ currentUser;}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00046}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Application_a86ec24f4f3ca04f6a5bd94ceaea65ef6}{00046}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Application_a86ec24f4f3ca04f6a5bd94ceaea65ef6}{main}}(String[]\ args)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ authService\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1AuthService}{AuthService}}();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ ingredientService\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService}{IngredientService}}();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ recipeService\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService}{RecipeService}}();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ budgetService\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1BudgetService}{BudgetService}}();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ initializing\ services:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ Scanner\ scanner\ =\ \textcolor{keyword}{new}\ Scanner(System.in);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Welcome\ to\ Recipe\ Cost\ Calculator!"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ exit\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!exit)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentUser\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}1.\ Register"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}2.\ Login"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}0.\ Exit"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Select\ an\ option:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ option\ =\ Integer.parseInt(scanner.nextLine());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (option)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ register(scanner);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ login(scanner);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exit\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Invalid\ option."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}\(\backslash\)nMain\ Menu:"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}1.\ Ingredient\ Management"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}2.\ Recipe\ Costing"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}3.\ Price\ Adjustment"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}4.\ Budget\ Planner"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}5.\ Logout"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}0.\ Exit"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Select\ an\ option:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ option\ =\ Integer.parseInt(scanner.nextLine());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (option)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientManagement(scanner);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ recipeCosting(scanner);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ priceAdjustment(scanner);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ budgetPlanner(scanner);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentUser\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Logged\ out\ successfully."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exit\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Invalid\ option."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ scanner.close();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Goodbye!"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00124}00124\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ register(Scanner\ scanner)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ username:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ String\ username\ =\ scanner.nextLine().trim();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ password:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ String\ password\ =\ scanner.nextLine().trim();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ authService.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1AuthService_aa7a8d44f3a091637a7b010882add7156}{register}}(username,\ password);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00130}00130\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00136}00136\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ login(Scanner\ scanner)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ username:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ String\ username\ =\ scanner.nextLine().trim();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ password:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ String\ password\ =\ scanner.nextLine().trim();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ currentUser\ =\ authService.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1AuthService_a8337bf1b2e4199447ef1a7c60f4cf25a}{login}}(username,\ password);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00142}00142\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00148}00148\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ingredientManagement(Scanner\ scanner)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ back\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!back)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}\(\backslash\)nIngredient\ Management:"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}1.\ Add\ Ingredient"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}2.\ Update\ Ingredient"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}3.\ View\ All\ Ingredients"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}0.\ Back"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Select\ an\ option:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ option\ =\ Integer.parseInt(scanner.nextLine());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (option)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ ingredient\ name:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ name\ =\ scanner.nextLine().trim();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ price:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ price\ =\ Double.parseDouble(scanner.nextLine());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ category:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ category\ =\ scanner.nextLine().trim();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ingredient\ ingredient\ =\ \textcolor{keyword}{new}\ Ingredient(0,\ name,\ price,\ category);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientService.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_add4be62af2c005b58820c5095fe12b0c}{addIngredient}}(ingredient);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ ingredient\ ID\ to\ update:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ Integer.parseInt(scanner.nextLine());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ new\ name:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ newName\ =\ scanner.nextLine().trim();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ new\ price:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ newPrice\ =\ Double.parseDouble(scanner.nextLine());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ new\ category:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ newCategory\ =\ scanner.nextLine().trim();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Ingredient\ ingToUpdate\ =\ \textcolor{keyword}{new}\ Ingredient(\textcolor{keywordtype}{id},\ newName,\ newPrice,\ newCategory);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientService.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a9bbeab382cb3c6f788493c88057791b0}{updateIngredient}}(ingToUpdate);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<Ingredient>\ ingredients\ =\ ingredientService.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_acade2da12a9e3e5752b201c23ff1abbf}{getAllIngredients}}();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ingredients\ ==\ \textcolor{keyword}{null}\ ||\ ingredients.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}No\ ingredients\ found."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Ingredient\ ing\ :\ ingredients)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}ID:\ "{}}\ +\ ing.getId()\ +\ \textcolor{stringliteral}{"{},\ Name:\ "{}}\ +\ ing.getName()\ +}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},\ Price:\ "{}}\ +\ ing.getPrice()\ +\ \textcolor{stringliteral}{"{},\ Category:\ "{}}\ +\ ing.getCategory());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ back\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Invalid\ option."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00198}00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00199}00199\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00205}00205\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ recipeCosting(Scanner\ scanner)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00206}00206\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}\(\backslash\)nRecipe\ Costing:"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00207}00207\ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ recipe\ name:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00208}00208\ \ \ \ \ \ \ \ \ String\ recipeName\ =\ scanner.nextLine().trim();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00209}00209\ \ \ \ \ \ \ \ \ Recipe\ recipe\ =\ \textcolor{keyword}{new}\ Recipe(0,\ recipeName);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00211}00211\ \ \ \ \ \ \ \ \ List<Ingredient>\ allIngredients\ =\ ingredientService.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_acade2da12a9e3e5752b201c23ff1abbf}{getAllIngredients}}();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00212}00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (allIngredients\ ==\ \textcolor{keyword}{null}\ ||\ allIngredients.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}No\ ingredients\ available\ in\ the\ system.\ Please\ add\ ingredients\ first."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00215}00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00216}00216\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Available\ Ingredients:"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Ingredient\ ing\ :\ allIngredients)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}ID:\ "{}}\ +\ ing.getId()\ +\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ +\ ing.getName()\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}\ (Price:\ "{}}\ +\ ing.getPrice()\ +\ \textcolor{stringliteral}{"{},\ Category:\ "{}}\ +\ ing.getCategory()\ +\ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00220}00220\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00222}00222\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ addMore\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (addMore)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ ingredient\ ID:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ingredientId\ =\ Integer.parseInt(scanner.nextLine());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ Ingredient\ ingredient\ =\ ingredientService.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a89faf9c0072c72efcaa03be09128f0a0}{getIngredientById}}(ingredientId);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ingredient\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Ingredient\ not\ found.\ Please\ try\ again."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ quantity:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ quantity\ =\ Double.parseDouble(scanner.nextLine());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ unit:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ unit\ =\ scanner.nextLine().trim();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ recipe.addIngredient(\textcolor{keyword}{new}\ RecipeIngredient(ingredient,\ quantity,\ unit));}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Add\ another\ ingredient?\ (y/n):\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ String\ choice\ =\ scanner.nextLine();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!choice.equalsIgnoreCase(\textcolor{stringliteral}{"{}y"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ addMore\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00241}00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (recipe.getIngredients().isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}No\ ingredients\ added\ to\ the\ recipe.\ Aborting\ recipe\ creation."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00245}00245\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ recipeService.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a80b140995de751d78bfdd6125080d412}{addRecipe}}(recipe);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ totalCost\ =\ recipe.calculateTotalCost();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Total\ cost\ of\ recipe\ \(\backslash\)"{}"{}}\ +\ recipe.getName()\ +\ \textcolor{stringliteral}{"{}\(\backslash\)"{}:\ "{}}\ +\ totalCost);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00249}00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00250}00250\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00256}00256\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ priceAdjustment(Scanner\ scanner)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00257}00257\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}\(\backslash\)nPrice\ Adjustment:"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00258}00258\ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ ingredient\ ID\ to\ adjust\ price:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00259}00259\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ingredientId\ =\ Integer.parseInt(scanner.nextLine());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00260}00260\ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Do\ you\ want\ to\ increase\ or\ decrease\ the\ price?\ (i/d):\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00261}00261\ \ \ \ \ \ \ \ \ String\ type\ =\ scanner.nextLine().trim();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00262}00262\ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ percentage:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00263}00263\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ percentage\ =\ Double.parseDouble(scanner.nextLine());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00264}00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type.equalsIgnoreCase(\textcolor{stringliteral}{"{}i"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ ingredientService.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a2756bb4db5cf6c3ae04f7ab5c647af2b}{adjustIngredientPrice}}(ingredientId,\ \textcolor{keyword}{new}\ IncreasePriceStrategy(percentage));}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00266}00266\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type.equalsIgnoreCase(\textcolor{stringliteral}{"{}d"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ ingredientService.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a2756bb4db5cf6c3ae04f7ab5c647af2b}{adjustIngredientPrice}}(ingredientId,\ \textcolor{keyword}{new}\ DecreasePriceStrategy(percentage));}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00268}00268\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Invalid\ option."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00270}00270\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00271}00271\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00277}00277\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ budgetPlanner(Scanner\ scanner)\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00278}00278\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}\(\backslash\)nBudget\ Planner:"{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00279}00279\ \ \ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Enter\ your\ budget:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00280}00280\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ budget\ =\ Double.parseDouble(scanner.nextLine());}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00281}00281\ \ \ \ \ \ \ \ \ List<Recipe>\ recipes\ =\ recipeService.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a4e30e61225f1fb106e2aa54262e1d795}{getAllRecipes}}();}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00282}00282\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (recipes\ ==\ \textcolor{keyword}{null}\ ||\ recipes.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}No\ recipes\ found.\ Please\ create\ recipes\ first."{}});}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00284}00284\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ budgetService.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1BudgetService_acd00b8ae69aaac827ef386ad50398e33}{planBudget}}(budget,\ recipes);}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00286}00286\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00287}00287\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Application_8java_source_l00288}00288\ \}}
+
+\end{DoxyCode}

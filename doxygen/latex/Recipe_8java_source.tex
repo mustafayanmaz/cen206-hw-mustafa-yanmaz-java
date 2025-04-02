@@ -1,0 +1,66 @@
+\doxysection{Recipe.\+java}
+\hypertarget{Recipe_8java_source}{}\label{Recipe_8java_source}\index{recipe-\/app/src/main/java/com/aygazyanar/recipe/Recipe.java@{recipe-\/app/src/main/java/com/aygazyanar/recipe/Recipe.java}}
+\mbox{\hyperlink{Recipe_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00006}00006\ \textcolor{keyword}{package\ }com.aygazyanar.recipe;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00017}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}}\ \{}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{private}\ String\ name;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{private}\ List<RecipeIngredient>\ ingredients;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00037}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_aa7d42e38eac429018b3d1dfcf21b5d0a}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_aa7d42e38eac429018b3d1dfcf21b5d0a}{Recipe}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ ingredients\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00046}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a4c913aabcbd226b26e6cb2668f7f63c3}{00046}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a4c913aabcbd226b26e6cb2668f7f63c3}{Recipe}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ String\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ this.id\ =\ id;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ this.ingredients\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00056}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_aa87bf48419d7220b8f4bfa3ce81dd105}{00056}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_aa87bf48419d7220b8f4bfa3ce81dd105}{getId}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ id;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00064}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a94a0dc660d5b8bf35060200f66633c43}{00064}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a94a0dc660d5b8bf35060200f66633c43}{setId}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ this.id\ =\ id;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00072}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a2313f70a1f2b52f8232e2e381b852d49}{00072}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a2313f70a1f2b52f8232e2e381b852d49}{getName}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00080}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a6a939792c7665a17d12bdfb15368da13}{00080}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a6a939792c7665a17d12bdfb15368da13}{setName}}(String\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00088}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_ae2dc13503829f6614b44cb7f26e00814}{00088}}\ \ \ \ \ \textcolor{keyword}{public}\ List<RecipeIngredient>\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_ae2dc13503829f6614b44cb7f26e00814}{getIngredients}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ingredients;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00096}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a64553b60aa3dee22a763af2fd2df0355}{00096}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a64553b60aa3dee22a763af2fd2df0355}{setIngredients}}(List<RecipeIngredient>\ ingredients)\ \{}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ this.ingredients\ =\ ingredients;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00104}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a793e47aa009306513fc8b2172b51c3ba}{00104}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a793e47aa009306513fc8b2172b51c3ba}{addIngredient}}(\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{RecipeIngredient}}\ recipeIngredient)\ \{}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ ingredients.add(recipeIngredient);}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00112}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a762e720ec7da59298fc4c346fb28d1c8}{00112}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a762e720ec7da59298fc4c346fb28d1c8}{calculateTotalCost}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ total\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{RecipeIngredient}}\ ri\ :\ ingredients)\ \{}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ total\ +=\ ri.getQuantity()\ *\ ri.getIngredient().getPrice();}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ total;}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Recipe_8java_source_l00119}00119\ \}}
+
+\end{DoxyCode}

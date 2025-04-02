@@ -1,0 +1,71 @@
+\doxysection{com.\+aygazyanar.\+recipe.\+Budget\+Service Class Reference}
+\hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1BudgetService}{}\label{classcom_1_1aygazyanar_1_1recipe_1_1BudgetService}\index{com.aygazyanar.recipe.BudgetService@{com.aygazyanar.recipe.BudgetService}}
+
+
+Provides functionality for planning meals within a given budget.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1BudgetService_acd00b8ae69aaac827ef386ad50398e33}{plan\+Budget}} (double budget, List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} $>$ recipes)
+\begin{DoxyCompactList}\small\item\em Plans meals by calculating the total cost of given recipes and comparing it to the budget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality for planning meals within a given budget. 
+
+This service class compares the total cost of a list of recipes against a specified budget and outputs whether the budget is exceeded or not. 
+
+Definition at line \mbox{\hyperlink{BudgetService_8java_source_l00017}{17}} of file \mbox{\hyperlink{BudgetService_8java_source}{Budget\+Service.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1BudgetService_acd00b8ae69aaac827ef386ad50398e33}\label{classcom_1_1aygazyanar_1_1recipe_1_1BudgetService_acd00b8ae69aaac827ef386ad50398e33} 
+\index{com.aygazyanar.recipe.BudgetService@{com.aygazyanar.recipe.BudgetService}!planBudget@{planBudget}}
+\index{planBudget@{planBudget}!com.aygazyanar.recipe.BudgetService@{com.aygazyanar.recipe.BudgetService}}
+\doxysubsubsection{\texorpdfstring{planBudget()}{planBudget()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Budget\+Service.\+plan\+Budget (\begin{DoxyParamCaption}\item[{double}]{budget,  }\item[{List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} $>$}]{recipes }\end{DoxyParamCaption})}
+
+
+
+Plans meals by calculating the total cost of given recipes and comparing it to the budget. 
+
+This method calculates the total cost of all provided recipes and prints the cost of each recipe, the total cost, and whether the total is within or over the specified budget.
+
+
+\begin{DoxyParams}{Parameters}
+{\em budget} & The total budget available. \\
+\hline
+{\em recipes} & The list of recipes to be considered in the budget planning. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{BudgetService_8java_source_l00028}{28}} of file \mbox{\hyperlink{BudgetService_8java_source}{Budget\+Service.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ totalCost\ =\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Planning\ meals\ within\ a\ budget\ of:\ "{}}\ +\ budget);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Recipe\ recipe\ :\ recipes)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cost\ =\ recipe.calculateTotalCost();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ totalCost\ +=\ cost;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Recipe:\ "{}}\ +\ recipe.getName()\ +\ \textcolor{stringliteral}{"{},\ Cost:\ "{}}\ +\ cost);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Total\ cost:\ "{}}\ +\ totalCost);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (totalCost\ >\ budget)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Warning:\ Total\ cost\ exceeds\ the\ budget."{}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Within\ budget."{}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+recipe-\/app/src/main/java/com/aygazyanar/recipe/\mbox{\hyperlink{BudgetService_8java}{Budget\+Service.\+java}}\end{DoxyCompactItemize}

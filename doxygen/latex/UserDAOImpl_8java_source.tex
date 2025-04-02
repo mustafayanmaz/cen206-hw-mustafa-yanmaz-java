@@ -1,0 +1,56 @@
+\doxysection{User\+DAOImpl.\+java}
+\hypertarget{UserDAOImpl_8java_source}{}\label{UserDAOImpl_8java_source}\index{recipe-\/app/src/main/java/com/aygazyanar/recipe/UserDAOImpl.java@{recipe-\/app/src/main/java/com/aygazyanar/recipe/UserDAOImpl.java}}
+\mbox{\hyperlink{UserDAOImpl_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00006}00006\ \textcolor{keyword}{package\ }com.aygazyanar.recipe;\ }
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.sql.Connection;}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.sql.PreparedStatement;}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.sql.ResultSet;}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00018}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl}{00018}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl}{UserDAOImpl}}\ \textcolor{keyword}{implements}\ \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO}{UserDAO}}\ \{}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ Connection\ connection;}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00029}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_aa61adfe7129543c5dc45f93283a2c656}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_aa61adfe7129543c5dc45f93283a2c656}{UserDAOImpl}}()\ throws\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ this.connection\ =\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}{DBConnection}}.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_a375981392f105a6c7c3d90d21f924234}{getInstance}}().\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_ac283a250b94b7c8efc89b12ceaa493d2}{getConnection}}();}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ createUsersTable();}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ createUsersTable()\ throws\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ users\ ("{}}}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}id\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT,\ "{}}}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}username\ TEXT\ UNIQUE\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}password\ TEXT\ NOT\ NULL"{}}}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ connection.createStatement().execute(sql);}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00053}00053\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00054}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_a4d7fb9bc1d18d18166a1ba821e597796}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_a4d7fb9bc1d18d18166a1ba821e597796}{createUser}}(\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}}\ user)\ \textcolor{keywordflow}{throws}\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}INSERT\ INTO\ users\ (username,\ password)\ VALUES\ (?,?)"{}};}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ PreparedStatement\ pstmt\ =\ connection.prepareStatement(sql);}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ pstmt.setString(1,\ user.getUsername());}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ pstmt.setString(2,\ user.getPassword());}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ pstmt.executeUpdate();}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00069}00069\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00070}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_a448f02718563803647ef0183f78b1ca9}{00070}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_a448f02718563803647ef0183f78b1ca9}{getUserByUsername}}(String\ username)\ \textcolor{keywordflow}{throws}\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}SELECT\ *\ FROM\ users\ WHERE\ username\ =\ ?"{}};}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ PreparedStatement\ pstmt\ =\ connection.prepareStatement(sql);}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ pstmt.setString(1,\ username);}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ pstmt.executeQuery();}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rs.next())\ \{}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}}(}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rs.getInt(\textcolor{stringliteral}{"{}id"{}}),}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rs.getString(\textcolor{stringliteral}{"{}username"{}}),}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rs.getString(\textcolor{stringliteral}{"{}password"{}})}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{UserDAOImpl_8java_source_l00084}00084\ \}}
+
+\end{DoxyCode}

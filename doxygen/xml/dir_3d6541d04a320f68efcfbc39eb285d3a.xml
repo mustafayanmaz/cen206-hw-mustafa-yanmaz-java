@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_3d6541d04a320f68efcfbc39eb285d3a" kind="dir">
+    <compoundname>recipe-app/src/main/java/com/aygazyanar/recipe</compoundname>
+    <innerfile refid="Application_8java">Application.java</innerfile>
+    <innerfile refid="AuthService_8java">AuthService.java</innerfile>
+    <innerfile refid="BudgetService_8java">BudgetService.java</innerfile>
+    <innerfile refid="DBConnection_8java">DBConnection.java</innerfile>
+    <innerfile refid="DecreasePriceStrategy_8java">DecreasePriceStrategy.java</innerfile>
+    <innerfile refid="IncreasePriceStrategy_8java">IncreasePriceStrategy.java</innerfile>
+    <innerfile refid="Ingredient_8java">Ingredient.java</innerfile>
+    <innerfile refid="IngredientDAO_8java">IngredientDAO.java</innerfile>
+    <innerfile refid="IngredientDAOImpl_8java">IngredientDAOImpl.java</innerfile>
+    <innerfile refid="IngredientService_8java">IngredientService.java</innerfile>
+    <innerfile refid="PriceAdjustmentStrategy_8java">PriceAdjustmentStrategy.java</innerfile>
+    <innerfile refid="Recipe_8java">Recipe.java</innerfile>
+    <innerfile refid="RecipeDAO_8java">RecipeDAO.java</innerfile>
+    <innerfile refid="RecipeDAOImpl_8java">RecipeDAOImpl.java</innerfile>
+    <innerfile refid="RecipeIngredient_8java">RecipeIngredient.java</innerfile>
+    <innerfile refid="RecipeService_8java">RecipeService.java</innerfile>
+    <innerfile refid="User_8java">User.java</innerfile>
+    <innerfile refid="UserDAO_8java">UserDAO.java</innerfile>
+    <innerfile refid="UserDAOImpl_8java">UserDAOImpl.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/"/>
+  </compounddef>
+</doxygen>

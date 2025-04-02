@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AuthService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">recipe-app</a> &gt; <a href="index.source.html" class="el_package">com.aygazyanar.recipe</a> &gt; <span class="el_source">AuthService.java</span></div><h1>AuthService.java</h1><pre class="source lang-java linenums">/**
+ * @file AuthService.java
+ * @brief Provides authentication services such as user registration and login.
+ */
+
+package com.aygazyanar.recipe;
+
+/**
+ * @class AuthService
+ * @brief Provides authentication services such as user registration and login.
+ *
+ * Uses UserDAO to interact with user data stored in the database.
+ */
+public class AuthService {
+
+    /**
+     * @brief Data access object for user operations.
+     */
+    private UserDAO userDAO;
+
+    /**
+     * @brief Constructs the AuthService and initializes the UserDAO implementation.
+     * @throws Exception if the UserDAO initialization fails.
+     */
+<span class="fc" id="L25">    public AuthService() throws Exception {</span>
+<span class="fc" id="L26">        this.userDAO = new UserDAOImpl();</span>
+<span class="fc" id="L27">    }</span>
+
+    /**
+     * @brief Registers a new user with the given username and password.
+     *
+     * If the username is already taken, registration fails.
+     *
+     * @param username The username of the user to be registered.
+     * @param password The password of the user to be registered.
+     * @return true if registration is successful, false otherwise.
+     */
+    public boolean register(String username, String password) {
+        try {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">            if (userDAO.getUserByUsername(username) != null) {</span>
+<span class="fc" id="L41">                System.out.println(&quot;User already exists.&quot;);</span>
+<span class="fc" id="L42">                return false;</span>
+            }
+<span class="fc" id="L44">            User user = new User(0, username, password);</span>
+<span class="fc" id="L45">            userDAO.createUser(user);</span>
+<span class="fc" id="L46">            System.out.println(&quot;User registered successfully.&quot;);</span>
+<span class="fc" id="L47">            return true;</span>
+<span class="fc" id="L48">        } catch (Exception e) {</span>
+<span class="fc" id="L49">            System.out.println(&quot;Error registering user: &quot; + e.getMessage());</span>
+<span class="fc" id="L50">            return false;</span>
+        }
+    }
+
+    /**
+     * @brief Attempts to log in the user with the provided credentials.
+     *
+     * @param username The username of the user attempting to log in.
+     * @param password The password of the user.
+     * @return A User object if login is successful; null otherwise.
+     */
+    public User login(String username, String password) {
+        try {
+<span class="fc" id="L63">            User user = userDAO.getUserByUsername(username);</span>
+<span class="pc bpc" id="L64" title="1 of 4 branches missed.">            if (user != null &amp;&amp; user.getPassword().equals(password)) {</span>
+<span class="fc" id="L65">                System.out.println(&quot;Login successful.&quot;);</span>
+<span class="fc" id="L66">                return user;</span>
+            } else {
+<span class="fc" id="L68">                System.out.println(&quot;Invalid username or password.&quot;);</span>
+<span class="fc" id="L69">                return null;</span>
+            }
+<span class="fc" id="L71">        } catch (Exception e) {</span>
+<span class="fc" id="L72">            System.out.println(&quot;Error during login: &quot; + e.getMessage());</span>
+<span class="fc" id="L73">            return null;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RecipeService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">recipe-app</a> &gt; <a href="index.source.html" class="el_package">com.aygazyanar.recipe</a> &gt; <span class="el_source">RecipeService.java</span></div><h1>RecipeService.java</h1><pre class="source lang-java linenums">/**
+ * @file RecipeService.java
+ * @brief Provides service-layer operations for managing recipes.
+ */
+
+package com.aygazyanar.recipe;
+
+import java.util.List;
+
+/**
+ * @class RecipeService
+ * @brief Provides service-layer operations for managing recipes.
+ *
+ * Acts as a bridge between the application logic and the recipe data access layer.
+ */
+public class RecipeService {
+
+    /**
+     * @brief Data Access Object used for recipe persistence operations.
+     */
+    private RecipeDAO recipeDAO;
+
+    /**
+     * @brief Constructs the service and initializes the DAO implementation.
+     * @throws Exception If DAO initialization fails.
+     */
+<span class="fc" id="L27">    public RecipeService() throws Exception {</span>
+<span class="fc" id="L28">        this.recipeDAO = new RecipeDAOImpl();</span>
+<span class="fc" id="L29">    }</span>
+
+    /**
+     * @brief Adds a new recipe to the system.
+     * @param recipe The Recipe object to be added.
+     */
+    public void addRecipe(Recipe recipe) {
+        try {
+<span class="fc" id="L37">            recipeDAO.addRecipe(recipe);</span>
+<span class="fc" id="L38">            System.out.println(&quot;Recipe added successfully.&quot;);</span>
+<span class="fc" id="L39">        } catch (Exception e) {</span>
+<span class="fc" id="L40">            System.out.println(&quot;Error adding recipe: &quot; + e.getMessage());</span>
+<span class="fc" id="L41">        }</span>
+<span class="fc" id="L42">    }</span>
+
+    /**
+     * @brief Retrieves a recipe by its ID.
+     * @param id The ID of the recipe to retrieve.
+     * @return The Recipe object if found, otherwise null.
+     */
+    public Recipe getRecipeById(int id) {
+        try {
+<span class="fc" id="L51">            return recipeDAO.getRecipeById(id);</span>
+<span class="fc" id="L52">        } catch (Exception e) {</span>
+<span class="fc" id="L53">            System.out.println(&quot;Error retrieving recipe: &quot; + e.getMessage());</span>
+<span class="fc" id="L54">            return null;</span>
+        }
+    }
+
+    /**
+     * @brief Retrieves all recipes from the system.
+     * @return A list of all Recipe objects, or null if retrieval fails.
+     */
+    public List&lt;Recipe&gt; getAllRecipes() {
+        try {
+<span class="fc" id="L64">            return recipeDAO.getAllRecipes();</span>
+<span class="fc" id="L65">        } catch (Exception e) {</span>
+<span class="fc" id="L66">            System.out.println(&quot;Error retrieving recipes: &quot; + e.getMessage());</span>
+<span class="fc" id="L67">            return null;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,313 @@
+\doxysection{com.\+aygazyanar.\+recipe.\+Recipe Class Reference}
+\hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{}\label{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}\index{com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}}
+
+
+Represents a recipe consisting of multiple ingredients and their quantities.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_aa7d42e38eac429018b3d1dfcf21b5d0a}{Recipe}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that initializes the ingredient list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a4c913aabcbd226b26e6cb2668f7f63c3}{Recipe}} (int id, String name)
+\begin{DoxyCompactList}\small\item\em Constructs a recipe with the specified ID and name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_aa87bf48419d7220b8f4bfa3ce81dd105}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Gets the recipe ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a94a0dc660d5b8bf35060200f66633c43}{set\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Sets the recipe ID. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a2313f70a1f2b52f8232e2e381b852d49}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the recipe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a6a939792c7665a17d12bdfb15368da13}{set\+Name}} (String name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the recipe. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{Recipe\+Ingredient}} $>$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_ae2dc13503829f6614b44cb7f26e00814}{get\+Ingredients}} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of ingredients in the recipe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a64553b60aa3dee22a763af2fd2df0355}{set\+Ingredients}} (List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{Recipe\+Ingredient}} $>$ ingredients)
+\begin{DoxyCompactList}\small\item\em Sets the list of ingredients for the recipe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a793e47aa009306513fc8b2172b51c3ba}{add\+Ingredient}} (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{Recipe\+Ingredient}} recipe\+Ingredient)
+\begin{DoxyCompactList}\small\item\em Adds a new ingredient to the recipe. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a762e720ec7da59298fc4c346fb28d1c8}{calculate\+Total\+Cost}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the total cost of the recipe based on its ingredients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a recipe consisting of multiple ingredients and their quantities. 
+
+Provides methods to manage ingredients within a recipe and calculate the total cost. 
+
+Definition at line \mbox{\hyperlink{Recipe_8java_source_l00017}{17}} of file \mbox{\hyperlink{Recipe_8java_source}{Recipe.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_aa7d42e38eac429018b3d1dfcf21b5d0a}\label{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_aa7d42e38eac429018b3d1dfcf21b5d0a} 
+\index{com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}!Recipe@{Recipe}}
+\index{Recipe@{Recipe}!com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}}
+\doxysubsubsection{\texorpdfstring{Recipe()}{Recipe()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily com.\+aygazyanar.\+recipe.\+Recipe.\+Recipe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor that initializes the ingredient list. 
+
+
+
+Definition at line \mbox{\hyperlink{Recipe_8java_source_l00037}{37}} of file \mbox{\hyperlink{Recipe_8java_source}{Recipe.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ ingredients\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a4c913aabcbd226b26e6cb2668f7f63c3}\label{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a4c913aabcbd226b26e6cb2668f7f63c3} 
+\index{com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}!Recipe@{Recipe}}
+\index{Recipe@{Recipe}!com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}}
+\doxysubsubsection{\texorpdfstring{Recipe()}{Recipe()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily com.\+aygazyanar.\+recipe.\+Recipe.\+Recipe (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{String}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructs a recipe with the specified ID and name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The recipe\textquotesingle{}s unique identifier. \\
+\hline
+{\em name} & The name of the recipe. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Recipe_8java_source_l00046}{46}} of file \mbox{\hyperlink{Recipe_8java_source}{Recipe.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ this.id\ =\ id;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ this.ingredients\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a793e47aa009306513fc8b2172b51c3ba}\label{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a793e47aa009306513fc8b2172b51c3ba} 
+\index{com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}!addIngredient@{addIngredient}}
+\index{addIngredient@{addIngredient}!com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}}
+\doxysubsubsection{\texorpdfstring{addIngredient()}{addIngredient()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Recipe.\+add\+Ingredient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{Recipe\+Ingredient}}}]{recipe\+Ingredient }\end{DoxyParamCaption})}
+
+
+
+Adds a new ingredient to the recipe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recipe\+Ingredient} & The ingredient with quantity and unit to add. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Recipe_8java_source_l00104}{104}} of file \mbox{\hyperlink{Recipe_8java_source}{Recipe.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ ingredients.add(recipeIngredient);}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{RecipeDAOImpl_8java_source_l00134}{com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl.\+get\+All\+Recipes()}}, and \mbox{\hyperlink{RecipeDAOImpl_8java_source_l00100}{com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl.\+get\+Recipe\+By\+Id()}}.
+
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a762e720ec7da59298fc4c346fb28d1c8}\label{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a762e720ec7da59298fc4c346fb28d1c8} 
+\index{com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}!calculateTotalCost@{calculateTotalCost}}
+\index{calculateTotalCost@{calculateTotalCost}!com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}}
+\doxysubsubsection{\texorpdfstring{calculateTotalCost()}{calculateTotalCost()}}
+{\footnotesize\ttfamily double com.\+aygazyanar.\+recipe.\+Recipe.\+calculate\+Total\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the total cost of the recipe based on its ingredients. 
+
+\begin{DoxyReturn}{Returns}
+The total cost of the recipe. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Recipe_8java_source_l00112}{112}} of file \mbox{\hyperlink{Recipe_8java_source}{Recipe.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ total\ =\ 0;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (RecipeIngredient\ ri\ :\ ingredients)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ total\ +=\ ri.getQuantity()\ *\ ri.getIngredient().getPrice();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ total;}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_aa87bf48419d7220b8f4bfa3ce81dd105}\label{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_aa87bf48419d7220b8f4bfa3ce81dd105} 
+\index{com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}!getId@{getId}}
+\index{getId@{getId}!com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int com.\+aygazyanar.\+recipe.\+Recipe.\+get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the recipe ID. 
+
+\begin{DoxyReturn}{Returns}
+The ID of the recipe. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Recipe_8java_source_l00056}{56}} of file \mbox{\hyperlink{Recipe_8java_source}{Recipe.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ id;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{RecipeDAOImpl_8java_source_l00134}{com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl.\+get\+All\+Recipes()}}, and \mbox{\hyperlink{RecipeDAOImpl_8java_source_l00100}{com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl.\+get\+Recipe\+By\+Id()}}.
+
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_ae2dc13503829f6614b44cb7f26e00814}\label{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_ae2dc13503829f6614b44cb7f26e00814} 
+\index{com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}!getIngredients@{getIngredients}}
+\index{getIngredients@{getIngredients}!com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}}
+\doxysubsubsection{\texorpdfstring{getIngredients()}{getIngredients()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{Recipe\+Ingredient}} $>$ com.\+aygazyanar.\+recipe.\+Recipe.\+get\+Ingredients (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the list of ingredients in the recipe. 
+
+\begin{DoxyReturn}{Returns}
+List of Recipe\+Ingredient objects. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Recipe_8java_source_l00088}{88}} of file \mbox{\hyperlink{Recipe_8java_source}{Recipe.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ingredients;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a2313f70a1f2b52f8232e2e381b852d49}\label{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a2313f70a1f2b52f8232e2e381b852d49} 
+\index{com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}!getName@{getName}}
+\index{getName@{getName}!com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily String com.\+aygazyanar.\+recipe.\+Recipe.\+get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the name of the recipe. 
+
+\begin{DoxyReturn}{Returns}
+The recipe name. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Recipe_8java_source_l00072}{72}} of file \mbox{\hyperlink{Recipe_8java_source}{Recipe.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a94a0dc660d5b8bf35060200f66633c43}\label{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a94a0dc660d5b8bf35060200f66633c43} 
+\index{com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}!setId@{setId}}
+\index{setId@{setId}!com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Recipe.\+set\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Sets the recipe ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID to assign to the recipe. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Recipe_8java_source_l00064}{64}} of file \mbox{\hyperlink{Recipe_8java_source}{Recipe.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ this.id\ =\ id;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a64553b60aa3dee22a763af2fd2df0355}\label{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a64553b60aa3dee22a763af2fd2df0355} 
+\index{com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}!setIngredients@{setIngredients}}
+\index{setIngredients@{setIngredients}!com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}}
+\doxysubsubsection{\texorpdfstring{setIngredients()}{setIngredients()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Recipe.\+set\+Ingredients (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeIngredient}{Recipe\+Ingredient}} $>$}]{ingredients }\end{DoxyParamCaption})}
+
+
+
+Sets the list of ingredients for the recipe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredients} & List of Recipe\+Ingredient objects. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Recipe_8java_source_l00096}{96}} of file \mbox{\hyperlink{Recipe_8java_source}{Recipe.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ this.ingredients\ =\ ingredients;}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a6a939792c7665a17d12bdfb15368da13}\label{classcom_1_1aygazyanar_1_1recipe_1_1Recipe_a6a939792c7665a17d12bdfb15368da13} 
+\index{com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}!setName@{setName}}
+\index{setName@{setName}!com.aygazyanar.recipe.Recipe@{com.aygazyanar.recipe.Recipe}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Recipe.\+set\+Name (\begin{DoxyParamCaption}\item[{String}]{name }\end{DoxyParamCaption})}
+
+
+
+Sets the name of the recipe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The new name to assign to the recipe. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Recipe_8java_source_l00080}{80}} of file \mbox{\hyperlink{Recipe_8java_source}{Recipe.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+recipe-\/app/src/main/java/com/aygazyanar/recipe/\mbox{\hyperlink{Recipe_8java}{Recipe.\+java}}\end{DoxyCompactItemize}

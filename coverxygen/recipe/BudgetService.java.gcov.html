@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - Documentation Coverage Report - recipe/BudgetService.java</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">recipe</a> - BudgetService.java<span style="font-size: 80%;"> (source / <a href="BudgetService.java.func-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">Documentation Coverage Report</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">3</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2025-04-02 08:38:14</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">-</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+</td>
+            <td></td>
+          </tr>
+                  <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span> <span class="tlaGNC tlaBgGNC">           1 : /**</span></span>
+<span id="L2"><span class="lineNum">       2</span>              :  * @file BudgetService.java</span>
+<span id="L3"><span class="lineNum">       3</span>              :  * @brief Provides functionality for budget planning based on recipe costs.</span>
+<span id="L4"><span class="lineNum">       4</span>              :  */</span>
+<span id="L5"><span class="lineNum">       5</span>              : </span>
+<span id="L6"><span class="lineNum">       6</span>              : package com.aygazyanar.recipe;</span>
+<span id="L7"><span class="lineNum">       7</span>              : </span>
+<span id="L8"><span class="lineNum">       8</span>              : import java.util.List;</span>
+<span id="L9"><span class="lineNum">       9</span>              : </span>
+<span id="L10"><span class="lineNum">      10</span>              : /**</span>
+<span id="L11"><span class="lineNum">      11</span>              :  * @class BudgetService</span>
+<span id="L12"><span class="lineNum">      12</span>              :  * @brief Provides functionality for planning meals within a given budget.</span>
+<span id="L13"><span class="lineNum">      13</span>              :  *</span>
+<span id="L14"><span class="lineNum">      14</span>              :  * This service class compares the total cost of a list of recipes against a specified budget</span>
+<span id="L15"><span class="lineNum">      15</span>              :  * and outputs whether the budget is exceeded or not.</span>
+<span id="L16"><span class="lineNum">      16</span>              :  */</span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">           1 : public class BudgetService {</span></span>
+<span id="L18"><span class="lineNum">      18</span>              : </span>
+<span id="L19"><span class="lineNum">      19</span>              :     /**</span>
+<span id="L20"><span class="lineNum">      20</span>              :      * @brief Plans meals by calculating the total cost of given recipes and comparing it to the budget.</span>
+<span id="L21"><span class="lineNum">      21</span>              :      *</span>
+<span id="L22"><span class="lineNum">      22</span>              :      * This method calculates the total cost of all provided recipes and prints the cost</span>
+<span id="L23"><span class="lineNum">      23</span>              :      * of each recipe, the total cost, and whether the total is within or over the specified budget.</span>
+<span id="L24"><span class="lineNum">      24</span>              :      *</span>
+<span id="L25"><span class="lineNum">      25</span>              :      * @param budget The total budget available.</span>
+<span id="L26"><span class="lineNum">      26</span>              :      * @param recipes The list of recipes to be considered in the budget planning.</span>
+<span id="L27"><span class="lineNum">      27</span>              :      */</span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">           1 :     public void planBudget(double budget, List&lt;Recipe&gt; recipes) {</span></span>
+<span id="L29"><span class="lineNum">      29</span>              :         double totalCost = 0;</span>
+<span id="L30"><span class="lineNum">      30</span>              :         System.out.println(&quot;Planning meals within a budget of: &quot; + budget);</span>
+<span id="L31"><span class="lineNum">      31</span>              :         for (Recipe recipe : recipes) {</span>
+<span id="L32"><span class="lineNum">      32</span>              :             double cost = recipe.calculateTotalCost();</span>
+<span id="L33"><span class="lineNum">      33</span>              :             totalCost += cost;</span>
+<span id="L34"><span class="lineNum">      34</span>              :             System.out.println(&quot;Recipe: &quot; + recipe.getName() + &quot;, Cost: &quot; + cost);</span>
+<span id="L35"><span class="lineNum">      35</span>              :         }</span>
+<span id="L36"><span class="lineNum">      36</span>              :         System.out.println(&quot;Total cost: &quot; + totalCost);</span>
+<span id="L37"><span class="lineNum">      37</span>              :         if (totalCost &gt; budget) {</span>
+<span id="L38"><span class="lineNum">      38</span>              :             System.out.println(&quot;Warning: Total cost exceeds the budget.&quot;);</span>
+<span id="L39"><span class="lineNum">      39</span>              :         } else {</span>
+<span id="L40"><span class="lineNum">      40</span>              :             System.out.println(&quot;Within budget.&quot;);</span>
+<span id="L41"><span class="lineNum">      41</span>              :         }</span>
+<span id="L42"><span class="lineNum">      42</span>              :     }</span>
+<span id="L43"><span class="lineNum">      43</span>              : }</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.0-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Application.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">recipe-app</a> &gt; <a href="index.source.html" class="el_package">com.aygazyanar.recipe</a> &gt; <span class="el_source">Application.java</span></div><h1>Application.java</h1><pre class="source lang-java linenums">package com.aygazyanar.recipe;
+
+
+
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ * @class Application
+ * @brief Entry point of the Recipe Cost Calculator application.
+ *
+ * Provides a text-based menu for user registration, login, ingredient management,
+ * recipe costing, price adjustment, and budget planning.
+ */
+<span class="nc" id="L15">public class Application {</span>
+
+    /** 
+     * @brief Handles user authentication processes such as register and login.
+     */
+    private static AuthService authService;
+
+    /**
+     * @brief Manages operations related to ingredients (add, update, list).
+     */
+    private static IngredientService ingredientService;
+
+    /**
+     * @brief Handles recipe creation and costing features.
+     */
+    private static RecipeService recipeService;
+
+    /**
+     * @brief Provides functionality to plan meals within a user-defined budget.
+     */
+    private static BudgetService budgetService;
+
+    /**
+     * @brief Holds the currently logged-in user during application runtime.
+     */
+    private static User currentUser;
+
+    /**
+     * @brief Main method of the application. Initializes services and handles main menu navigation.
+     * @param args Command line arguments (not used).
+     */
+    public static void main(String[] args) {
+        try {
+<span class="fc" id="L48">            authService = new AuthService();</span>
+<span class="fc" id="L49">            ingredientService = new IngredientService();</span>
+<span class="fc" id="L50">            recipeService = new RecipeService();</span>
+<span class="fc" id="L51">            budgetService = new BudgetService();</span>
+<span class="nc" id="L52">        } catch (Exception e) {</span>
+<span class="nc" id="L53">            System.out.println(&quot;Error initializing services: &quot; + e.getMessage());</span>
+<span class="nc" id="L54">            return;</span>
+<span class="fc" id="L55">        }</span>
+
+<span class="fc" id="L57">        Scanner scanner = new Scanner(System.in);</span>
+<span class="fc" id="L58">        System.out.println(&quot;Welcome to Recipe Cost Calculator!&quot;);</span>
+
+<span class="fc" id="L60">        boolean exit = false;</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        while (!exit) {</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">            if (currentUser == null) {</span>
+<span class="fc" id="L63">                System.out.println(&quot;1. Register&quot;);</span>
+<span class="fc" id="L64">                System.out.println(&quot;2. Login&quot;);</span>
+<span class="fc" id="L65">                System.out.println(&quot;0. Exit&quot;);</span>
+<span class="fc" id="L66">                System.out.print(&quot;Select an option: &quot;);</span>
+<span class="fc" id="L67">                int option = Integer.parseInt(scanner.nextLine());</span>
+<span class="fc bfc" id="L68" title="All 4 branches covered.">                switch (option) {</span>
+                    case 1:
+<span class="fc" id="L70">                        register(scanner);</span>
+<span class="fc" id="L71">                        break;</span>
+                    case 2:
+<span class="fc" id="L73">                        login(scanner);</span>
+<span class="fc" id="L74">                        break;</span>
+                    case 0:
+<span class="fc" id="L76">                        exit = true;</span>
+<span class="fc" id="L77">                        break;</span>
+                    default:
+<span class="fc" id="L79">                        System.out.println(&quot;Invalid option.&quot;);</span>
+                }
+<span class="fc" id="L81">            } else {</span>
+<span class="fc" id="L82">                System.out.println(&quot;\nMain Menu:&quot;);</span>
+<span class="fc" id="L83">                System.out.println(&quot;1. Ingredient Management&quot;);</span>
+<span class="fc" id="L84">                System.out.println(&quot;2. Recipe Costing&quot;);</span>
+<span class="fc" id="L85">                System.out.println(&quot;3. Price Adjustment&quot;);</span>
+<span class="fc" id="L86">                System.out.println(&quot;4. Budget Planner&quot;);</span>
+<span class="fc" id="L87">                System.out.println(&quot;5. Logout&quot;);</span>
+<span class="fc" id="L88">                System.out.println(&quot;0. Exit&quot;);</span>
+<span class="fc" id="L89">                System.out.print(&quot;Select an option: &quot;);</span>
+<span class="fc" id="L90">                int option = Integer.parseInt(scanner.nextLine());</span>
+<span class="fc bfc" id="L91" title="All 7 branches covered.">                switch (option) {</span>
+                    case 1:
+<span class="fc" id="L93">                        ingredientManagement(scanner);</span>
+<span class="fc" id="L94">                        break;</span>
+                    case 2:
+<span class="fc" id="L96">                        recipeCosting(scanner);</span>
+<span class="fc" id="L97">                        break;</span>
+                    case 3:
+<span class="fc" id="L99">                        priceAdjustment(scanner);</span>
+<span class="fc" id="L100">                        break;</span>
+                    case 4:
+<span class="fc" id="L102">                        budgetPlanner(scanner);</span>
+<span class="fc" id="L103">                        break;</span>
+                    case 5:
+<span class="fc" id="L105">                        currentUser = null;</span>
+<span class="fc" id="L106">                        System.out.println(&quot;Logged out successfully.&quot;);</span>
+<span class="fc" id="L107">                        break;</span>
+                    case 0:
+<span class="fc" id="L109">                        exit = true;</span>
+<span class="fc" id="L110">                        break;</span>
+                    default:
+<span class="fc" id="L112">                        System.out.println(&quot;Invalid option.&quot;);</span>
+                }
+<span class="fc" id="L114">            }</span>
+        }
+<span class="fc" id="L116">        scanner.close();</span>
+<span class="fc" id="L117">        System.out.println(&quot;Goodbye!&quot;);</span>
+<span class="fc" id="L118">    }</span>
+
+    /**
+     * @brief Handles user registration.
+     * @param scanner Scanner object for user input.
+     */
+    private static void register(Scanner scanner) {
+<span class="fc" id="L125">        System.out.print(&quot;Enter username: &quot;);</span>
+<span class="fc" id="L126">        String username = scanner.nextLine().trim();</span>
+<span class="fc" id="L127">        System.out.print(&quot;Enter password: &quot;);</span>
+<span class="fc" id="L128">        String password = scanner.nextLine().trim();</span>
+<span class="fc" id="L129">        authService.register(username, password);</span>
+<span class="fc" id="L130">    }</span>
+
+    /**
+     * @brief Handles user login.
+     * @param scanner Scanner object for user input.
+     */
+    private static void login(Scanner scanner) {
+<span class="fc" id="L137">        System.out.print(&quot;Enter username: &quot;);</span>
+<span class="fc" id="L138">        String username = scanner.nextLine().trim();</span>
+<span class="fc" id="L139">        System.out.print(&quot;Enter password: &quot;);</span>
+<span class="fc" id="L140">        String password = scanner.nextLine().trim();</span>
+<span class="fc" id="L141">        currentUser = authService.login(username, password);</span>
+<span class="fc" id="L142">    }</span>
+
+    /**
+     * @brief Handles ingredient management options (add, update, view).
+     * @param scanner Scanner object for user input.
+     */
+    private static void ingredientManagement(Scanner scanner) {
+<span class="fc" id="L149">        boolean back = false;</span>
+<span class="fc bfc" id="L150" title="All 2 branches covered.">        while (!back) {</span>
+<span class="fc" id="L151">            System.out.println(&quot;\nIngredient Management:&quot;);</span>
+<span class="fc" id="L152">            System.out.println(&quot;1. Add Ingredient&quot;);</span>
+<span class="fc" id="L153">            System.out.println(&quot;2. Update Ingredient&quot;);</span>
+<span class="fc" id="L154">            System.out.println(&quot;3. View All Ingredients&quot;);</span>
+<span class="fc" id="L155">            System.out.println(&quot;0. Back&quot;);</span>
+<span class="fc" id="L156">            System.out.print(&quot;Select an option: &quot;);</span>
+<span class="fc" id="L157">            int option = Integer.parseInt(scanner.nextLine());</span>
+<span class="pc bpc" id="L158" title="1 of 5 branches missed.">            switch (option) {</span>
+                case 1:
+<span class="fc" id="L160">                    System.out.print(&quot;Enter ingredient name: &quot;);</span>
+<span class="fc" id="L161">                    String name = scanner.nextLine().trim();</span>
+<span class="fc" id="L162">                    System.out.print(&quot;Enter price: &quot;);</span>
+<span class="fc" id="L163">                    double price = Double.parseDouble(scanner.nextLine());</span>
+<span class="fc" id="L164">                    System.out.print(&quot;Enter category: &quot;);</span>
+<span class="fc" id="L165">                    String category = scanner.nextLine().trim();</span>
+<span class="fc" id="L166">                    Ingredient ingredient = new Ingredient(0, name, price, category);</span>
+<span class="fc" id="L167">                    ingredientService.addIngredient(ingredient);</span>
+<span class="fc" id="L168">                    break;</span>
+                case 2:
+<span class="fc" id="L170">                    System.out.print(&quot;Enter ingredient ID to update: &quot;);</span>
+<span class="fc" id="L171">                    int id = Integer.parseInt(scanner.nextLine());</span>
+<span class="fc" id="L172">                    System.out.print(&quot;Enter new name: &quot;);</span>
+<span class="fc" id="L173">                    String newName = scanner.nextLine().trim();</span>
+<span class="fc" id="L174">                    System.out.print(&quot;Enter new price: &quot;);</span>
+<span class="fc" id="L175">                    double newPrice = Double.parseDouble(scanner.nextLine());</span>
+<span class="fc" id="L176">                    System.out.print(&quot;Enter new category: &quot;);</span>
+<span class="fc" id="L177">                    String newCategory = scanner.nextLine().trim();</span>
+<span class="fc" id="L178">                    Ingredient ingToUpdate = new Ingredient(id, newName, newPrice, newCategory);</span>
+<span class="fc" id="L179">                    ingredientService.updateIngredient(ingToUpdate);</span>
+<span class="fc" id="L180">                    break;</span>
+                case 3:
+<span class="fc" id="L182">                    List&lt;Ingredient&gt; ingredients = ingredientService.getAllIngredients();</span>
+<span class="pc bpc" id="L183" title="2 of 4 branches missed.">                    if (ingredients == null || ingredients.isEmpty()) {</span>
+<span class="nc" id="L184">                        System.out.println(&quot;No ingredients found.&quot;);</span>
+                    } else {
+<span class="fc bfc" id="L186" title="All 2 branches covered.">                        for (Ingredient ing : ingredients) {</span>
+<span class="fc" id="L187">                            System.out.println(&quot;ID: &quot; + ing.getId() + &quot;, Name: &quot; + ing.getName() +</span>
+<span class="fc" id="L188">                                    &quot;, Price: &quot; + ing.getPrice() + &quot;, Category: &quot; + ing.getCategory());</span>
+<span class="fc" id="L189">                        }</span>
+                    }
+<span class="fc" id="L191">                    break;</span>
+                case 0:
+<span class="fc" id="L193">                    back = true;</span>
+<span class="fc" id="L194">                    break;</span>
+                default:
+<span class="nc" id="L196">                    System.out.println(&quot;Invalid option.&quot;);</span>
+            }
+<span class="fc" id="L198">        }</span>
+<span class="fc" id="L199">    }</span>
+
+    /**
+     * @brief Handles recipe costing flow: select ingredients and calculate total cost.
+     * @param scanner Scanner object for user input.
+     */
+    private static void recipeCosting(Scanner scanner) {
+<span class="fc" id="L206">        System.out.println(&quot;\nRecipe Costing:&quot;);</span>
+<span class="fc" id="L207">        System.out.print(&quot;Enter recipe name: &quot;);</span>
+<span class="fc" id="L208">        String recipeName = scanner.nextLine().trim();</span>
+<span class="fc" id="L209">        Recipe recipe = new Recipe(0, recipeName);</span>
+
+<span class="fc" id="L211">        List&lt;Ingredient&gt; allIngredients = ingredientService.getAllIngredients();</span>
+<span class="pc bpc" id="L212" title="1 of 4 branches missed.">        if (allIngredients == null || allIngredients.isEmpty()) {</span>
+<span class="fc" id="L213">            System.out.println(&quot;No ingredients available in the system. Please add ingredients first.&quot;);</span>
+<span class="fc" id="L214">            return;</span>
+        }
+<span class="fc" id="L216">        System.out.println(&quot;Available Ingredients:&quot;);</span>
+<span class="fc bfc" id="L217" title="All 2 branches covered.">        for (Ingredient ing : allIngredients) {</span>
+<span class="fc" id="L218">            System.out.println(&quot;ID: &quot; + ing.getId() + &quot; - &quot; + ing.getName() </span>
+<span class="fc" id="L219">                + &quot; (Price: &quot; + ing.getPrice() + &quot;, Category: &quot; + ing.getCategory() + &quot;)&quot;);</span>
+<span class="fc" id="L220">        }</span>
+
+<span class="fc" id="L222">        boolean addMore = true;</span>
+<span class="fc bfc" id="L223" title="All 2 branches covered.">        while (addMore) {</span>
+<span class="fc" id="L224">            System.out.print(&quot;Enter ingredient ID: &quot;);</span>
+<span class="fc" id="L225">            int ingredientId = Integer.parseInt(scanner.nextLine());</span>
+<span class="fc" id="L226">            Ingredient ingredient = ingredientService.getIngredientById(ingredientId);</span>
+<span class="pc bpc" id="L227" title="1 of 2 branches missed.">            if (ingredient == null) {</span>
+<span class="nc" id="L228">                System.out.println(&quot;Ingredient not found. Please try again.&quot;);</span>
+            } else {
+<span class="fc" id="L230">                System.out.print(&quot;Enter quantity: &quot;);</span>
+<span class="fc" id="L231">                double quantity = Double.parseDouble(scanner.nextLine());</span>
+<span class="fc" id="L232">                System.out.print(&quot;Enter unit: &quot;);</span>
+<span class="fc" id="L233">                String unit = scanner.nextLine().trim();</span>
+<span class="fc" id="L234">                recipe.addIngredient(new RecipeIngredient(ingredient, quantity, unit));</span>
+            }
+<span class="fc" id="L236">            System.out.print(&quot;Add another ingredient? (y/n): &quot;);</span>
+<span class="fc" id="L237">            String choice = scanner.nextLine();</span>
+<span class="pc bpc" id="L238" title="1 of 2 branches missed.">            if (!choice.equalsIgnoreCase(&quot;y&quot;)) {</span>
+<span class="fc" id="L239">                addMore = false;</span>
+            }
+<span class="fc" id="L241">        }</span>
+
+<span class="pc bpc" id="L243" title="1 of 2 branches missed.">        if (recipe.getIngredients().isEmpty()) {</span>
+<span class="nc" id="L244">            System.out.println(&quot;No ingredients added to the recipe. Aborting recipe creation.&quot;);</span>
+        } else {
+<span class="fc" id="L246">            recipeService.addRecipe(recipe);</span>
+<span class="fc" id="L247">            double totalCost = recipe.calculateTotalCost();</span>
+<span class="fc" id="L248">            System.out.println(&quot;Total cost of recipe \&quot;&quot; + recipe.getName() + &quot;\&quot;: &quot; + totalCost);</span>
+        }
+<span class="fc" id="L250">    }</span>
+
+    /**
+     * @brief Adjusts the price of an ingredient by a given percentage.
+     * @param scanner Scanner object for user input.
+     */
+    private static void priceAdjustment(Scanner scanner) {
+<span class="fc" id="L257">        System.out.println(&quot;\nPrice Adjustment:&quot;);</span>
+<span class="fc" id="L258">        System.out.print(&quot;Enter ingredient ID to adjust price: &quot;);</span>
+<span class="fc" id="L259">        int ingredientId = Integer.parseInt(scanner.nextLine());</span>
+<span class="fc" id="L260">        System.out.print(&quot;Do you want to increase or decrease the price? (i/d): &quot;);</span>
+<span class="fc" id="L261">        String type = scanner.nextLine().trim();</span>
+<span class="fc" id="L262">        System.out.print(&quot;Enter percentage: &quot;);</span>
+<span class="fc" id="L263">        double percentage = Double.parseDouble(scanner.nextLine());</span>
+<span class="fc bfc" id="L264" title="All 2 branches covered.">        if (type.equalsIgnoreCase(&quot;i&quot;)) {</span>
+<span class="fc" id="L265">            ingredientService.adjustIngredientPrice(ingredientId, new IncreasePriceStrategy(percentage));</span>
+<span class="pc bpc" id="L266" title="1 of 2 branches missed.">        } else if (type.equalsIgnoreCase(&quot;d&quot;)) {</span>
+<span class="nc" id="L267">            ingredientService.adjustIngredientPrice(ingredientId, new DecreasePriceStrategy(percentage));</span>
+        } else {
+<span class="fc" id="L269">            System.out.println(&quot;Invalid option.&quot;);</span>
+        }
+<span class="fc" id="L271">    }</span>
+
+    /**
+     * @brief Plans a budget using existing recipes and the given budget amount.
+     * @param scanner Scanner object for user input.
+     */
+    private static void budgetPlanner(Scanner scanner) {
+<span class="fc" id="L278">        System.out.println(&quot;\nBudget Planner:&quot;);</span>
+<span class="fc" id="L279">        System.out.print(&quot;Enter your budget: &quot;);</span>
+<span class="fc" id="L280">        double budget = Double.parseDouble(scanner.nextLine());</span>
+<span class="fc" id="L281">        List&lt;Recipe&gt; recipes = recipeService.getAllRecipes();</span>
+<span class="pc bpc" id="L282" title="1 of 4 branches missed.">        if (recipes == null || recipes.isEmpty()) {</span>
+<span class="fc" id="L283">            System.out.println(&quot;No recipes found. Please create recipes first.&quot;);</span>
+        } else {
+<span class="fc" id="L285">            budgetService.planBudget(budget, recipes);</span>
+        }
+<span class="fc" id="L287">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,163 @@
+\doxysection{com.\+aygazyanar.\+recipe.\+User\+DAOImpl Class Reference}
+\hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl}{}\label{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl}\index{com.aygazyanar.recipe.UserDAOImpl@{com.aygazyanar.recipe.UserDAOImpl}}
+
+
+\texorpdfstring{$<$}{<} Main package for the Recipe Cost Calculator application.  
+
+
+Inheritance diagram for com.\+aygazyanar.\+recipe.\+User\+DAOImpl\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_aa61adfe7129543c5dc45f93283a2c656}{User\+DAOImpl}} ()  throws Exception 
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the database connection and ensures the users table exists. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_a4d7fb9bc1d18d18166a1ba821e597796}{create\+User}} (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}} user)  throws Exception 
+\begin{DoxyCompactList}\small\item\em Inserts a new user into the database. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}} \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_a448f02718563803647ef0183f78b1ca9}{get\+User\+By\+Username}} (String username)  throws Exception 
+\begin{DoxyCompactList}\small\item\em Retrieves a user from the database by their username. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Main package for the Recipe Cost Calculator application. 
+
+Implementation of the User\+DAO interface using SQLite via JDBC.
+
+Provides methods to create users and retrieve users by username from the database. 
+
+Definition at line \mbox{\hyperlink{UserDAOImpl_8java_source_l00018}{18}} of file \mbox{\hyperlink{UserDAOImpl_8java_source}{User\+DAOImpl.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_aa61adfe7129543c5dc45f93283a2c656}\label{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_aa61adfe7129543c5dc45f93283a2c656} 
+\index{com.aygazyanar.recipe.UserDAOImpl@{com.aygazyanar.recipe.UserDAOImpl}!UserDAOImpl@{UserDAOImpl}}
+\index{UserDAOImpl@{UserDAOImpl}!com.aygazyanar.recipe.UserDAOImpl@{com.aygazyanar.recipe.UserDAOImpl}}
+\doxysubsubsection{\texorpdfstring{UserDAOImpl()}{UserDAOImpl()}}
+{\footnotesize\ttfamily com.\+aygazyanar.\+recipe.\+User\+DAOImpl.\+User\+DAOImpl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Constructor that initializes the database connection and ensures the users table exists. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If a database connection or table creation error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{UserDAOImpl_8java_source_l00029}{29}} of file \mbox{\hyperlink{UserDAOImpl_8java_source}{User\+DAOImpl.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ this.connection\ =\ DBConnection.getInstance().getConnection();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ createUsersTable();}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{DBConnection_8java_source_l00057}{com.\+aygazyanar.\+recipe.\+DBConnection.\+get\+Connection()}}, and \mbox{\hyperlink{DBConnection_8java_source_l00069}{com.\+aygazyanar.\+recipe.\+DBConnection.\+get\+Instance()}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_a4d7fb9bc1d18d18166a1ba821e597796}\label{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_a4d7fb9bc1d18d18166a1ba821e597796} 
+\index{com.aygazyanar.recipe.UserDAOImpl@{com.aygazyanar.recipe.UserDAOImpl}!createUser@{createUser}}
+\index{createUser@{createUser}!com.aygazyanar.recipe.UserDAOImpl@{com.aygazyanar.recipe.UserDAOImpl}}
+\doxysubsubsection{\texorpdfstring{createUser()}{createUser()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+User\+DAOImpl.\+create\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}}}]{user }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Inserts a new user into the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The User object to be added. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If a database error occurs during the insert operation. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_a490f6f60e6925353daba00829e041bd3}{com.\+aygazyanar.\+recipe.\+User\+DAO}}.
+
+
+
+Definition at line \mbox{\hyperlink{UserDAOImpl_8java_source_l00054}{54}} of file \mbox{\hyperlink{UserDAOImpl_8java_source}{User\+DAOImpl.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}INSERT\ INTO\ users\ (username,\ password)\ VALUES\ (?,?)"{}};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ PreparedStatement\ pstmt\ =\ connection.prepareStatement(sql);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ pstmt.setString(1,\ user.getUsername());}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ pstmt.setString(2,\ user.getPassword());}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ pstmt.executeUpdate();}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_a448f02718563803647ef0183f78b1ca9}\label{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl_a448f02718563803647ef0183f78b1ca9} 
+\index{com.aygazyanar.recipe.UserDAOImpl@{com.aygazyanar.recipe.UserDAOImpl}!getUserByUsername@{getUserByUsername}}
+\index{getUserByUsername@{getUserByUsername}!com.aygazyanar.recipe.UserDAOImpl@{com.aygazyanar.recipe.UserDAOImpl}}
+\doxysubsubsection{\texorpdfstring{getUserByUsername()}{getUserByUsername()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}} com.\+aygazyanar.\+recipe.\+User\+DAOImpl.\+get\+User\+By\+Username (\begin{DoxyParamCaption}\item[{String}]{username }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Retrieves a user from the database by their username. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The User object if found, otherwise null. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If a database query error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_a372faa3feb290b17e07a312bc8e697c9}{com.\+aygazyanar.\+recipe.\+User\+DAO}}.
+
+
+
+Definition at line \mbox{\hyperlink{UserDAOImpl_8java_source_l00070}{70}} of file \mbox{\hyperlink{UserDAOImpl_8java_source}{User\+DAOImpl.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ String\ sql\ =\ \textcolor{stringliteral}{"{}SELECT\ *\ FROM\ users\ WHERE\ username\ =\ ?"{}};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ PreparedStatement\ pstmt\ =\ connection.prepareStatement(sql);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ pstmt.setString(1,\ username);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ pstmt.executeQuery();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rs.next())\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ User(}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rs.getInt(\textcolor{stringliteral}{"{}id"{}}),}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rs.getString(\textcolor{stringliteral}{"{}username"{}}),}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rs.getString(\textcolor{stringliteral}{"{}password"{}})}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+recipe-\/app/src/main/java/com/aygazyanar/recipe/\mbox{\hyperlink{UserDAOImpl_8java}{User\+DAOImpl.\+java}}\end{DoxyCompactItemize}

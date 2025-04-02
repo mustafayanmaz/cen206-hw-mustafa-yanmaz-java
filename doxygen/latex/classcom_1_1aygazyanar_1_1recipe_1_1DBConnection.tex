@@ -1,0 +1,106 @@
+\doxysection{com.\+aygazyanar.\+recipe.\+DBConnection Class Reference}
+\hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}{}\label{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}\index{com.aygazyanar.recipe.DBConnection@{com.aygazyanar.recipe.DBConnection}}
+
+
+Singleton class responsible for establishing and providing access to the SQLite database connection.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Connection \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_ac283a250b94b7c8efc89b12ceaa493d2}{get\+Connection}} ()
+\begin{DoxyCompactList}\small\item\em Gets the active database connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}{DBConnection}} \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_a375981392f105a6c7c3d90d21f924234}{get\+Instance}} ()  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Returns the singleton instance of DBConnection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton class responsible for establishing and providing access to the SQLite database connection. 
+
+This class ensures that only one instance of the database connection exists during runtime. It initializes the SQLite JDBC driver and handles reconnection if the connection is closed. 
+
+Definition at line \mbox{\hyperlink{DBConnection_8java_source_l00019}{19}} of file \mbox{\hyperlink{DBConnection_8java_source}{DBConnection.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_ac283a250b94b7c8efc89b12ceaa493d2}\label{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_ac283a250b94b7c8efc89b12ceaa493d2} 
+\index{com.aygazyanar.recipe.DBConnection@{com.aygazyanar.recipe.DBConnection}!getConnection@{getConnection}}
+\index{getConnection@{getConnection}!com.aygazyanar.recipe.DBConnection@{com.aygazyanar.recipe.DBConnection}}
+\doxysubsubsection{\texorpdfstring{getConnection()}{getConnection()}}
+{\footnotesize\ttfamily Connection com.\+aygazyanar.\+recipe.\+DBConnection.\+get\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the active database connection. 
+
+\begin{DoxyReturn}{Returns}
+The JDBC Connection object. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{DBConnection_8java_source_l00057}{57}} of file \mbox{\hyperlink{DBConnection_8java_source}{DBConnection.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ connection;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{DBConnection_8java_source_l00069}{com.\+aygazyanar.\+recipe.\+DBConnection.\+get\+Instance()}}, \mbox{\hyperlink{IngredientDAOImpl_8java_source_l00031}{com.\+aygazyanar.\+recipe.\+Ingredient\+DAOImpl.\+Ingredient\+DAOImpl()}}, \mbox{\hyperlink{RecipeDAOImpl_8java_source_l00031}{com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl.\+Recipe\+DAOImpl()}}, and \mbox{\hyperlink{UserDAOImpl_8java_source_l00029}{com.\+aygazyanar.\+recipe.\+User\+DAOImpl.\+User\+DAOImpl()}}.
+
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_a375981392f105a6c7c3d90d21f924234}\label{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_a375981392f105a6c7c3d90d21f924234} 
+\index{com.aygazyanar.recipe.DBConnection@{com.aygazyanar.recipe.DBConnection}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!com.aygazyanar.recipe.DBConnection@{com.aygazyanar.recipe.DBConnection}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection}{DBConnection}} com.\+aygazyanar.\+recipe.\+DBConnection.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the singleton instance of DBConnection. 
+
+If the instance does not exist or the connection is closed, a new one is created.
+
+\begin{DoxyReturn}{Returns}
+DBConnection singleton instance. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & If connection initialization fails. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{DBConnection_8java_source_l00069}{69}} of file \mbox{\hyperlink{DBConnection_8java_source}{DBConnection.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (instance\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ instance\ =\ \textcolor{keyword}{new}\ DBConnection();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (instance.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_ac283a250b94b7c8efc89b12ceaa493d2}{getConnection}}().isClosed())\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ instance\ =\ \textcolor{keyword}{new}\ DBConnection();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{DBConnection_8java_source_l00057}{com.\+aygazyanar.\+recipe.\+DBConnection.\+get\+Connection()}}.
+
+
+
+Referenced by \mbox{\hyperlink{IngredientDAOImpl_8java_source_l00031}{com.\+aygazyanar.\+recipe.\+Ingredient\+DAOImpl.\+Ingredient\+DAOImpl()}}, \mbox{\hyperlink{RecipeDAOImpl_8java_source_l00031}{com.\+aygazyanar.\+recipe.\+Recipe\+DAOImpl.\+Recipe\+DAOImpl()}}, and \mbox{\hyperlink{UserDAOImpl_8java_source_l00029}{com.\+aygazyanar.\+recipe.\+User\+DAOImpl.\+User\+DAOImpl()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+recipe-\/app/src/main/java/com/aygazyanar/recipe/\mbox{\hyperlink{DBConnection_8java}{DBConnection.\+java}}\end{DoxyCompactItemize}

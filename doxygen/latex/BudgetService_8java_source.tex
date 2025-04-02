@@ -1,0 +1,29 @@
+\doxysection{Budget\+Service.\+java}
+\hypertarget{BudgetService_8java_source}{}\label{BudgetService_8java_source}\index{recipe-\/app/src/main/java/com/aygazyanar/recipe/BudgetService.java@{recipe-\/app/src/main/java/com/aygazyanar/recipe/BudgetService.java}}
+\mbox{\hyperlink{BudgetService_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00006}00006\ \textcolor{keyword}{package\ }com.aygazyanar.recipe;}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00017}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1BudgetService}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1BudgetService}{BudgetService}}\ \{}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00028}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1BudgetService_acd00b8ae69aaac827ef386ad50398e33}{00028}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1BudgetService_acd00b8ae69aaac827ef386ad50398e33}{planBudget}}(\textcolor{keywordtype}{double}\ budget,\ List<Recipe>\ recipes)\ \{}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ totalCost\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Planning\ meals\ within\ a\ budget\ of:\ "{}}\ +\ budget);}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}}\ recipe\ :\ recipes)\ \{}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ cost\ =\ recipe.calculateTotalCost();}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ totalCost\ +=\ cost;}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Recipe:\ "{}}\ +\ recipe.getName()\ +\ \textcolor{stringliteral}{"{},\ Cost:\ "{}}\ +\ cost);}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Total\ cost:\ "{}}\ +\ totalCost);}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (totalCost\ >\ budget)\ \{}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Warning:\ Total\ cost\ exceeds\ the\ budget."{}});}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Within\ budget."{}});}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BudgetService_8java_source_l00043}00043\ \}}
+
+\end{DoxyCode}

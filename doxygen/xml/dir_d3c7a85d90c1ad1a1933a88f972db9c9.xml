@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_d3c7a85d90c1ad1a1933a88f972db9c9" kind="dir">
+    <compoundname>recipe-app/src/main</compoundname>
+    <innerdir refid="dir_ba4c6102c0146c76a15a53d2e6cecd46">recipe-app/src/main/java</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="recipe-app/src/main/"/>
+  </compounddef>
+</doxygen>

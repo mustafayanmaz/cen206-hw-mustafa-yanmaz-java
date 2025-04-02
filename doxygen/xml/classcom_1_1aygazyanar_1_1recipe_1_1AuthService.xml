@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classcom_1_1aygazyanar_1_1recipe_1_1AuthService" kind="class" language="Java" prot="public">
+    <compoundname>com::aygazyanar::recipe::AuthService</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1a21d54bda26573c8a2b633eee019091d8" prot="private" static="no" mutable="no">
+        <type><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO" kindref="compound">UserDAO</ref></type>
+        <definition>UserDAO com.aygazyanar.recipe.AuthService.userDAO</definition>
+        <argsstring></argsstring>
+        <name>userDAO</name>
+        <qualifiedname>com.aygazyanar.recipe.AuthService.userDAO</qualifiedname>
+        <briefdescription>
+<para>Data access object for user operations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/AuthService.java" line="19" column="21" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/AuthService.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1af54cfcc56dbfe5795da88dd766535bab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.aygazyanar.recipe.AuthService.AuthService</definition>
+        <argsstring>()</argsstring>
+        <name>AuthService</name>
+        <qualifiedname>com.aygazyanar.recipe.AuthService.AuthService</qualifiedname>
+        <exceptions> throws Exception </exceptions>
+        <briefdescription>
+<para>Constructs the AuthService and initializes the UserDAO implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the UserDAO initialization fails. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/AuthService.java" line="25" column="12" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/AuthService.java" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1aa7a8d44f3a091637a7b010882add7156" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean com.aygazyanar.recipe.AuthService.register</definition>
+        <argsstring>(String username, String password)</argsstring>
+        <name>register</name>
+        <qualifiedname>com.aygazyanar.recipe.AuthService.register</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+<para>Registers a new user with the given username and password. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the username is already taken, registration fails.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The username of the user to be registered. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The password of the user to be registered. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if registration is successful, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/AuthService.java" line="38" column="20" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/AuthService.java" bodystart="38" bodyend="52"/>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a490f6f60e6925353daba00829e041bd3">com.aygazyanar.recipe.UserDAO.createUser</references>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a372faa3feb290b17e07a312bc8e697c9">com.aygazyanar.recipe.UserDAO.getUserByUsername</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1a8337bf1b2e4199447ef1a7c60f4cf25a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1User" kindref="compound">User</ref></type>
+        <definition>User com.aygazyanar.recipe.AuthService.login</definition>
+        <argsstring>(String username, String password)</argsstring>
+        <name>login</name>
+        <qualifiedname>com.aygazyanar.recipe.AuthService.login</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+<para>Attempts to log in the user with the provided credentials. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The username of the user attempting to log in. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The password of the user. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A User object if login is successful; null otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/AuthService.java" line="61" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/AuthService.java" bodystart="61" bodyend="75"/>
+        <references refid="classcom_1_1aygazyanar_1_1recipe_1_1User_1a00d60ac12e86b6bdd73bd4ba442d70c3" compoundref="User_8java" startline="85" endline="87">com.aygazyanar.recipe.User.getPassword</references>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_1a372faa3feb290b17e07a312bc8e697c9">com.aygazyanar.recipe.UserDAO.getUserByUsername</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Provides authentication services such as user registration and login. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Uses UserDAO to interact with user data stored in the database. </para>
+    </detaileddescription>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/AuthService.java" line="14" column="7" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/AuthService.java" bodystart="14" bodyend="76"/>
+    <listofallmembers>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1af54cfcc56dbfe5795da88dd766535bab" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::AuthService</scope><name>AuthService</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1a8337bf1b2e4199447ef1a7c60f4cf25a" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::AuthService</scope><name>login</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1aa7a8d44f3a091637a7b010882add7156" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::AuthService</scope><name>register</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService_1a21d54bda26573c8a2b633eee019091d8" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::AuthService</scope><name>userDAO</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

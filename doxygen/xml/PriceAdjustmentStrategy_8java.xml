@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="PriceAdjustmentStrategy_8java" kind="file" language="Java">
+    <compoundname>PriceAdjustmentStrategy.java</compoundname>
+    <innerclass refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy" prot="public">com::aygazyanar::recipe::PriceAdjustmentStrategy</innerclass>
+    <innernamespace refid="namespacecom_1_1aygazyanar_1_1recipe">com::aygazyanar::recipe</innernamespace>
+    <briefdescription>
+<para>Defines the strategy interface for adjusting ingredient prices. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">package<sp/></highlight><highlight class="normal">com.aygazyanar.recipe;<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy" kindref="compound">PriceAdjustmentStrategy</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy_1a869ce7d33e86a67d6952764daf56cfa7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy_1a869ce7d33e86a67d6952764daf56cfa7" kindref="member">adjustPrice</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>currentPrice);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/PriceAdjustmentStrategy.java"/>
+  </compounddef>
+</doxygen>

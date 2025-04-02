@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classcom_1_1aygazyanar_1_1recipe_1_1Application" kind="class" language="Java" prot="public">
+    <compoundname>com::aygazyanar::recipe::Application</compoundname>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a90379d5d59ec5ea52e606fa40de948a9" prot="private" static="yes" mutable="no">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1AuthService" kindref="compound">AuthService</ref></type>
+        <definition>AuthService com.aygazyanar.recipe.Application.authService</definition>
+        <argsstring></argsstring>
+        <name>authService</name>
+        <qualifiedname>com.aygazyanar.recipe.Application.authService</qualifiedname>
+        <briefdescription>
+<para>Handles user authentication processes such as register and login. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="20" column="32" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a1636bbba9121956a7d55c5ce0b62651d" prot="private" static="yes" mutable="no">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1IngredientService" kindref="compound">IngredientService</ref></type>
+        <definition>IngredientService com.aygazyanar.recipe.Application.ingredientService</definition>
+        <argsstring></argsstring>
+        <name>ingredientService</name>
+        <qualifiedname>com.aygazyanar.recipe.Application.ingredientService</qualifiedname>
+        <briefdescription>
+<para>Manages operations related to ingredients (add, update, list). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="25" column="38" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a83a051a0faee0bf8e79dc6412c85fcaf" prot="private" static="yes" mutable="no">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService" kindref="compound">RecipeService</ref></type>
+        <definition>RecipeService com.aygazyanar.recipe.Application.recipeService</definition>
+        <argsstring></argsstring>
+        <name>recipeService</name>
+        <qualifiedname>com.aygazyanar.recipe.Application.recipeService</qualifiedname>
+        <briefdescription>
+<para>Handles recipe creation and costing features. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="30" column="34" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1Application_1aee1a418723009d4b2fd6b64097c1e0f7" prot="private" static="yes" mutable="no">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1BudgetService" kindref="compound">BudgetService</ref></type>
+        <definition>BudgetService com.aygazyanar.recipe.Application.budgetService</definition>
+        <argsstring></argsstring>
+        <name>budgetService</name>
+        <qualifiedname>com.aygazyanar.recipe.Application.budgetService</qualifiedname>
+        <briefdescription>
+<para>Provides functionality to plan meals within a user-defined budget. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="35" column="34" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a9790655e8123709909606a37dcf93e99" prot="private" static="yes" mutable="no">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1User" kindref="compound">User</ref></type>
+        <definition>User com.aygazyanar.recipe.Application.currentUser</definition>
+        <argsstring></argsstring>
+        <name>currentUser</name>
+        <qualifiedname>com.aygazyanar.recipe.Application.currentUser</qualifiedname>
+        <briefdescription>
+<para>Holds the currently logged-in user during application runtime. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="40" column="25" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="40" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a86ec24f4f3ca04f6a5bd94ceaea65ef6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.aygazyanar.recipe.Application.main</definition>
+        <argsstring>(String[] args)</argsstring>
+        <name>main</name>
+        <qualifiedname>com.aygazyanar.recipe.Application.main</qualifiedname>
+        <param>
+          <type>String[]</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Main method of the application. Initializes services and handles main menu navigation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command line arguments (not used). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="46" column="24" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="46" bodyend="118"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a6f272f5d9b67a9aae062dfc00d75cc99" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.aygazyanar.recipe.Application.register</definition>
+        <argsstring>(Scanner scanner)</argsstring>
+        <name>register</name>
+        <qualifiedname>com.aygazyanar.recipe.Application.register</qualifiedname>
+        <param>
+          <type>Scanner</type>
+          <declname>scanner</declname>
+        </param>
+        <briefdescription>
+<para>Handles user registration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scanner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scanner object for user input. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="124" column="25" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="124" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a4a039c681403663d347a291cbefcf272" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.aygazyanar.recipe.Application.login</definition>
+        <argsstring>(Scanner scanner)</argsstring>
+        <name>login</name>
+        <qualifiedname>com.aygazyanar.recipe.Application.login</qualifiedname>
+        <param>
+          <type>Scanner</type>
+          <declname>scanner</declname>
+        </param>
+        <briefdescription>
+<para>Handles user login. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scanner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scanner object for user input. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="136" column="25" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="136" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1Application_1aedf7dab0d42cf9225b28bf7623c9eef3" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.aygazyanar.recipe.Application.ingredientManagement</definition>
+        <argsstring>(Scanner scanner)</argsstring>
+        <name>ingredientManagement</name>
+        <qualifiedname>com.aygazyanar.recipe.Application.ingredientManagement</qualifiedname>
+        <param>
+          <type>Scanner</type>
+          <declname>scanner</declname>
+        </param>
+        <briefdescription>
+<para>Handles ingredient management options (add, update, view). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scanner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scanner object for user input. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="148" column="25" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="148" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a86aa65982075af7054922c259a22072c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.aygazyanar.recipe.Application.recipeCosting</definition>
+        <argsstring>(Scanner scanner)</argsstring>
+        <name>recipeCosting</name>
+        <qualifiedname>com.aygazyanar.recipe.Application.recipeCosting</qualifiedname>
+        <param>
+          <type>Scanner</type>
+          <declname>scanner</declname>
+        </param>
+        <briefdescription>
+<para>Handles recipe costing flow: select ingredients and calculate total cost. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scanner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scanner object for user input. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="205" column="25" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="205" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1Application_1ae9aaf9c614902c91a15f8ffb7122c823" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.aygazyanar.recipe.Application.priceAdjustment</definition>
+        <argsstring>(Scanner scanner)</argsstring>
+        <name>priceAdjustment</name>
+        <qualifiedname>com.aygazyanar.recipe.Application.priceAdjustment</qualifiedname>
+        <param>
+          <type>Scanner</type>
+          <declname>scanner</declname>
+        </param>
+        <briefdescription>
+<para>Adjusts the price of an ingredient by a given percentage. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scanner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scanner object for user input. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="256" column="25" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="256" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a16c12abadca61ef854b6c845f5d6240a" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void com.aygazyanar.recipe.Application.budgetPlanner</definition>
+        <argsstring>(Scanner scanner)</argsstring>
+        <name>budgetPlanner</name>
+        <qualifiedname>com.aygazyanar.recipe.Application.budgetPlanner</qualifiedname>
+        <param>
+          <type>Scanner</type>
+          <declname>scanner</declname>
+        </param>
+        <briefdescription>
+<para>Plans a budget using existing recipes and the given budget amount. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>scanner</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scanner object for user input. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="277" column="25" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="277" bodyend="287"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Entry point of the Recipe Cost Calculator application. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides a text-based menu for user registration, login, ingredient management, recipe costing, price adjustment, and budget planning. </para>
+    </detaileddescription>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" line="15" column="7" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/Application.java" bodystart="15" bodyend="288"/>
+    <listofallmembers>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a90379d5d59ec5ea52e606fa40de948a9" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::Application</scope><name>authService</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a16c12abadca61ef854b6c845f5d6240a" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::Application</scope><name>budgetPlanner</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1aee1a418723009d4b2fd6b64097c1e0f7" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::Application</scope><name>budgetService</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a9790655e8123709909606a37dcf93e99" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::Application</scope><name>currentUser</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1aedf7dab0d42cf9225b28bf7623c9eef3" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::Application</scope><name>ingredientManagement</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a1636bbba9121956a7d55c5ce0b62651d" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::Application</scope><name>ingredientService</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a4a039c681403663d347a291cbefcf272" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::Application</scope><name>login</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a86ec24f4f3ca04f6a5bd94ceaea65ef6" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::Application</scope><name>main</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1ae9aaf9c614902c91a15f8ffb7122c823" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::Application</scope><name>priceAdjustment</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a86aa65982075af7054922c259a22072c" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::Application</scope><name>recipeCosting</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a83a051a0faee0bf8e79dc6412c85fcaf" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::Application</scope><name>recipeService</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1Application_1a6f272f5d9b67a9aae062dfc00d75cc99" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::Application</scope><name>register</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

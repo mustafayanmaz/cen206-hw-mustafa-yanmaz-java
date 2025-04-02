@@ -1,0 +1,63 @@
+\doxysection{com.\+aygazyanar.\+recipe.\+Price\+Adjustment\+Strategy Interface Reference}
+\hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy}{}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy}\index{com.aygazyanar.recipe.PriceAdjustmentStrategy@{com.aygazyanar.recipe.PriceAdjustmentStrategy}}
+
+
+\texorpdfstring{$<$}{<} Main package for the Recipe Cost Calculator application.  
+
+
+Inheritance diagram for com.\+aygazyanar.\+recipe.\+Price\+Adjustment\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.891892cm]{interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy_a869ce7d33e86a67d6952764daf56cfa7}{adjust\+Price}} (double current\+Price)
+\begin{DoxyCompactList}\small\item\em Adjusts the current price based on the implemented strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Main package for the Recipe Cost Calculator application. 
+
+Strategy interface for adjusting the price of an ingredient.
+
+Defines a contract for price modification logic, allowing different adjustment strategies such as increasing or decreasing the price by a percentage. 
+
+Definition at line \mbox{\hyperlink{PriceAdjustmentStrategy_8java_source_l00015}{15}} of file \mbox{\hyperlink{PriceAdjustmentStrategy_8java_source}{Price\+Adjustment\+Strategy.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy_a869ce7d33e86a67d6952764daf56cfa7}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy_a869ce7d33e86a67d6952764daf56cfa7} 
+\index{com.aygazyanar.recipe.PriceAdjustmentStrategy@{com.aygazyanar.recipe.PriceAdjustmentStrategy}!adjustPrice@{adjustPrice}}
+\index{adjustPrice@{adjustPrice}!com.aygazyanar.recipe.PriceAdjustmentStrategy@{com.aygazyanar.recipe.PriceAdjustmentStrategy}}
+\doxysubsubsection{\texorpdfstring{adjustPrice()}{adjustPrice()}}
+{\footnotesize\ttfamily double com.\+aygazyanar.\+recipe.\+Price\+Adjustment\+Strategy.\+adjust\+Price (\begin{DoxyParamCaption}\item[{double}]{current\+Price }\end{DoxyParamCaption})}
+
+
+
+Adjusts the current price based on the implemented strategy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Price} & The original price before adjustment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The adjusted price. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1DecreasePriceStrategy_af56bdd0a5be2502091bbdd395ab403ab}{com.\+aygazyanar.\+recipe.\+Decrease\+Price\+Strategy}}, and \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IncreasePriceStrategy_a7c7d23ec6bcaa1d5ec3ab3edbf9d5e5a}{com.\+aygazyanar.\+recipe.\+Increase\+Price\+Strategy}}.
+
+
+
+Referenced by \mbox{\hyperlink{IngredientService_8java_source_l00092}{com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+adjust\+Ingredient\+Price()}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+recipe-\/app/src/main/java/com/aygazyanar/recipe/\mbox{\hyperlink{PriceAdjustmentStrategy_8java}{Price\+Adjustment\+Strategy.\+java}}\end{DoxyCompactItemize}

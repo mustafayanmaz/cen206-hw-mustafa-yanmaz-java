@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>IngredientService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">recipe-app</a> &gt; <a href="index.source.html" class="el_package">com.aygazyanar.recipe</a> &gt; <span class="el_source">IngredientService.java</span></div><h1>IngredientService.java</h1><pre class="source lang-java linenums">/**
+ * @file IngredientService.java
+ * @brief Service class providing ingredient management logic between application and data layer.
+ */
+
+package com.aygazyanar.recipe;
+
+import java.util.List;
+
+/**
+ * @class IngredientService
+ * @brief Provides service-layer operations for managing ingredients.
+ *
+ * Acts as an intermediary between the application logic and the data access layer.
+ */
+public class IngredientService {
+
+    /**
+     * @brief Data Access Object for ingredient persistence operations.
+     */
+    private IngredientDAO ingredientDAO;
+
+    /**
+     * @brief Constructs the service and initializes the DAO implementation.
+     * @throws Exception If DAO initialization fails.
+     */
+<span class="fc" id="L27">    public IngredientService() throws Exception {</span>
+<span class="fc" id="L28">        this.ingredientDAO = new IngredientDAOImpl();</span>
+<span class="fc" id="L29">    }</span>
+
+    /**
+     * @brief Adds a new ingredient to the system.
+     * @param ingredient The Ingredient object to add.
+     */
+    public void addIngredient(Ingredient ingredient) {
+        try {
+<span class="fc" id="L37">            ingredientDAO.addIngredient(ingredient);</span>
+<span class="fc" id="L38">            System.out.println(&quot;Ingredient added successfully.&quot;);</span>
+<span class="fc" id="L39">        } catch (Exception e) {</span>
+<span class="fc" id="L40">            System.out.println(&quot;Error adding ingredient: &quot; + e.getMessage());</span>
+<span class="fc" id="L41">        }</span>
+<span class="fc" id="L42">    }</span>
+
+    /**
+     * @brief Updates an existing ingredient's details.
+     * @param ingredient The Ingredient object with updated data.
+     */
+    public void updateIngredient(Ingredient ingredient) {
+        try {
+<span class="fc" id="L50">            ingredientDAO.updateIngredient(ingredient);</span>
+<span class="fc" id="L51">            System.out.println(&quot;Ingredient updated successfully.&quot;);</span>
+<span class="fc" id="L52">        } catch (Exception e) {</span>
+<span class="fc" id="L53">            System.out.println(&quot;Error updating ingredient: &quot; + e.getMessage());</span>
+<span class="fc" id="L54">        }</span>
+<span class="fc" id="L55">    }</span>
+
+    /**
+     * @brief Retrieves a list of all ingredients.
+     * @return A List of Ingredient objects, or null if an error occurs.
+     */
+    public List&lt;Ingredient&gt; getAllIngredients() {
+        try {
+<span class="fc" id="L63">            return ingredientDAO.getAllIngredients();</span>
+<span class="fc" id="L64">        } catch (Exception e) {</span>
+<span class="fc" id="L65">            System.out.println(&quot;Error retrieving ingredients: &quot; + e.getMessage());</span>
+<span class="fc" id="L66">            return null;</span>
+        }
+    }
+
+    /**
+     * @brief Retrieves an ingredient by its ID.
+     * @param id The ID of the ingredient to retrieve.
+     * @return The Ingredient object if found, otherwise null.
+     */
+    public Ingredient getIngredientById(int id) {
+        try {
+<span class="fc" id="L77">            return ingredientDAO.getIngredientById(id);</span>
+<span class="fc" id="L78">        } catch (Exception e) {</span>
+<span class="fc" id="L79">            System.out.println(&quot;Error retrieving ingredient: &quot; + e.getMessage());</span>
+<span class="fc" id="L80">            return null;</span>
+        }
+    }
+
+    /**
+     * @brief Adjusts the price of an ingredient using the provided strategy.
+     *
+     * If the ingredient exists, its price is recalculated and updated.
+     *
+     * @param ingredientId The ID of the ingredient to update.
+     * @param strategy The price adjustment strategy (increase or decrease).
+     */
+    public void adjustIngredientPrice(int ingredientId, PriceAdjustmentStrategy strategy) {
+        try {
+<span class="fc" id="L94">            Ingredient ingredient = ingredientDAO.getIngredientById(ingredientId);</span>
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">            if (ingredient != null) {</span>
+<span class="fc" id="L96">                double newPrice = strategy.adjustPrice(ingredient.getPrice());</span>
+<span class="fc" id="L97">                ingredient.setPrice(newPrice);</span>
+<span class="fc" id="L98">                ingredientDAO.updateIngredient(ingredient);</span>
+<span class="fc" id="L99">                System.out.println(&quot;Price adjusted successfully.&quot;);</span>
+<span class="fc" id="L100">            } else {</span>
+<span class="nc" id="L101">                System.out.println(&quot;Ingredient not found.&quot;);</span>
+            }
+<span class="fc" id="L103">        } catch (Exception e) {</span>
+<span class="fc" id="L104">            System.out.println(&quot;Error adjusting price: &quot; + e.getMessage());</span>
+<span class="fc" id="L105">        }</span>
+<span class="fc" id="L106">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

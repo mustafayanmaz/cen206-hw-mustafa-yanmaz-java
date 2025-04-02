@@ -1,0 +1,154 @@
+\doxysection{com.\+aygazyanar.\+recipe.\+Ingredient\+DAO Interface Reference}
+\hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO}{}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO}\index{com.aygazyanar.recipe.IngredientDAO@{com.aygazyanar.recipe.IngredientDAO}}
+
+
+Data Access Object interface for performing CRUD operations on ingredients.  
+
+
+Inheritance diagram for com.\+aygazyanar.\+recipe.\+Ingredient\+DAO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_ab05d3504aa659766e5ee31797d55692c}{add\+Ingredient}} (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}} ingredient)  throws Exception
+\begin{DoxyCompactList}\small\item\em Adds a new ingredient to the data source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_a7e2fe1609986ef4520a99006866c40ac}{update\+Ingredient}} (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}} ingredient)  throws Exception
+\begin{DoxyCompactList}\small\item\em Updates an existing ingredient in the data source. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}} \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_ad25398bd2f32e6989765c8b4121c7779}{get\+Ingredient\+By\+Id}} (int id)  throws Exception
+\begin{DoxyCompactList}\small\item\em Retrieves an ingredient by its ID. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}} $>$ \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_aa8f978c0f142eaffb14826b77c788ded}{get\+All\+Ingredients}} ()  throws Exception
+\begin{DoxyCompactList}\small\item\em Retrieves all ingredients from the data source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data Access Object interface for performing CRUD operations on ingredients. 
+
+This interface defines methods for adding, updating, retrieving a single ingredient, and retrieving all ingredients from the data source. 
+
+Definition at line \mbox{\hyperlink{IngredientDAO_8java_source_l00017}{17}} of file \mbox{\hyperlink{IngredientDAO_8java_source}{Ingredient\+DAO.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_ab05d3504aa659766e5ee31797d55692c}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_ab05d3504aa659766e5ee31797d55692c} 
+\index{com.aygazyanar.recipe.IngredientDAO@{com.aygazyanar.recipe.IngredientDAO}!addIngredient@{addIngredient}}
+\index{addIngredient@{addIngredient}!com.aygazyanar.recipe.IngredientDAO@{com.aygazyanar.recipe.IngredientDAO}}
+\doxysubsubsection{\texorpdfstring{addIngredient()}{addIngredient()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Ingredient\+DAO.\+add\+Ingredient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}}}]{ingredient }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Adds a new ingredient to the data source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & The ingredient object to be added. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If a database or connection error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_a70ada18f779b2aba581bdc4cba72648f}{com.\+aygazyanar.\+recipe.\+Ingredient\+DAOImpl}}.
+
+
+
+Referenced by \mbox{\hyperlink{IngredientService_8java_source_l00035}{com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+add\+Ingredient()}}.
+
+\Hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_aa8f978c0f142eaffb14826b77c788ded}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_aa8f978c0f142eaffb14826b77c788ded} 
+\index{com.aygazyanar.recipe.IngredientDAO@{com.aygazyanar.recipe.IngredientDAO}!getAllIngredients@{getAllIngredients}}
+\index{getAllIngredients@{getAllIngredients}!com.aygazyanar.recipe.IngredientDAO@{com.aygazyanar.recipe.IngredientDAO}}
+\doxysubsubsection{\texorpdfstring{getAllIngredients()}{getAllIngredients()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}} $>$ com.\+aygazyanar.\+recipe.\+Ingredient\+DAO.\+get\+All\+Ingredients (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Retrieves all ingredients from the data source. 
+
+\begin{DoxyReturn}{Returns}
+A list of all Ingredient objects. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If a database or connection error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_a96e100b6dd055104083ea7449cc06ee4}{com.\+aygazyanar.\+recipe.\+Ingredient\+DAOImpl}}.
+
+
+
+Referenced by \mbox{\hyperlink{IngredientService_8java_source_l00061}{com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+get\+All\+Ingredients()}}.
+
+\Hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_ad25398bd2f32e6989765c8b4121c7779}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_ad25398bd2f32e6989765c8b4121c7779} 
+\index{com.aygazyanar.recipe.IngredientDAO@{com.aygazyanar.recipe.IngredientDAO}!getIngredientById@{getIngredientById}}
+\index{getIngredientById@{getIngredientById}!com.aygazyanar.recipe.IngredientDAO@{com.aygazyanar.recipe.IngredientDAO}}
+\doxysubsubsection{\texorpdfstring{getIngredientById()}{getIngredientById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}} com.\+aygazyanar.\+recipe.\+Ingredient\+DAO.\+get\+Ingredient\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Retrieves an ingredient by its ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the ingredient to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The matching Ingredient object, or null if not found. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If a database or connection error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_a52d7a19579d7dedca481b2eda37c8d25}{com.\+aygazyanar.\+recipe.\+Ingredient\+DAOImpl}}.
+
+
+
+Referenced by \mbox{\hyperlink{IngredientService_8java_source_l00092}{com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+adjust\+Ingredient\+Price()}}, and \mbox{\hyperlink{IngredientService_8java_source_l00075}{com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+get\+Ingredient\+By\+Id()}}.
+
+\Hypertarget{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_a7e2fe1609986ef4520a99006866c40ac}\label{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_a7e2fe1609986ef4520a99006866c40ac} 
+\index{com.aygazyanar.recipe.IngredientDAO@{com.aygazyanar.recipe.IngredientDAO}!updateIngredient@{updateIngredient}}
+\index{updateIngredient@{updateIngredient}!com.aygazyanar.recipe.IngredientDAO@{com.aygazyanar.recipe.IngredientDAO}}
+\doxysubsubsection{\texorpdfstring{updateIngredient()}{updateIngredient()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Ingredient\+DAO.\+update\+Ingredient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}}}]{ingredient }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Updates an existing ingredient in the data source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & The updated ingredient object. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If a database or connection error occurs. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientDAOImpl_a5858723bed4471ba1289c254b3543d5e}{com.\+aygazyanar.\+recipe.\+Ingredient\+DAOImpl}}.
+
+
+
+Referenced by \mbox{\hyperlink{IngredientService_8java_source_l00092}{com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+adjust\+Ingredient\+Price()}}, and \mbox{\hyperlink{IngredientService_8java_source_l00048}{com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+update\+Ingredient()}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+recipe-\/app/src/main/java/com/aygazyanar/recipe/\mbox{\hyperlink{IngredientDAO_8java}{Ingredient\+DAO.\+java}}\end{DoxyCompactItemize}

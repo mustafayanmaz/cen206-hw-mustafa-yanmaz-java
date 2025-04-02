@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService" kind="class" language="Java" prot="public">
+    <compoundname>com::aygazyanar::recipe::RecipeService</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a1b3cb43435c1cd3820326758a27d2b9c" prot="private" static="no" mutable="no">
+        <type><ref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO" kindref="compound">RecipeDAO</ref></type>
+        <definition>RecipeDAO com.aygazyanar.recipe.RecipeService.recipeDAO</definition>
+        <argsstring></argsstring>
+        <name>recipeDAO</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeService.recipeDAO</qualifiedname>
+        <briefdescription>
+<para>Data Access Object used for recipe persistence operations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeService.java" line="21" column="23" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeService.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a243676419a4734bcc359766e3eff410c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.aygazyanar.recipe.RecipeService.RecipeService</definition>
+        <argsstring>()</argsstring>
+        <name>RecipeService</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeService.RecipeService</qualifiedname>
+        <exceptions> throws Exception </exceptions>
+        <briefdescription>
+<para>Constructs the service and initializes the DAO implementation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If DAO initialization fails. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeService.java" line="27" column="12" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeService.java" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a80b140995de751d78bfdd6125080d412" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.RecipeService.addRecipe</definition>
+        <argsstring>(Recipe recipe)</argsstring>
+        <name>addRecipe</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeService.addRecipe</qualifiedname>
+        <param>
+          <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe" kindref="compound">Recipe</ref></type>
+          <declname>recipe</declname>
+        </param>
+        <briefdescription>
+<para>Adds a new recipe to the system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>recipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Recipe object to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeService.java" line="35" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeService.java" bodystart="35" bodyend="42"/>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_1ac0032249a7a8c0779ba99a41b2277669">com.aygazyanar.recipe.RecipeDAO.addRecipe</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a7dbb8718e7e8522bcf69994d4dafa221" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe" kindref="compound">Recipe</ref></type>
+        <definition>Recipe com.aygazyanar.recipe.RecipeService.getRecipeById</definition>
+        <argsstring>(int id)</argsstring>
+        <name>getRecipeById</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeService.getRecipeById</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves a recipe by its ID. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the recipe to retrieve. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The Recipe object if found, otherwise null. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeService.java" line="49" column="19" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeService.java" bodystart="49" bodyend="56"/>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_1a3786a32df6739d8bcf3d16f7da92e475">com.aygazyanar.recipe.RecipeDAO.getRecipeById</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a4e30e61225f1fb106e2aa54262e1d795" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe" kindref="compound">Recipe</ref> &gt;</type>
+        <definition>List&lt; Recipe &gt; com.aygazyanar.recipe.RecipeService.getAllRecipes</definition>
+        <argsstring>()</argsstring>
+        <name>getAllRecipes</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeService.getAllRecipes</qualifiedname>
+        <briefdescription>
+<para>Retrieves all recipes from the system. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A list of all Recipe objects, or null if retrieval fails. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeService.java" line="62" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeService.java" bodystart="62" bodyend="69"/>
+        <references refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_1aaec8b4489b407f87ae123438837b44c4">com.aygazyanar.recipe.RecipeDAO.getAllRecipes</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Provides service-layer operations for managing recipes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Acts as a bridge between the application logic and the recipe data access layer. </para>
+    </detaileddescription>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeService.java" line="16" column="7" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeService.java" bodystart="16" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a80b140995de751d78bfdd6125080d412" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeService</scope><name>addRecipe</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a4e30e61225f1fb106e2aa54262e1d795" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeService</scope><name>getAllRecipes</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a7dbb8718e7e8522bcf69994d4dafa221" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeService</scope><name>getRecipeById</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a1b3cb43435c1cd3820326758a27d2b9c" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeService</scope><name>recipeDAO</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_1a243676419a4734bcc359766e3eff410c" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeService</scope><name>RecipeService</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

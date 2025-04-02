@@ -1,0 +1,255 @@
+\doxysection{com.\+aygazyanar.\+recipe.\+Ingredient\+Service Class Reference}
+\hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService}{}\label{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService}\index{com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}}
+
+
+Provides service-\/layer operations for managing ingredients.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a3a811f87f1673f78d578eec3dc1fa305}{Ingredient\+Service}} ()  throws Exception 
+\begin{DoxyCompactList}\small\item\em Constructs the service and initializes the DAO implementation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_add4be62af2c005b58820c5095fe12b0c}{add\+Ingredient}} (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}} ingredient)
+\begin{DoxyCompactList}\small\item\em Adds a new ingredient to the system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a9bbeab382cb3c6f788493c88057791b0}{update\+Ingredient}} (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}} ingredient)
+\begin{DoxyCompactList}\small\item\em Updates an existing ingredient\textquotesingle{}s details. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}} $>$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_acade2da12a9e3e5752b201c23ff1abbf}{get\+All\+Ingredients}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a list of all ingredients. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}} \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a89faf9c0072c72efcaa03be09128f0a0}{get\+Ingredient\+By\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Retrieves an ingredient by its ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a2756bb4db5cf6c3ae04f7ab5c647af2b}{adjust\+Ingredient\+Price}} (int ingredient\+Id, \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy}{Price\+Adjustment\+Strategy}} strategy)
+\begin{DoxyCompactList}\small\item\em Adjusts the price of an ingredient using the provided strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides service-\/layer operations for managing ingredients. 
+
+Acts as an intermediary between the application logic and the data access layer. 
+
+Definition at line \mbox{\hyperlink{IngredientService_8java_source_l00016}{16}} of file \mbox{\hyperlink{IngredientService_8java_source}{Ingredient\+Service.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a3a811f87f1673f78d578eec3dc1fa305}\label{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a3a811f87f1673f78d578eec3dc1fa305} 
+\index{com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}!IngredientService@{IngredientService}}
+\index{IngredientService@{IngredientService}!com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}}
+\doxysubsubsection{\texorpdfstring{IngredientService()}{IngredientService()}}
+{\footnotesize\ttfamily com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+Ingredient\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Constructs the service and initializes the DAO implementation. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If DAO initialization fails. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{IngredientService_8java_source_l00027}{27}} of file \mbox{\hyperlink{IngredientService_8java_source}{Ingredient\+Service.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ this.ingredientDAO\ =\ \textcolor{keyword}{new}\ IngredientDAOImpl();}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_add4be62af2c005b58820c5095fe12b0c}\label{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_add4be62af2c005b58820c5095fe12b0c} 
+\index{com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}!addIngredient@{addIngredient}}
+\index{addIngredient@{addIngredient}!com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}}
+\doxysubsubsection{\texorpdfstring{addIngredient()}{addIngredient()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+add\+Ingredient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}}}]{ingredient }\end{DoxyParamCaption})}
+
+
+
+Adds a new ingredient to the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & The Ingredient object to add. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{IngredientService_8java_source_l00035}{35}} of file \mbox{\hyperlink{IngredientService_8java_source}{Ingredient\+Service.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ ingredientDAO.\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_ab05d3504aa659766e5ee31797d55692c}{addIngredient}}(ingredient);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Ingredient\ added\ successfully."{}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ adding\ ingredient:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_ab05d3504aa659766e5ee31797d55692c}{com.\+aygazyanar.\+recipe.\+Ingredient\+DAO.\+add\+Ingredient()}}.
+
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a2756bb4db5cf6c3ae04f7ab5c647af2b}\label{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a2756bb4db5cf6c3ae04f7ab5c647af2b} 
+\index{com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}!adjustIngredientPrice@{adjustIngredientPrice}}
+\index{adjustIngredientPrice@{adjustIngredientPrice}!com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}}
+\doxysubsubsection{\texorpdfstring{adjustIngredientPrice()}{adjustIngredientPrice()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+adjust\+Ingredient\+Price (\begin{DoxyParamCaption}\item[{int}]{ingredient\+Id,  }\item[{\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy}{Price\+Adjustment\+Strategy}}}]{strategy }\end{DoxyParamCaption})}
+
+
+
+Adjusts the price of an ingredient using the provided strategy. 
+
+If the ingredient exists, its price is recalculated and updated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient\+Id} & The ID of the ingredient to update. \\
+\hline
+{\em strategy} & The price adjustment strategy (increase or decrease). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{IngredientService_8java_source_l00092}{92}} of file \mbox{\hyperlink{IngredientService_8java_source}{Ingredient\+Service.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ Ingredient\ ingredient\ =\ ingredientDAO.\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_ad25398bd2f32e6989765c8b4121c7779}{getIngredientById}}(ingredientId);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ingredient\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ newPrice\ =\ strategy.adjustPrice(ingredient.getPrice());}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredient.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient_a0c22104e914c8210edbeba68971772d7}{setPrice}}(newPrice);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ingredientDAO.\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_a7e2fe1609986ef4520a99006866c40ac}{updateIngredient}}(ingredient);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Price\ adjusted\ successfully."{}});}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Ingredient\ not\ found."{}});}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ adjusting\ price:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1PriceAdjustmentStrategy_a869ce7d33e86a67d6952764daf56cfa7}{com.\+aygazyanar.\+recipe.\+Price\+Adjustment\+Strategy.\+adjust\+Price()}}, \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_ad25398bd2f32e6989765c8b4121c7779}{com.\+aygazyanar.\+recipe.\+Ingredient\+DAO.\+get\+Ingredient\+By\+Id()}}, \mbox{\hyperlink{Ingredient_8java_source_l00092}{com.\+aygazyanar.\+recipe.\+Ingredient.\+get\+Price()}}, \mbox{\hyperlink{Ingredient_8java_source_l00100}{com.\+aygazyanar.\+recipe.\+Ingredient.\+set\+Price()}}, and \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_a7e2fe1609986ef4520a99006866c40ac}{com.\+aygazyanar.\+recipe.\+Ingredient\+DAO.\+update\+Ingredient()}}.
+
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_acade2da12a9e3e5752b201c23ff1abbf}\label{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_acade2da12a9e3e5752b201c23ff1abbf} 
+\index{com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}!getAllIngredients@{getAllIngredients}}
+\index{getAllIngredients@{getAllIngredients}!com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}}
+\doxysubsubsection{\texorpdfstring{getAllIngredients()}{getAllIngredients()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}} $>$ com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+get\+All\+Ingredients (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves a list of all ingredients. 
+
+\begin{DoxyReturn}{Returns}
+A List of Ingredient objects, or null if an error occurs. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{IngredientService_8java_source_l00061}{61}} of file \mbox{\hyperlink{IngredientService_8java_source}{Ingredient\+Service.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ingredientDAO.\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_aa8f978c0f142eaffb14826b77c788ded}{getAllIngredients}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ retrieving\ ingredients:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_aa8f978c0f142eaffb14826b77c788ded}{com.\+aygazyanar.\+recipe.\+Ingredient\+DAO.\+get\+All\+Ingredients()}}.
+
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a89faf9c0072c72efcaa03be09128f0a0}\label{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a89faf9c0072c72efcaa03be09128f0a0} 
+\index{com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}!getIngredientById@{getIngredientById}}
+\index{getIngredientById@{getIngredientById}!com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}}
+\doxysubsubsection{\texorpdfstring{getIngredientById()}{getIngredientById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}} com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+get\+Ingredient\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Retrieves an ingredient by its ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the ingredient to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Ingredient object if found, otherwise null. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{IngredientService_8java_source_l00075}{75}} of file \mbox{\hyperlink{IngredientService_8java_source}{Ingredient\+Service.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ingredientDAO.\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_ad25398bd2f32e6989765c8b4121c7779}{getIngredientById}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ retrieving\ ingredient:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_ad25398bd2f32e6989765c8b4121c7779}{com.\+aygazyanar.\+recipe.\+Ingredient\+DAO.\+get\+Ingredient\+By\+Id()}}.
+
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a9bbeab382cb3c6f788493c88057791b0}\label{classcom_1_1aygazyanar_1_1recipe_1_1IngredientService_a9bbeab382cb3c6f788493c88057791b0} 
+\index{com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}!updateIngredient@{updateIngredient}}
+\index{updateIngredient@{updateIngredient}!com.aygazyanar.recipe.IngredientService@{com.aygazyanar.recipe.IngredientService}}
+\doxysubsubsection{\texorpdfstring{updateIngredient()}{updateIngredient()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Ingredient\+Service.\+update\+Ingredient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Ingredient}{Ingredient}}}]{ingredient }\end{DoxyParamCaption})}
+
+
+
+Updates an existing ingredient\textquotesingle{}s details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & The Ingredient object with updated data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{IngredientService_8java_source_l00048}{48}} of file \mbox{\hyperlink{IngredientService_8java_source}{Ingredient\+Service.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ ingredientDAO.\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_a7e2fe1609986ef4520a99006866c40ac}{updateIngredient}}(ingredient);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Ingredient\ updated\ successfully."{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ updating\ ingredient:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1IngredientDAO_a7e2fe1609986ef4520a99006866c40ac}{com.\+aygazyanar.\+recipe.\+Ingredient\+DAO.\+update\+Ingredient()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+recipe-\/app/src/main/java/com/aygazyanar/recipe/\mbox{\hyperlink{IngredientService_8java}{Ingredient\+Service.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classcom_1_1aygazyanar_1_1recipe_1_1BudgetService" kind="class" language="Java" prot="public">
+    <compoundname>com::aygazyanar::recipe::BudgetService</compoundname>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1BudgetService_1acd00b8ae69aaac827ef386ad50398e33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.BudgetService.planBudget</definition>
+        <argsstring>(double budget, List&lt; Recipe &gt; recipes)</argsstring>
+        <name>planBudget</name>
+        <qualifiedname>com.aygazyanar.recipe.BudgetService.planBudget</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>budget</declname>
+        </param>
+        <param>
+          <type>List&lt; <ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe" kindref="compound">Recipe</ref> &gt;</type>
+          <declname>recipes</declname>
+        </param>
+        <briefdescription>
+<para>Plans meals by calculating the total cost of given recipes and comparing it to the budget. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method calculates the total cost of all provided recipes and prints the cost of each recipe, the total cost, and whether the total is within or over the specified budget.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>budget</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The total budget available. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>recipes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list of recipes to be considered in the budget planning. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/BudgetService.java" line="28" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/BudgetService.java" bodystart="28" bodyend="42"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Provides functionality for planning meals within a given budget. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This service class compares the total cost of a list of recipes against a specified budget and outputs whether the budget is exceeded or not. </para>
+    </detaileddescription>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/BudgetService.java" line="17" column="7" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/BudgetService.java" bodystart="17" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1BudgetService_1acd00b8ae69aaac827ef386ad50398e33" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::BudgetService</scope><name>planBudget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

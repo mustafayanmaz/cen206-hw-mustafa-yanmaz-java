@@ -1,0 +1,49 @@
+\doxysection{Auth\+Service.\+java}
+\hypertarget{AuthService_8java_source}{}\label{AuthService_8java_source}\index{recipe-\/app/src/main/java/com/aygazyanar/recipe/AuthService.java@{recipe-\/app/src/main/java/com/aygazyanar/recipe/AuthService.java}}
+\mbox{\hyperlink{AuthService_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00006}00006\ \textcolor{keyword}{package\ }com.aygazyanar.recipe;}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00014}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1AuthService}{00014}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1AuthService}{AuthService}}\ \{}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO}{UserDAO}}\ userDAO;}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00025}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1AuthService_af54cfcc56dbfe5795da88dd766535bab}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1AuthService_af54cfcc56dbfe5795da88dd766535bab}{AuthService}}()\ throws\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ this.userDAO\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1UserDAOImpl}{UserDAOImpl}}();}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00038}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1AuthService_aa7a8d44f3a091637a7b010882add7156}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1AuthService_aa7a8d44f3a091637a7b010882add7156}{register}}(String\ username,\ String\ password)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (userDAO.\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_a372faa3feb290b17e07a312bc8e697c9}{getUserByUsername}}(username)\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}User\ already\ exists."{}});}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}}\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}}(0,\ username,\ password);}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ userDAO.\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_a490f6f60e6925353daba00829e041bd3}{createUser}}(user);}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}User\ registered\ successfully."{}});}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ registering\ user:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00061}\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1AuthService_a8337bf1b2e4199447ef1a7c60f4cf25a}{00061}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}}\ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1AuthService_a8337bf1b2e4199447ef1a7c60f4cf25a}{login}}(String\ username,\ String\ password)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User}{User}}\ user\ =\ userDAO.\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1UserDAO_a372faa3feb290b17e07a312bc8e697c9}{getUserByUsername}}(username);}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user\ !=\ \textcolor{keyword}{null}\ \&\&\ user.\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1User_a00d60ac12e86b6bdd73bd4ba442d70c3}{getPassword}}().equals(password))\ \{}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Login\ successful."{}});}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ user;}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Invalid\ username\ or\ password."{}});}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ during\ login:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthService_8java_source_l00076}00076\ \}}
+
+\end{DoxyCode}

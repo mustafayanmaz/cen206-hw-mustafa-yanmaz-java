@@ -1,0 +1,16 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+recipe-app,com.aygazyanar.recipe,AuthService,0,84,1,5,0,22,1,5,0,3
+recipe-app,com.aygazyanar.recipe,IngredientService,3,124,1,1,1,34,1,6,0,6
+recipe-app,com.aygazyanar.recipe,Ingredient,0,46,0,0,0,20,0,10,0,10
+recipe-app,com.aygazyanar.recipe,UserDAOImpl,0,71,0,2,0,23,0,5,0,4
+recipe-app,com.aygazyanar.recipe,DecreasePriceStrategy,0,15,0,0,0,4,0,2,0,2
+recipe-app,com.aygazyanar.recipe,Application,39,534,9,41,9,159,10,28,1,7
+recipe-app,com.aygazyanar.recipe,RecipeService,0,66,0,0,0,17,0,4,0,4
+recipe-app,com.aygazyanar.recipe,User,0,36,0,0,0,16,0,8,0,8
+recipe-app,com.aygazyanar.recipe,DBConnection,9,34,0,4,3,12,0,5,0,3
+recipe-app,com.aygazyanar.recipe,BudgetService,0,70,0,4,0,13,0,4,0,2
+recipe-app,com.aygazyanar.recipe,IngredientDAOImpl,2,144,1,3,1,42,1,7,0,6
+recipe-app,com.aygazyanar.recipe,IncreasePriceStrategy,0,15,0,0,0,4,0,2,0,2
+recipe-app,com.aygazyanar.recipe,Recipe,0,74,0,2,0,24,0,11,0,10
+recipe-app,com.aygazyanar.recipe,RecipeIngredient,0,33,0,0,0,14,0,7,0,7
+recipe-app,com.aygazyanar.recipe,RecipeDAOImpl,0,262,2,10,0,71,2,10,0,6

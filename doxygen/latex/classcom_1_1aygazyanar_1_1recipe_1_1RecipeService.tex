@@ -1,0 +1,170 @@
+\doxysection{com.\+aygazyanar.\+recipe.\+Recipe\+Service Class Reference}
+\hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService}{}\label{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService}\index{com.aygazyanar.recipe.RecipeService@{com.aygazyanar.recipe.RecipeService}}
+
+
+Provides service-\/layer operations for managing recipes.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a243676419a4734bcc359766e3eff410c}{Recipe\+Service}} ()  throws Exception 
+\begin{DoxyCompactList}\small\item\em Constructs the service and initializes the DAO implementation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a80b140995de751d78bfdd6125080d412}{add\+Recipe}} (\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} recipe)
+\begin{DoxyCompactList}\small\item\em Adds a new recipe to the system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a7dbb8718e7e8522bcf69994d4dafa221}{get\+Recipe\+By\+Id}} (int id)
+\begin{DoxyCompactList}\small\item\em Retrieves a recipe by its ID. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} $>$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a4e30e61225f1fb106e2aa54262e1d795}{get\+All\+Recipes}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all recipes from the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides service-\/layer operations for managing recipes. 
+
+Acts as a bridge between the application logic and the recipe data access layer. 
+
+Definition at line \mbox{\hyperlink{RecipeService_8java_source_l00016}{16}} of file \mbox{\hyperlink{RecipeService_8java_source}{Recipe\+Service.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a243676419a4734bcc359766e3eff410c}\label{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a243676419a4734bcc359766e3eff410c} 
+\index{com.aygazyanar.recipe.RecipeService@{com.aygazyanar.recipe.RecipeService}!RecipeService@{RecipeService}}
+\index{RecipeService@{RecipeService}!com.aygazyanar.recipe.RecipeService@{com.aygazyanar.recipe.RecipeService}}
+\doxysubsubsection{\texorpdfstring{RecipeService()}{RecipeService()}}
+{\footnotesize\ttfamily com.\+aygazyanar.\+recipe.\+Recipe\+Service.\+Recipe\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws Exception}
+
+
+
+Constructs the service and initializes the DAO implementation. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If DAO initialization fails. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{RecipeService_8java_source_l00027}{27}} of file \mbox{\hyperlink{RecipeService_8java_source}{Recipe\+Service.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ this.recipeDAO\ =\ \textcolor{keyword}{new}\ RecipeDAOImpl();}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a80b140995de751d78bfdd6125080d412}\label{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a80b140995de751d78bfdd6125080d412} 
+\index{com.aygazyanar.recipe.RecipeService@{com.aygazyanar.recipe.RecipeService}!addRecipe@{addRecipe}}
+\index{addRecipe@{addRecipe}!com.aygazyanar.recipe.RecipeService@{com.aygazyanar.recipe.RecipeService}}
+\doxysubsubsection{\texorpdfstring{addRecipe()}{addRecipe()}}
+{\footnotesize\ttfamily void com.\+aygazyanar.\+recipe.\+Recipe\+Service.\+add\+Recipe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}}}]{recipe }\end{DoxyParamCaption})}
+
+
+
+Adds a new recipe to the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recipe} & The Recipe object to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{RecipeService_8java_source_l00035}{35}} of file \mbox{\hyperlink{RecipeService_8java_source}{Recipe\+Service.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ recipeDAO.\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_ac0032249a7a8c0779ba99a41b2277669}{addRecipe}}(recipe);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Recipe\ added\ successfully."{}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ adding\ recipe:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_ac0032249a7a8c0779ba99a41b2277669}{com.\+aygazyanar.\+recipe.\+Recipe\+DAO.\+add\+Recipe()}}.
+
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a4e30e61225f1fb106e2aa54262e1d795}\label{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a4e30e61225f1fb106e2aa54262e1d795} 
+\index{com.aygazyanar.recipe.RecipeService@{com.aygazyanar.recipe.RecipeService}!getAllRecipes@{getAllRecipes}}
+\index{getAllRecipes@{getAllRecipes}!com.aygazyanar.recipe.RecipeService@{com.aygazyanar.recipe.RecipeService}}
+\doxysubsubsection{\texorpdfstring{getAllRecipes()}{getAllRecipes()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} $>$ com.\+aygazyanar.\+recipe.\+Recipe\+Service.\+get\+All\+Recipes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves all recipes from the system. 
+
+\begin{DoxyReturn}{Returns}
+A list of all Recipe objects, or null if retrieval fails. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{RecipeService_8java_source_l00062}{62}} of file \mbox{\hyperlink{RecipeService_8java_source}{Recipe\+Service.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ recipeDAO.\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_aaec8b4489b407f87ae123438837b44c4}{getAllRecipes}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ retrieving\ recipes:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_aaec8b4489b407f87ae123438837b44c4}{com.\+aygazyanar.\+recipe.\+Recipe\+DAO.\+get\+All\+Recipes()}}.
+
+\Hypertarget{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a7dbb8718e7e8522bcf69994d4dafa221}\label{classcom_1_1aygazyanar_1_1recipe_1_1RecipeService_a7dbb8718e7e8522bcf69994d4dafa221} 
+\index{com.aygazyanar.recipe.RecipeService@{com.aygazyanar.recipe.RecipeService}!getRecipeById@{getRecipeById}}
+\index{getRecipeById@{getRecipeById}!com.aygazyanar.recipe.RecipeService@{com.aygazyanar.recipe.RecipeService}}
+\doxysubsubsection{\texorpdfstring{getRecipeById()}{getRecipeById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1aygazyanar_1_1recipe_1_1Recipe}{Recipe}} com.\+aygazyanar.\+recipe.\+Recipe\+Service.\+get\+Recipe\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Retrieves a recipe by its ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the recipe to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Recipe object if found, otherwise null. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{RecipeService_8java_source_l00049}{49}} of file \mbox{\hyperlink{RecipeService_8java_source}{Recipe\+Service.\+java}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ recipeDAO.\mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_a3786a32df6739d8bcf3d16f7da92e475}{getRecipeById}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error\ retrieving\ recipe:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_a3786a32df6739d8bcf3d16f7da92e475}{com.\+aygazyanar.\+recipe.\+Recipe\+DAO.\+get\+Recipe\+By\+Id()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+recipe-\/app/src/main/java/com/aygazyanar/recipe/\mbox{\hyperlink{RecipeService_8java}{Recipe\+Service.\+java}}\end{DoxyCompactItemize}

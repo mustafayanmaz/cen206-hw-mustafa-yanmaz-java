@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl" kind="class" language="Java" prot="public">
+    <compoundname>com::aygazyanar::recipe::RecipeDAOImpl</compoundname>
+    <basecompoundref refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO" prot="public" virt="non-virtual">com.aygazyanar.recipe.RecipeDAO</basecompoundref>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1aa4db21952ecfde8a65d8545b957ca042" prot="private" static="no" mutable="no">
+        <type>Connection</type>
+        <definition>Connection com.aygazyanar.recipe.RecipeDAOImpl.connection</definition>
+        <argsstring></argsstring>
+        <name>connection</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeDAOImpl.connection</qualifiedname>
+        <briefdescription>
+<para>JDBC connection used for executing SQL statements. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" line="25" column="24" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a380ff1b9cc213f508217613d516e29d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>com.aygazyanar.recipe.RecipeDAOImpl.RecipeDAOImpl</definition>
+        <argsstring>()</argsstring>
+        <name>RecipeDAOImpl</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeDAOImpl.RecipeDAOImpl</qualifiedname>
+        <exceptions> throws Exception </exceptions>
+        <briefdescription>
+<para>Constructor that initializes the database connection and ensures tables exist. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if a database connection error occurs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" line="31" column="12" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" bodystart="31" bodyend="35"/>
+        <references refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1ac283a250b94b7c8efc89b12ceaa493d2" compoundref="DBConnection_8java" startline="57" endline="59">com.aygazyanar.recipe.DBConnection.getConnection</references>
+        <references refid="classcom_1_1aygazyanar_1_1recipe_1_1DBConnection_1a375981392f105a6c7c3d90d21f924234" compoundref="DBConnection_8java" startline="69" endline="76">com.aygazyanar.recipe.DBConnection.getInstance</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1acce66ab053933a0a34cf22a37b1ea53a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.RecipeDAOImpl.addRecipe</definition>
+        <argsstring>(Recipe recipe)</argsstring>
+        <name>addRecipe</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeDAOImpl.addRecipe</qualifiedname>
+        <reimplements refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_1ac0032249a7a8c0779ba99a41b2277669">addRecipe</reimplements>
+        <param>
+          <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe" kindref="compound">Recipe</ref></type>
+          <declname>recipe</declname>
+        </param>
+        <exceptions> throws Exception </exceptions>
+        <briefdescription>
+<para>Adds a recipe and its ingredients to the database. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>recipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Recipe object to be stored. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if a database error occurs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" line="71" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" bodystart="71" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a793981d24e9e3fa76a08da1993600684" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe" kindref="compound">Recipe</ref></type>
+        <definition>Recipe com.aygazyanar.recipe.RecipeDAOImpl.getRecipeById</definition>
+        <argsstring>(int id)</argsstring>
+        <name>getRecipeById</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeDAOImpl.getRecipeById</qualifiedname>
+        <reimplements refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_1a3786a32df6739d8bcf3d16f7da92e475">getRecipeById</reimplements>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <exceptions> throws Exception </exceptions>
+        <briefdescription>
+<para>Retrieves a recipe and its ingredients by ID. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ID of the recipe to retrieve. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The Recipe object if found, otherwise null. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if a database error occurs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" line="100" column="19" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" bodystart="100" bodyend="125"/>
+        <references refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1a793e47aa009306513fc8b2172b51c3ba" compoundref="Recipe_8java" startline="104" endline="106">com.aygazyanar.recipe.Recipe.addIngredient</references>
+        <references refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1aa87bf48419d7220b8f4bfa3ce81dd105" compoundref="Recipe_8java" startline="56" endline="58">com.aygazyanar.recipe.Recipe.getId</references>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a2e65552e7e7171eb70259ce9bd2fc749" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe" kindref="compound">Recipe</ref> &gt;</type>
+        <definition>List&lt; Recipe &gt; com.aygazyanar.recipe.RecipeDAOImpl.getAllRecipes</definition>
+        <argsstring>()</argsstring>
+        <name>getAllRecipes</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeDAOImpl.getAllRecipes</qualifiedname>
+        <reimplements refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO_1aaec8b4489b407f87ae123438837b44c4">getAllRecipes</reimplements>
+        <exceptions> throws Exception </exceptions>
+        <briefdescription>
+<para>Retrieves all recipes from the database along with their ingredients. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A list of all Recipe objects. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if a database error occurs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" line="134" column="17" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" bodystart="134" bodyend="158"/>
+        <references refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1a793e47aa009306513fc8b2172b51c3ba" compoundref="Recipe_8java" startline="104" endline="106">com.aygazyanar.recipe.Recipe.addIngredient</references>
+        <references refid="classcom_1_1aygazyanar_1_1recipe_1_1Recipe_1aa87bf48419d7220b8f4bfa3ce81dd105" compoundref="Recipe_8java" startline="56" endline="58">com.aygazyanar.recipe.Recipe.getId</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a13d626c4eaaa66f04bc92197ae4eba5c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.RecipeDAOImpl.createRecipeTable</definition>
+        <argsstring>()</argsstring>
+        <name>createRecipeTable</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeDAOImpl.createRecipeTable</qualifiedname>
+        <exceptions> throws Exception </exceptions>
+        <briefdescription>
+<para>Creates the &quot;recipes&quot; table if it doesn&apos;t already exist. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if table creation fails. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" line="41" column="18" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" bodystart="41" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1af22b5c6a5fc7c8a30c00bb7f066ccdb0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void com.aygazyanar.recipe.RecipeDAOImpl.createRecipeIngredientsTable</definition>
+        <argsstring>()</argsstring>
+        <name>createRecipeIngredientsTable</name>
+        <qualifiedname>com.aygazyanar.recipe.RecipeDAOImpl.createRecipeIngredientsTable</qualifiedname>
+        <exceptions> throws Exception </exceptions>
+        <briefdescription>
+<para>Creates the &quot;recipe_ingredients&quot; table if it doesn&apos;t already exist. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>Exception</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if table creation fails. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" line="53" column="18" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" bodystart="53" bodyend="62"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>&lt; Main package for the Recipe Cost Calculator application. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Implementation of the RecipeDAO interface using SQLite and JDBC.</para>
+<para>Provides database access for storing, retrieving, and managing recipes and their ingredients. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>com.aygazyanar.recipe.RecipeDAOImpl</label>
+        <link refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>com.aygazyanar.recipe.RecipeDAO</label>
+        <link refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>com.aygazyanar.recipe.RecipeDAOImpl</label>
+        <link refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>com.aygazyanar.recipe.RecipeDAO</label>
+        <link refid="interfacecom_1_1aygazyanar_1_1recipe_1_1RecipeDAO"/>
+      </node>
+    </collaborationgraph>
+    <location file="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" line="20" column="7" bodyfile="recipe-app/src/main/java/com/aygazyanar/recipe/RecipeDAOImpl.java" bodystart="20" bodyend="159"/>
+    <listofallmembers>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1acce66ab053933a0a34cf22a37b1ea53a" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeDAOImpl</scope><name>addRecipe</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1aa4db21952ecfde8a65d8545b957ca042" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeDAOImpl</scope><name>connection</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1af22b5c6a5fc7c8a30c00bb7f066ccdb0" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeDAOImpl</scope><name>createRecipeIngredientsTable</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a13d626c4eaaa66f04bc92197ae4eba5c" prot="private" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeDAOImpl</scope><name>createRecipeTable</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a2e65552e7e7171eb70259ce9bd2fc749" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeDAOImpl</scope><name>getAllRecipes</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a793981d24e9e3fa76a08da1993600684" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeDAOImpl</scope><name>getRecipeById</name></member>
+      <member refid="classcom_1_1aygazyanar_1_1recipe_1_1RecipeDAOImpl_1a380ff1b9cc213f508217613d516e29d8" prot="public" virt="non-virtual"><scope>com::aygazyanar::recipe::RecipeDAOImpl</scope><name>RecipeDAOImpl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
